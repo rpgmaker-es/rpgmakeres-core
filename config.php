@@ -16,4 +16,18 @@ $_RPGMAKERES["config"] = array(
      */
     "place" => "holder",
 
+    /*
+     * Database connection settings
+     */
+    "DB_HOST" => "localhost",
+    "DB_NAME" => "db",
+    "DB_USER" => "root",
+    "DB_PASS" => "1234",
+    "DB_DEBUG" => false,
+
+    /*
+     * Use own mysqli_stmt_get_result function. Use when mysql-client is not mysqlnd based.
+     */
+    "useOwnMysqliStmtGetResult" => false,
+
 );
