@@ -1,0 +1,16 @@
+#Exclusion for IDE's
+.idea/*
+.vscode/*
+.history/*
+.DS_Store
+
+#Exclusion for EN.I's workspace
+public/.htaccess
+composer.bat
+php.bat
+
+#Exclusion for development config files
+config.php
+
+#Exclusion for composer files
+/vendor/

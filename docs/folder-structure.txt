@@ -1,0 +1,25 @@
+storage/
+core/
+	corefiles1.php
+	corefiles2.php
+public/
+	index.html
+	route1/
+	    index.html
+	route2/
+	    index.php
+	...
+controllers/
+	controller1.php
+	controller2.php
+services/
+	db.php
+	session.php
+	storage.php
+views/
+	view1.php
+	view2.php
+	view3.php
+settings.php
+cron.php
+routes.php

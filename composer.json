@@ -1,0 +1,7 @@
+{
+    "name": "rpgmakeres/core",
+    "description": "rpgmaker.es core",
+    "type": "project",
+    "license": "MIT",
+    "require": {}
+}
