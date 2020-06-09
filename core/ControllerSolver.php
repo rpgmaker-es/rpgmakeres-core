@@ -21,7 +21,7 @@ class ControllerSolver
     static function call($controllerName, $controllerFunction)
     {
         global $_RPGMAKERES;
-        include_once(RPGMakerES::get_rootfolder("routes.php"));
+        include_once(RPGMakerES::getRootFolder("routes.php"));
 
         //The controller exists?
         if (!array_key_exists($controllerName, $_RPGMAKERES["controllers"])) {
@@ -29,7 +29,7 @@ class ControllerSolver
         }
 
         //Load controller
-        if (!@include_once(RPGMakerES::get_rootfolder("controllers/") . $_RPGMAKERES["controllers"][$controllerName])) {
+        if (!@include_once(RPGMakerES::getRootFolder("controllers/") . $_RPGMAKERES["controllers"][$controllerName])) {
             return RPGMakerES::gen501("Controller not found");
         }
 

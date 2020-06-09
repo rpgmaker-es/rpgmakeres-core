@@ -17,18 +17,38 @@ $_RPGMAKERES["config"] = array(
     "place" => "holder",
 
     /*
-     * Database connection settings
+     * Database connection settings for MySQLi
      */
-    "DB_HOST" => "localhost",
-    "DB_NAME" => "db",
-    "DB_USER" => "root",
-    "DB_PASS" => "1234",
-    "DB_DEBUG" => false,
+    "MySQLi_DB_HOST" => "localhost",
+    "MySQLi_DB_NAME" => "db",
+    "MySQLi_DB_USER" => "root",
+    "MySQLi_DB_PASS" => "1234",
+    "MySQLi_DB_DEBUG" => false,
 
     /*
-     * Use own mysqli_stmt_get_result function. Use when mysql-client is not mysqlnd based.
+ * Use own mysqli_stmt_get_result function. Use when mysql-client is not mysqlnd based.
+ */
+    "MySQLi_useOwnMysqliStmtGetResult" => false,
+
+    /*
+     * Database connection settings for PDO. If your database does not use some of these parameters you can set these as NULL.
      */
-    "useOwnMysqliStmtGetResult" => false,
+    "PDO_dsn" => "mysql:host=localhost;dbname=db",
+    "PDO_user" => "root",
+    "PDO_pass" => "1234",
+
+
+
+
+    /**
+     * Timeout for user inactivity, in seconds
+     */
+    "sessionTimeout" => 1800,
+
+    /**
+     * URL for login, used for failed logged in checks
+     */
+    "loginUrl" => "/login"
 
 
 );

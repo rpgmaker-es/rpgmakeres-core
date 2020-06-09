@@ -3,5 +3,8 @@
     "description": "rpgmaker.es core",
     "type": "project",
     "license": "MIT",
-    "require": {}
+    "require": {
+      "ext-mysqli": "*",
+      "ext-pdo": "*"
+    }
 }

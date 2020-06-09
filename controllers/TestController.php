@@ -27,4 +27,23 @@ class TestController
         ]);
     }
 
+    static function databaseTest()
+    {
+
+        //$out = DBService::getSecureQuery("SELECT * FROM cosa WHERE id=?", "i", [2]);
+        //$out = DBService::execQuery("INSERT INTO cosa VALUES(4,4)");
+        //DBService::disconnect();
+
+        //$out = PDOService::testDBConnection();
+
+        RPGMakerES::loadService("db_pdo");
+        //$out = PDOService::getSecureQuery("SELECT * FROM cosa WHERE id=?", [PDO::PARAM_INT], [2]);
+        //$out = PDOService::execQuery("INSERT INTO cosa VALUES(4,4)");
+        $out = PDOService::getQuery("SELECT * FROM cosa WHERE id=1");
+
+        var_dump($out);
+        die();
+
+    }
+
 }

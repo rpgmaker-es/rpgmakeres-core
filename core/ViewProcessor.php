@@ -21,7 +21,7 @@ class ViewProcessor
     static function renderHTML($viewFile, $contextVariables)
     {
         //validating render file
-        $filePath = RPGMakerES::get_rootfolder("/views/" . $viewFile);
+        $filePath = RPGMakerES::GetRootFolder("/views/" . $viewFile);
 
         if (!file_exists($filePath)) {
             throw new Exception("The specified view filename does not exist: " . $viewFile);

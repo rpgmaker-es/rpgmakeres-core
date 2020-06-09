@@ -17,7 +17,7 @@ Class RPGMakerES
      * @param string $path String Optional, a path to append to the output of this function.
      * @return string The path of RPG Maker ES core.
      */
-    static function get_rootfolder($path = "")
+    static function getRootfolder($path = "")
     {
         return $_SERVER['DOCUMENT_ROOT'] . "/../" . $path;
     }
@@ -28,12 +28,19 @@ Class RPGMakerES
      * @param String $controller  Controller String ID, as defined in routes.php
      * @param String $function  The function name in the controller.
      */
-    static function generate_dyn($controller, $function)
+    static function generateDyn($controller, $function)
     {
         include_once "ControllerSolver.php";
         include_once "ViewProcessor.php";
         return ControllerSolver::call($controller, $function);
 
+    }
+
+    static function loadService($serviceName) {
+        //Load service
+        if (!@include_once(RPGMakerES::getRootFolder("/services/") . $serviceName . ".php")) {
+            throw new Exception("The following service was not found: " . $serviceName);
+        }
     }
 
     /**

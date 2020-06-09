@@ -6,5 +6,5 @@
 */
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/../core/main.php";
-echo RPGMakerES::generateDyn("TestController", "testFunction");
+echo RPGMakerES::generateDyn("TestController", "databaseTest");
 

@@ -7,10 +7,10 @@
 */
 
 /**
- * Class DBService
+ * Class MySQLiService
  * Database Services for MySQL. Using MySQLi driver.
  */
-class DBService
+class MySQLiService
 {
 
     /*
@@ -27,16 +27,21 @@ class DBService
     {
         global $_RPGMAKERES;
 
-        if (!DBService::$db) {
+        if (!MySQLiService::$db) {
 
-            DBService::$db = mysqli_connect($_RPGMAKERES["DB_HOST"], $_RPGMAKERES["DB_USER"], $_RPGMAKERES["DB_PASS"], $_RPGMAKERES["DB_NAME"]);
+            MySQLiService::$db = mysqli_connect(
+                $_RPGMAKERES["config"]["MySQLi_DB_HOST"],
+                $_RPGMAKERES["config"]["MySQLi_DB_USER"],
+                $_RPGMAKERES["config"]["MySQLi_DB_PASS"],
+                $_RPGMAKERES["config"]["MySQLi_DB_NAME"]
+            );
 
-            if (!DBService::$db) {
+            if (!MySQLiService::$db) {
                 return NULL;
             }
         }
 
-        return DBService::$db;
+        return MySQLiService::$db;
     }
 
     /**
@@ -46,7 +51,7 @@ class DBService
     public static function testDBConnection()
     {
 
-        $db = DBService::connect();
+        $db = MySQLiService::connect();
         if (!$db) return false;
         return true;
     }
@@ -57,7 +62,7 @@ class DBService
      */
     public static function getDB()
     {
-        return DBService::connect();
+        return MySQLiService::connect();
     }
 
 
@@ -68,9 +73,8 @@ class DBService
      */
     public static function execQuery($query)
     {
-        $db = DBService::connect();
+        $db = MySQLiService::connect();
         if (!$db) return -1;
-        var_dump($query);
         $result = mysqli_query($db, $query);
         if (!$result) {
             return -1;
@@ -80,13 +84,34 @@ class DBService
     }
 
     /**
+     * Executes a sanitized query and returns the number of affected rows.
+     * @param string $query The query being executed (mark any dynamic values as ? For example: SELECT * FROM USERS WHERE ID = ? and ACTIVE = 0)
+     * @param string $valuesToReplace A string containing the types of each dynamic value as a character. See https://www.php.net/manual/en/mysqli-stmt.bind-param.php
+     * @param array $values An array (by reference) containing each value per dynamic value.
+     * @return int The number of affected rows or -1 in a case of error.
+     */
+    public static function execSecureQuery($query, $valuesToReplace, $values) {
+        $db = MySQLiService::connect();
+        if (!$db) return NULL;
+
+        $stmt = MySQLiService::_prepare_query_statement($db, $query, $valuesToReplace, $values);
+        if ($stmt === -1) return -1;
+        mysqli_stmt_execute($stmt);
+
+        $out =  mysqli_stmt_affected_rows($stmt);
+        mysqli_stmt_close($stmt);
+
+        return $out;
+    }
+
+    /**
      * Execute a unsanitized query (be careful!) and returns results in a key-value array.
      * @param string $query The query being executed.
      * @return array|int The results on the query, or -1 in case of an error.
      */
     public static function getQuery($query)
     {
-        $db = DBService::connect();
+        $db = MySQLiService::connect();
         if (!$db) return -1;
         $result = mysqli_query($db, $query);
         if (!$result) {
@@ -105,29 +130,21 @@ class DBService
      */
     public static function getSecureQuery($query, $valuesToReplace, $values)
     {
-
         global $_RPGMAKERES;
 
-        $db = DBService::connect();
+        $db = MySQLiService::connect();
         if (!$db) return NULL;
-        $stmt = mysqli_stmt_init($db);
-        if (!mysqli_stmt_prepare($stmt, $query)) {
-            return -1;
-        }
 
-        if ($valuesToReplace != "") {
-            $params = array_merge(array($stmt, $valuesToReplace), $values);
-            call_user_func_array("mysqli_stmt_bind_param", $params);
-        }
-
+        $stmt = MySQLiService::_prepare_query_statement($db, $query, $valuesToReplace, $values);
+        if ($stmt === -1) return -1;
         mysqli_stmt_execute($stmt);
 
         //Some particular servers hasn't mysqlnd native functions, so in that case we provide replacements.
-        $result = $_RPGMAKERES["useOwnMysqliStmtGetResult"] ? DBService::_fallback_get_result($stmt) : mysqli_stmt_get_result($stmt);
+        $result = $_RPGMAKERES["config"]["MySQLi_useOwnMysqliStmtGetResult"] ? MySQLiService::_fallback_get_result($stmt) : mysqli_stmt_get_result($stmt);
         if (!$result) return -1;
         $arr = array();
 
-        if ($_RPGMAKERES["useOwnMysqliStmtGetResult"]) {
+        if ($_RPGMAKERES["config"]["MySQLi_useOwnMysqliStmtGetResult"]) {
             while ($DATA = array_shift($result)) array_push($arr, $DATA);
         } else {
             $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -135,6 +152,39 @@ class DBService
 
         mysqli_stmt_close($stmt);
         return $arr;
+    }
+
+    /**
+     * Disconnects from a MySQL database if it's connected.
+     */
+    public static function disconnect() {
+        if (MySQLiService::$db) {
+            mysqli_close(MySQLiService::$db);
+            MySQLiService::$db = NULL;
+        }
+    }
+
+    /**
+     * Prepares a MySQL statement query with the designed parameters.
+     * @param mysqli $db MySQLi database object
+     * @param string $query The query being executed (mark any dynamic values as ? For example: SELECT * FROM USERS WHERE ID = ? and ACTIVE = 0)
+     * @param string $valuesToReplace A string containing the types of each dynamic value as a character. See https://www.php.net/manual/en/mysqli-stmt.bind-param.php
+     * @param array $values An array (by reference) containing each value per dynamic value.
+     * @return mysqli_stmt|int A statement ready for executing, or -1 in case of an error.
+     */
+    public static function _prepare_query_statement($db, $query, $valuesToReplace, $values) {
+
+        $stmt = mysqli_stmt_init($db);
+        if (!mysqli_stmt_prepare($stmt, $query)) {
+            return -1;
+        }
+
+        if ($valuesToReplace != "") {
+            $params = array_merge(array($stmt, $valuesToReplace), $values);
+            @call_user_func_array("mysqli_stmt_bind_param", $params);
+        }
+
+        return $stmt;
     }
 
     /**
