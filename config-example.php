@@ -48,7 +48,13 @@ $_RPGMAKERES["config"] = array(
     /**
      * URL for login, used for failed logged in checks
      */
-    "loginUrl" => "/login"
+    "loginUrl" => "/login",
+
+    /*
+     * Show error traces in 500 based errors.
+     * Regardeless of this option, error will be written at Apache's log or stderr.
+     */
+    "showTracesIn500Error" => true
 
 
 );
