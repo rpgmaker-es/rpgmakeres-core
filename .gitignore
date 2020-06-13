@@ -10,8 +10,8 @@ composer.bat
 php.bat
 
 #Exclusion for development config files
-#config.php
-#/public
+config.php
+/public
 
 #Exclusion for composer files
 /vendor/
