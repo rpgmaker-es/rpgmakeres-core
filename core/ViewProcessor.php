@@ -51,7 +51,9 @@ class ViewProcessor
      */
     static function sendHTMLHeaders()
     {
-        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        header('Content-type: text/html;charset=UTF-8');
+        if (RPGMakerES::isBrowser()) {
+            header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+            header('Content-type: text/html;charset=UTF-8');
+        }
     }
 }

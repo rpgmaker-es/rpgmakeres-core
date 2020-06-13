@@ -37,9 +37,6 @@ $_RPGMAKERES["config"] = array(
     "PDO_user" => "root",
     "PDO_pass" => "1234",
 
-
-
-
     /**
      * Timeout for user inactivity, in seconds
      */
@@ -54,7 +51,11 @@ $_RPGMAKERES["config"] = array(
      * Show error traces in 500 based errors.
      * Regardeless of this option, error will be written at Apache's log or stderr.
      */
-    "showTracesIn500Error" => true
+    "showTracesIn500Error" => true,
 
+    /**
+     * Core version
+     */
+    "version" => "20200613"
 
 );

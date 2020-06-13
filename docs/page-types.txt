@@ -1,0 +1,15 @@
+Dynamic
+Pages that are generated at real-time, when a user access to an URL(PHP pages).
+
+Static-OnDemand
+Pages that are pre-generated in HTML by a controller.
+It updates only when a controller wants to update it.
+
+
+Static-Periodic
+Pages that are pre-generated in HTML by a controller.
+It updates in a perioid of time, and when a controller wants to update it.
+
+Alias
+Page that redirects to one of their children.
+(IE. Games list redirects to games list page 1).

@@ -19,7 +19,7 @@ Class RPGMakerES
      */
     static function getRootfolder($path = "")
     {
-        return $_SERVER['DOCUMENT_ROOT'] . "/../" . $path;
+        return ( RPGMakerES::isBrowser() ? $_SERVER['DOCUMENT_ROOT'] . "/../" :  getcwd() . "/" ) . $path;
     }
 
 
@@ -27,12 +27,13 @@ Class RPGMakerES
      * Calls a controller and returns the output of it.
      * @param String $controller Controller String ID, as defined in routes.php
      * @param String $function The function name in the controller.
+     * @param mixed $params Any parameter you want to pass to the function
      */
-    static function generateDyn($controller, $function)
+    static function generateDyn($controller, $function, $params)
     {
         include_once "ControllerSolver.php";
         include_once "ViewProcessor.php";
-        return ControllerSolver::call($controller, $function);
+        return ControllerSolver::call($controller, $function, $params);
 
     }
 

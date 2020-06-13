@@ -16,9 +16,10 @@ class ControllerSolver
      * Calls a function from a provided Controller ID
      * @param $controllerName String Controller Name ID, as specificied in routes.php
      * @param $controllerFunction String Function Name in Controller file.
+     * @param $params mixed Any parameter you will deserve to pass to the function
      * @return mixed|string The output of the function or the corresponding errors.
      */
-    static function call($controllerName, $controllerFunction)
+    static function call($controllerName, $controllerFunction, $params = null)
     {
         global $_RPGMAKERES;
         include_once(RPGMakerES::getRootFolder("routes.php"));
@@ -35,7 +36,7 @@ class ControllerSolver
 
         //(Try to) call the function inside the controller.
         try {
-            return call_user_func($controllerName . "::" . $controllerFunction);
+            return call_user_func($controllerName . "::" . $controllerFunction, $params);
         } catch(Exception $e) {
             return RPGMakerES::gen500($e);
         }
