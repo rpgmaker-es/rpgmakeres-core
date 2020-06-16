@@ -1,0 +1,194 @@
+/*
+Tema: RPGMaker-ES
+Autores: CésarRP, Orochii, Fdelapena, EN.i, [...]
+Descripción: Plantilla para la web hispana central de RPG Maker.
+Versión: 1.0
+Licencia: GPLv3
+URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*General*/
+
+@font-face {font-family: "FontAwesome"; src: url("fonts/fontawesome4.woff");}
+@font-face {font-family: "Ubuntu"; src: url("fonts/Ubuntu-Light.ttf");}
+* {font-family: "Ubuntu", sans-serif; font-style: normal; font-weight: normal;}
+
+:root {--main-bg-color: #171522; --main-txt-color: #d8d7e0; }
+
+body {margin: 0; font-family: sans-serif; background-color: var(--main-bg-color);}
+section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-txt-color);}
+
+/*Menu principal*/
+
+nav {
+	background-color: var(--main-bg-color);
+	position: relative;
+	z-index: 3;
+	text-align: right;
+	-webkit-box-shadow: 0px 0px 15px -6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 15px -6px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 15px -6px rgba(0,0,0,0.5);
+}
+
+nav h1 {
+	float: left;
+	margin: 0 auto;
+	max-width: 960px;
+	text-indent: 36px;
+	line-height: 1.6em;
+	background-image: url("pics/rpgmaker.png");
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+nav h1 a {
+	display: block;
+	color: var(--main-txt-color);
+	padding: 6px;
+	text-decoration: none;
+	background-image: url("pics/logo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+nav ul.menu-general {float: left;}
+nav ul.menu-general li:first-child, nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
+
+nav ul {display: inline-flex; margin: 0; padding: 0 0 0 10px;}
+nav ul li {display: inline; line-height: 50px; color: var(--main-txt-color);}
+
+nav ul li a {
+	color: var(--main-txt-color);
+	text-decoration: none;
+	font-size: 1.1429em;
+	padding: 0.98em 0.49em;
+}
+
+nav ul li a:hover, article.contenedor aside p a:hover {color: #fff;}
+
+/*Wrappers, textos (encabezados, párrafos, listas...)*/
+
+.contenedor, footer {margin: 0 auto; max-width: 960px; padding: 0; overflow: hidden;}
+
+p {padding: 0.3em 0; line-height: 1.5em;}
+
+h2, .fixh2aside {
+	border-bottom: 1px solid #636170;
+	color: #d8d7e0;
+	padding: 0 0 5px 0;
+}
+
+.fixh2aside {margin: 58px 0 5px 0;}
+h2 {margin: 40px 0 5px 0;}
+
+
+/*Destacados*/
+
+article.contenedor div.destacados {float: left; width: 640px;}
+article.contenedor div.destacados figure, article.contenedor figure img {width: 150px;}
+article.contenedor div.destacados figure {display: inline-block; margin: 15px 10px 15px 0;}
+article.contenedor div.destacados figure:last-child {margin: 0;}
+article.contenedor div.destacados figure figcaption {text-align: center;}
+
+article br.limpiar {clear: both;}
+
+.comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; width: 98%; padding: 0 10px;}
+
+/*Sidebar*/
+
+article.contenedor aside {float: right; width: 300px;}
+article.contenedor aside figure, article.contenedor aside figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
+article.contenedor aside figure figcaption {background-color: var(--main-bg-color); opacity: 0.7; padding: 8px;}
+article.contenedor aside figure figcaption span {font-weight: bold;}
+article.contenedor aside p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
+article.contenedor aside p a {color: var(--main-txt-color); text-decoration: none;}
+
+/*Pie*/
+
+footer {color: var(--main-txt-color);}
+footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid #2A2833;}
+.contene-footer {display: table; width: 100%; margin: 40px auto;}
+footer div, .comunidad div {display: table-cell; width: 300px;}
+footer div ul, .comunidad div ul {list-style-type: none; padding: 0;}
+footer div ul li, .comunidad div ul li {list-style: none;}
+footer div a, .comunidad div a {color: var(--main-txt-color); text-decoration: none;}
+footer div a:hover, .comunidad div a:hover {color: #fff;}
+
+/* Iconos */
+
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before,
+.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before,
+.bandera:before, .folio:before, .tuto:before, .comu:before {
+	cursor: context-menu;
+	font-family: "FontAwesome", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	margin-right: 0.3rem;
+}
+
+.rdescargados:before, .estrella:before, .estrella-2:before, .mas:before,
+.tutos:before, .resena:before, .bandera:before, .comu:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before {cursor: pointer;}
+
+.acceso:before {content: "\f090";}
+.ayuda:before {content: "\f059";}
+.ajustes:before {content: "\f013";}
+.salir:before {content: "\f08b";}
+.juegos:before {content: "\f11b";}
+.recursos:before {content: "\f07c";}
+.burger:before {content: "\f0c9";}
+.rdescargados:before {content: "\f0ed";}
+.estrella:before {content: "\f005";}
+.estrella-2:before {content: "\f006";}
+.mas:before {content: "\f0fe";}
+.mas-2:before {content: "\f067"; font-size: 18px;}
+.tutos:before {content: "\f19d";}
+.tuto:before {content: "\f212";}
+.resena:before {content: "\f00c";}
+.bandera:before {content: "\f024";}
+.folio:before {content: "\f15c";}
+.comu:before {content: "\f0c0";}
+.copy-left {
+display: inline-block;
+margin-right: 5px;
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+filter: FlipH;
+-ms-filter: "FlipH";
+}
+
+/*Ocultos > 800px*/
+
+nav input[type="checkbox"], nav label {display: none;}
+
+/*Responsivos*/
+
+@media screen and (max-width: 800px) {
+	section {padding-top: 45px;}
+	nav label {font-size: 25px;}
+	nav input[type="checkbox"], nav label {display: inline-block; color: var(--main-txt-color);}
+	nav input[type="checkbox"] ~ .menu {max-height: 0;}
+	nav input[type="checkbox"] {visibility: hidden;}
+	nav input[type="checkbox"]:checked ~ .menu {max-height: 100%;}
+	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
+
+	nav {text-align: center; position: fixed; width: 100%;}
+	nav h1 {max-width: 100%; display: inline-block; text-align: center;}
+	nav ul.menu-general, nav h1 {float: none;}
+	nav ul.menu-general li:first-child, nav ul.menu-usuario li:first-child {border-left: none;}
+	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
+	nav ul, nav ul li a {margin: 0 auto; padding: 0; display: block; overflow: hidden;}
+	nav ul li {line-height: auto; display: block; padding-left: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
+}
+
+@media screen and (max-width: 980px) {
+	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
+}
+
+@media screen and (max-width: 640px) {
+	article.contenedor div.destacados, article.contenedor aside {max-width: 480px;}
+	article.contenedor div.destacados figure {max-width: 240px; margin: 0 auto;}
+	article.contenedor div.destacados figure img {max-width: 240px; height: auto;}
+}
