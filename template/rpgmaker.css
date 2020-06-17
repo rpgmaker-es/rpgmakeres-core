@@ -68,26 +68,26 @@ nav ul li a:hover, article.contenedor aside p a:hover {color: #fff;}
 
 /*Wrappers, textos (encabezados, párrafos, listas...)*/
 
-.contenedor, footer {margin: 0 auto; max-width: 960px; padding: 0; overflow: hidden;}
+.contenedor, footer {margin: 0 auto; max-width: 1280px; padding: 0; overflow: hidden;}
 
 p {padding: 0.3em 0; line-height: 1.5em;}
 
-h2, .fixh2aside {
+h2 {
 	border-bottom: 1px solid #636170;
 	color: #d8d7e0;
 	padding: 0 0 5px 0;
 }
 
-.fixh2aside {margin: 58px 0 5px 0;}
 h2 {margin: 40px 0 5px 0;}
 
 
 /*Destacados*/
 
-article.contenedor div.destacados {float: left; width: 640px;}
-article.contenedor div.destacados figure, article.contenedor figure img {width: 150px;}
-article.contenedor div.destacados figure {display: inline-block; margin: 15px 10px 15px 0;}
-article.contenedor div.destacados figure:last-child {margin: 0;}
+article.contenedor div.destacados {float: left; width: 925px;}
+article.contenedor div.destacados figure, article.contenedor figure img {width: 205px;}
+article.contenedor div.destacados figure {display: inline-block; margin: 15px 35px 15px 0;}
+article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
+article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
 article.contenedor div.destacados figure figcaption {text-align: center;}
 
 article br.limpiar {clear: both;}
@@ -183,8 +183,14 @@ nav input[type="checkbox"], nav label {display: none;}
 	nav ul li {line-height: auto; display: block; padding-left: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
+@media screen and (max-width: 1280px) {
+	article.contenedor div.destacados {width: 720px;}
+	article.contenedor div.destacados figure, article.contenedor figure img {width: 300x;}
+	article.contenedor div.destacados figure {margin: 15px 15px 15px 0;}
+}
+
 @media screen and (max-width: 980px) {
-	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
+	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; width: 640px;}
 }
 
 @media screen and (max-width: 640px) {
