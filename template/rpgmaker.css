@@ -185,12 +185,12 @@ nav input[type="checkbox"], nav label {display: none;}
 
 @media screen and (max-width: 1280px) {
 	article.contenedor div.destacados {max-width: 820px;}
-	article.contenedor div.destacados figure img {width: 170px; background: green;}
+	article.contenedor div.destacados figure img {width: 170px;}
 }
 
 @media screen and (max-width: 1160px) {
 	article.contenedor div.destacados {max-width: 760px;}
-	article.contenedor div.destacados figure img {width: 150px; background: green;}
+	article.contenedor div.destacados figure img {width: 150px;}
 }
 
 @media screen and (max-width: 1100px) {
@@ -209,14 +209,14 @@ nav input[type="checkbox"], nav label {display: none;}
 }
 
 @media screen and (max-width: 1000px) {
-	article.contenedor div.destacados figure img {width: 300px; background: green;}
+	article.contenedor div.destacados figure img {width: 300px;}
 	article.contenedor div.destacados figure, article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
 	article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
 }
 
 @media screen and (max-width: 940px) {
 	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
-	article.contenedor div.destacados figure img {max-width: 300px; background: green;}
+	article.contenedor div.destacados figure img {max-width: 300px;}
 	article.contenedor div.destacados figure {margin: 15px 20px 15px 0;}
 	article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
 	article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
