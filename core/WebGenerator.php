@@ -47,6 +47,11 @@ class WebGenerator
         foreach ($_RPGMAKERES["staticPages"] as $page => $minutes) {
             WebGenerator::_processPages(WebGenerator::$STATIC, $page, $force, $minutes);
         }
+
+        //check for controllers in the blacklist and then delete one each one.
+        foreach ($_RPGMAKERES["blackListPages"] as $page) {
+            WebGenerator::deleteControllerPages($page);
+        }
     }
 
     /**
@@ -96,6 +101,19 @@ class WebGenerator
             if (!RPGMakerES::isBrowser()) echo "WARNING: Route not found in public: " . $route . PHP_EOL;
             return false;
         }
+    }
+
+    /**
+     * Deletes a folder and its contents from a Controller name.
+     * @param String $controllerName ControllerName as defined in routes.php
+     * @return bool True or false, depending if the process returned successfully or not.
+     * @throws Exception
+     */
+    static function deleteControllerPages($controllerName)
+    {
+        //Get associated route from controller, and delete that one
+        $path = ControllerSolver::call($controllerName, "_getWebPath");
+        return WebGenerator::deleteRoute($path);
     }
 
     /**

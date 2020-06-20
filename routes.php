@@ -32,3 +32,13 @@ $_RPGMAKERES["staticPages"] = [
 $_RPGMAKERES["dynamicPages"] = [
     "DynamicTestController"
 ];
+
+/**
+ * List of controlers in black list.
+ * All pages by these controllers in this list will be deleted in next updates, so it can deleted safely later.
+ * Be sure to remove first from staticPages and DynamicPages first, or the core will be generate-and-delete them in
+ * each-update.
+ */
+$_RPGMAKERES["blackListPages"] = [
+
+];
