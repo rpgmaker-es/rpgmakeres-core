@@ -11,7 +11,7 @@
  */
 class DynamicTestController
 {
-    static function _getWebPatho() {
+    static function _getWebPath() {
         return "dynamic/";
     }
 
@@ -44,8 +44,10 @@ class DynamicTestController
     static function testFunction()
     {
         ViewProcessor::sendHTMLHeaders();
+        ViewProcessor::setSkinHeadTitle("Dynamic view test");
 
-        return ViewProcessor::renderHTML("testView.php", [
+        return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php",
+            "testView.php", [
             "title" => "Hello world!",
             "second_text" => "I'm rendering a dynamic view!"
         ]);

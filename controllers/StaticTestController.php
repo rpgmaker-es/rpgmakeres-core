@@ -45,15 +45,17 @@ class StaticTestController
     static function index()
     {
         ViewProcessor::sendHTMLHeaders();
-
-        return ViewProcessor::renderHTML("testView.php", [
-            "title" => "Hello world!",
-            "second_text" => "I'm rendering a view statically!"
-        ]);
+        return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php", "home.php", []);
     }
 
     static function childrenTest($parameter) {
-        return "childrenTest: " . $parameter;
+        ViewProcessor::setSkinHeadTitle("Static children view test");
+
+        return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php",
+            "testView.php", [
+                "title" => "Children test",
+                "second_text" => "This is the children number " . $parameter
+            ]);
     }
 
 }
