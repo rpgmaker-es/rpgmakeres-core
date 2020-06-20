@@ -224,11 +224,11 @@ nav input[type="checkbox"], nav label {display: none;}
 
 @media screen and (max-width: 640px) {
 	article.contenedor div.destacados {max-width: 480px;}
-	article.contenedor div.destacados figure {margin: 15px 40px 15px 0;}
+	article.contenedor div.destacados figure {margin: 15px 8% 15px 0;}
 	article.contenedor div.destacados figure:nth-child(3), article.contenedor div.destacados figure:nth-child(8), article.contenedor div.destacados figure:nth-child(10),
 	article.contenedor div.destacados figure:nth-child(12), article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:nth-child(17),
 	article.contenedor div.destacados figure:nth-child(19), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
-	article.contenedor div.destacados figure img {max-width: 190px; height: auto;}
+	article.contenedor div.destacados figure img {max-width: 150px; height: auto;}
 	footer div, .comunidad div {display: block; max-width: 100%; margin: 0 auto;}
 	div.comunidad div {border-bottom: 1px solid #4c4a56;}
 	div.comunidad div:last-child {border-bottom: none;}
