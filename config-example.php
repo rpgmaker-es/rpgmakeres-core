@@ -51,7 +51,7 @@ $_RPGMAKERES["config"] = array(
      * Show error traces in 500 based errors.
      * Regardeless of this option, error will be written at Apache's log or stderr.
      */
-    "showTracesIn500Error" => true,
+    "showTracesIn500Error" => false,
 
     /**
      * Core version

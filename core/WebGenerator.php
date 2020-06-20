@@ -80,6 +80,25 @@ class WebGenerator
     }
 
     /**
+     * Deletes a folder and its contents from public. It validates if the path is valid.
+     * @param String $route The route that needs to be deleted, from public. Absolute paths are not accepted. 
+     * @return bool True or false depending if the deletion was a success.
+     */
+    static function deleteRoute($route)
+    {
+        //filter that route by just leaving A-Z a-z 0-9 and /, it can be dirty
+        $route = preg_replace("/[^a-zA-Z0-9\/]/", "", $route);
+
+        if (@is_dir(RPGMakerES::getRootfolder("public/" . $route))) {
+            if (!RPGMakerES::isBrowser()) echo "Deleting " . RPGMakerES::getRootfolder("public/" . $route) . PHP_EOL;
+            return WebGenerator::_delTree(RPGMakerES::getRootfolder("public/" . $route));
+        } else {
+            if (!RPGMakerES::isBrowser()) echo "WARNING: Route not found in public: " . $route . PHP_EOL;
+            return false;
+        }
+    }
+
+    /**
      * It process pages from a specific Controller.
      * @param int $mode WebGenerator::$DYNAMIC or WebGenerator::$STATIC.
      * @param String $page Controller name, as configured in routes.php
@@ -116,10 +135,10 @@ class WebGenerator
             if (!@file_exists($filePath) || $force) {
                 switch ($mode) {
                     case WebGenerator::$DYNAMIC:
-                        WebGenerator::_createDyn($filePath, $page, $default_method[0], $default_method[1]);
+                        WebGenerator::createDyn($filePath, $page, $default_method[0], $default_method[1]);
                         break;
                     case WebGenerator::$STATIC:
-                        WebGenerator::_createStatic($filePath, $page, $default_method[0], $default_method[1]);
+                        WebGenerator::createStatic($filePath, $page, $default_method[0], $default_method[1]);
                         break;
                 }
 
@@ -132,7 +151,7 @@ class WebGenerator
                     $current_time = time();
                     if ($current_time - $lastModified > ($timeout * 60) ) {
                         //time is out, renew it
-                        WebGenerator::_createStatic($filePath, $page, $default_method[0], $default_method[1]);
+                        WebGenerator::createStatic($filePath, $page, $default_method[0], $default_method[1]);
                     }
                 }
             }
@@ -151,10 +170,10 @@ class WebGenerator
                 if (!@file_exists($filePath) || $force) {
                     switch ($mode) {
                         case WebGenerator::$DYNAMIC:
-                            WebGenerator::_createDyn($filePath, $page, $child[1], $child[2]);
+                            WebGenerator::createDyn($filePath, $page, $child[1], $child[2]);
                             break;
                         case WebGenerator::$STATIC:
-                            WebGenerator::_createStatic($filePath, $page, $child[1], $child[2]);
+                            WebGenerator::createStatic($filePath, $page, $child[1], $child[2]);
                             break;
                     }
                 } else if ($mode == WebGenerator::$STATIC && !!$timeout ) {
@@ -166,7 +185,7 @@ class WebGenerator
                         $current_time = time();
                         if ($current_time - $lastModified > ($timeout * 60) ) {
                             //time is out, renew it
-                            WebGenerator::_createStatic($filePath, $page, $child[1], $child[2]);
+                            WebGenerator::createStatic($filePath, $page, $child[1], $child[2]);
                         }
                     }
                 }
@@ -184,7 +203,7 @@ class WebGenerator
      * @param String $method Method name in the controller to be called.
      * @param mixed $parameter Optional, any literal parameter to pass to the function.
      */
-    static function _createDyn($file, $controller, $method, $parameter = null)
+    static function createDyn($file, $controller, $method, $parameter = null)
     {
         if (!RPGMakerES::isBrowser()) echo $file . PHP_EOL;
 
@@ -216,7 +235,7 @@ class WebGenerator
      * @param String $method Method name in the controller to be called.
      * @param mixed $parameter Optional, any parameter to pass to the function to render it to.
      */
-    static function _createStatic($file, $controller, $method, $parameter = null) {
+    static function createStatic($file, $controller, $method, $parameter = null) {
 
         include_once "ViewProcessor.php";
 
@@ -230,5 +249,20 @@ class WebGenerator
         if (file_put_contents($file, $contents) === FALSE) {
             if (!RPGMakerES::isBrowser()) echo "ERROR: Unable to write at " . $file . PHP_EOL;
         }
+    }
+
+    /**
+     * Auxilliary function that recursive deletes a folder and it's contents.
+     * Original author: nbari at dalmp dot com, from https://www.php.net/manual/es/function.rmdir.php#110489
+     * @param String $dir The directory path to be deleted
+     * @return bool True or false if it's deleted or not.
+     */
+    static function _delTree($dir)
+    {
+        $files = array_diff(scandir($dir), array('.','..'));
+        foreach ($files as $file) {
+            (is_dir("$dir/$file")) ? WebGenerator::_delTree("$dir/$file") : unlink("$dir/$file");
+        }
+        return rmdir($dir);
     }
 }

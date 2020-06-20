@@ -46,6 +46,9 @@ class DynamicTestController
         ViewProcessor::sendHTMLHeaders();
         ViewProcessor::setSkinHeadTitle("Dynamic view test");
 
+        //RPGMakerES::loadCore("WebGenerator");
+        //WebGenerator::deleteRoute(DynamicTestController::_getWebPath() . "toBeDeleted");
+
         return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php",
             "testView.php", [
             "title" => "Hello world!",

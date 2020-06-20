@@ -37,11 +37,29 @@ Class RPGMakerES
 
     }
 
+    /**
+     * Load a service from the core
+     * @param String $serviceName Name of the service
+     * @throws Exception
+     */
     static function loadService($serviceName)
     {
         //Load service
         if (!@include_once(RPGMakerES::getRootFolder("/services/") . $serviceName . ".php")) {
             throw new Exception("The following service was not found: " . $serviceName);
+        }
+    }
+
+    /**
+     * Load a core from the core (well... the name sound stupid)
+     * @param String $coreName Name of the service
+     * @throws Exception
+     */
+    static function loadCore($coreName)
+    {
+        //Load service
+        if (!@include_once(RPGMakerES::getRootFolder("/core/") . $coreName . ".php")) {
+            throw new Exception("The following core was not found: " . $coreName);
         }
     }
 
