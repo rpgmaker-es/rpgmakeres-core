@@ -11,7 +11,7 @@
  */
 class DynamicTestController
 {
-    static function _getWebPath() {
+    static function _getWebPatho() {
         return "dynamic/";
     }
 

@@ -33,7 +33,7 @@ class WebGenerator
         //check if public folder exists
         if (!@is_dir(RPGMakerES::getRootfolder("public"))) {
             //attempt to create it
-            echo RPGMakerES::getRootfolder("public") . PHP_EOL;
+            if (!RPGMakerES::isBrowser()) echo RPGMakerES::getRootfolder("public") . PHP_EOL;
             $out = mkdir(RPGMakerES::getRootfolder("public"));
             if (!$out) throw new Exception("Unable to create public folder. Check file permissions!");
         }
@@ -41,14 +41,42 @@ class WebGenerator
         //list all dynamic pages
         foreach ($_RPGMAKERES["dynamicPages"] as $page) {
             WebGenerator::_processPages(WebGenerator::$DYNAMIC, $page, $force);
-
         }
 
         //now static pages
         foreach ($_RPGMAKERES["staticPages"] as $page => $minutes) {
             WebGenerator::_processPages(WebGenerator::$STATIC, $page, $force, $minutes);
-
         }
+    }
+
+    /**
+     * Search and generate a single controller, if exists.
+     * @param String $controller The controller name, as defined in routes.php
+     * @param bool $force If true, it will be generated regardless if it already exists or not
+     * @return bool True if the controller is updated. False if controller does not exist.
+     * @throws Exception
+     */
+    static function generateSingle($controller, $force = false)
+    {
+        global $_RPGMAKERES;
+        include_once(RPGMakerES::getRootFolder("routes.php"));
+
+        //seek if the desired controller is in one of the routes path. If so, then generate it.
+        foreach ($_RPGMAKERES["dynamicPages"] as $page) {
+            if ($page == $controller) {
+                WebGenerator::_processPages(WebGenerator::$DYNAMIC, $page, $force);
+                return true;
+            }
+        }
+        foreach ($_RPGMAKERES["staticPages"] as $page => $minutes) {
+            if ($page == $controller) {
+                WebGenerator::_processPages(WebGenerator::$STATIC, $page, $force, $minutes);
+                return true;
+            }
+        }
+
+        //not found
+        return false;
     }
 
     /**
@@ -77,7 +105,7 @@ class WebGenerator
                 $currentPath = implode("/", array_slice($path, 0, $i + 1));
                 if (!@is_dir(RPGMakerES::getRootfolder("public/" . $currentPath))) {
                     //attempt to create it
-                    echo RPGMakerES::getRootfolder("public/" . $currentPath) . PHP_EOL;
+                    if (!RPGMakerES::isBrowser()) echo RPGMakerES::getRootfolder("public/" . $currentPath) . PHP_EOL;
                     $out = mkdir(RPGMakerES::getRootfolder("public/" . $currentPath));
                     if (!$out) throw new Exception("Unable to create folder public/" . $currentPath . ". Check file permissions!");
                 }
@@ -99,7 +127,7 @@ class WebGenerator
                 //I can calculate timeout for this one
                 $lastModified = filemtime($filePath);
                 if (!$lastModified) {
-                    echo "WARNING: Unable to gather last modified date of file: " . $filePath . PHP_EOL;
+                    if (!RPGMakerES::isBrowser()) echo "WARNING: Unable to gather last modified date of file: " . $filePath . PHP_EOL;
                 } else {
                     $current_time = time();
                     if ($current_time - $lastModified > ($timeout * 60) ) {
@@ -133,7 +161,7 @@ class WebGenerator
                     //I can calculate timeout for this one
                     $lastModified = filemtime($filePath);
                     if (!$lastModified) {
-                        echo "WARNING: Unable to gather last modified date of file: " . $filePath . PHP_EOL;
+                        if (!RPGMakerES::isBrowser()) echo "WARNING: Unable to gather last modified date of file: " . $filePath . PHP_EOL;
                     } else {
                         $current_time = time();
                         if ($current_time - $lastModified > ($timeout * 60) ) {
@@ -145,7 +173,7 @@ class WebGenerator
             }
 
         } else {
-            echo "WARNING: Unable to locate controller in routes.php with name: " . $page . PHP_EOL;
+            if (!RPGMakerES::isBrowser()) echo "WARNING: Unable to locate controller in routes.php with name: " . $page . PHP_EOL;
         }
     }
 
@@ -158,7 +186,7 @@ class WebGenerator
      */
     static function _createDyn($file, $controller, $method, $parameter = null)
     {
-        echo $file . PHP_EOL;
+        if (!RPGMakerES::isBrowser()) echo $file . PHP_EOL;
 
         //generate output for the dynamic file
         $contents = "<?php" . PHP_EOL .
@@ -177,7 +205,7 @@ class WebGenerator
 
         //write the content to the file
         if (file_put_contents($file, $contents) === FALSE) {
-            echo "ERROR: Unable to write at " . $file . PHP_EOL;
+            if (!RPGMakerES::isBrowser()) echo "ERROR: Unable to write at " . $file . PHP_EOL;
         }
     }
 
@@ -192,7 +220,7 @@ class WebGenerator
 
         include_once "ViewProcessor.php";
 
-        echo $file . PHP_EOL;
+        if (!RPGMakerES::isBrowser()) echo $file . PHP_EOL;
 
         //generate output
         $contents = "<!-- THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT! (you will lose the changes in the next update) -->" . PHP_EOL;
@@ -200,7 +228,7 @@ class WebGenerator
 
         //write the content to the file
         if (file_put_contents($file, $contents) === FALSE) {
-            echo "ERROR: Unable to write at " . $file . PHP_EOL;
+            if (!RPGMakerES::isBrowser()) echo "ERROR: Unable to write at " . $file . PHP_EOL;
         }
     }
 }
