@@ -90,6 +90,11 @@ article.contenedor div.destacados figure:nth-child(5), article.contenedor div.de
 article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
 article.contenedor div.destacados figure figcaption {text-align: center;}
 
+article.contenedor div.cpanel {max-width: 540px; border: 1px solid #39393a; margin: 20px 0;}
+article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
+article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 201px; border-right: 1px solid #39393a;}
+article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
+
 article br.limpiar {clear: both;}
 
 .comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; width: 98%; padding: 0 10px;}
@@ -114,11 +119,139 @@ footer div ul li, .comunidad div ul li {list-style: none;}
 footer div a, .comunidad div a {color: var(--main-txt-color); text-decoration: none;}
 footer div a:hover, .comunidad div a:hover {color: #fff;}
 
+
+/* Formularios */
+
+form {padding: 15px; overflow: hidden;}
+
+label {
+	font-size: 13px;
+	color: #afafaf;
+	content: '\A';
+	white-space: pre;
+	}
+
+input[type="submit"] {
+	border-radius: 2px;
+	-webkit-box-shadow: 2px 3px 2px 0px rgba(6, 17, 28, 0.9);
+	-moz-box-shadow:    2px 3px 2px 0px rgba(6, 17, 28, 0.9);
+	box-shadow:         2px 3px 2px 0px rgba(6, 17, 28, 0.9);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	font-size: 14px;
+	max-width: auto;
+	padding: 6px 10px 8px 10px;
+	float: right;
+	}
+
+.bg_azul {
+	background-image: -ms-linear-gradient(bottom, #12415c 0%, #196189 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #12415c 0%, #196189 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #12415c 0%, #196189 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #12415c), color-stop(1, #196189)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #12415c 0%, #196189 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #12415c 0%, #196189 100%); /* W3C Markup, IE10 Release Preview */
+	color: #91b9d0;
+	}
+
+.bg_azul:hover {
+	background-image: -ms-linear-gradient(bottom, #196189 0%, #3b91c1 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #196189 0%, #3b91c1 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #196189 0%, #3b91c1 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #196189), color-stop(1, #3b91c1)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #196189 0%, #3b91c1 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #196189 0%, #3b91c1 100%); /* W3C Markup, IE10 Release Preview */
+	color: #fff;
+	}
+
+.bg_verde {
+	background-image: -ms-linear-gradient(bottom, #375c12 0%, #708919 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #375c12 0%, #708919 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #375c12 0%, #708919 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #375c12), color-stop(1, #708919)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #375c12 0%, #708919 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #375c12 0%, #708919 100%); /* W3C Markup, IE10 Release Preview */
+	color: #bdd091;
+	}
+
+.bg_verde:hover {
+	background-image: -ms-linear-gradient(bottom, #708919 0%, #9bba2e 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #708919 0%, #9bba2e 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #708919 0%, #9bba2e 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #708919), color-stop(1, #9bba2e)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #708919 0%, #9bba2e 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #708919 0%, #9bba2e 100%); /* W3C Markup, IE10 Release Preview */
+	color: #fff;
+	}
+
+.borde_azul {
+	border: 1px solid #196189;
+	}
+
+.borde_verde {
+	border: 1px solid #708919;
+	}
+
+input[type="text"], input[type="password"], input[type="email"] {
+	background-color: var(--main-bg-color);
+	width: 75%;
+	padding: 5px;
+	margin: 2px auto 10px auto;
+	color: var(--main-txt-color);
+	border: 1px solid #39393a;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+[type="file"] {height: 0; overflow: hidden; width: 0;}
+
+[type="file"] + label {
+	border-radius: 3px;
+	cursor: pointer;
+	display: inline-block;
+	outline: none;
+	font-size: 14px;
+	text-align: center;
+	padding: 6px 10px 8px 10px;
+	position: relative;
+	margin: auto 30% 20px auto;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(pics/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(pics/check_radio_sheet.png) -19px top no-repeat;
+}
+
+input[type="text"]:disabled {
+	background-color: #39393a;
+	}
+
+input[type="text"]:required:invalid, input[type="password"]:required:invalid, input[type="email"]:required:invalid {
+	box-shadow: none;
+	border-color: none;
+	}
+
 /* Iconos */
 
 .acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before,
 .rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before,
-.bandera:before, .folio:before, .tuto:before, .comu:before {
+.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
 	font-style: normal;
@@ -148,6 +281,8 @@ footer div a:hover, .comunidad div a:hover {color: #fff;}
 .bandera:before {content: "\f024";}
 .folio:before {content: "\f15c";}
 .comu:before {content: "\f0c0";}
+.cargavatar:before {content: "\f093";}
+.actualizar:before {content: "\f01e";}
 .copy-left {
 display: inline-block;
 margin-right: 5px;
