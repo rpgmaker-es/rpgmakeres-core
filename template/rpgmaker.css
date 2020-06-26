@@ -80,6 +80,8 @@ h2 {
 
 h2 {margin: 40px 0 5px 0;}
 
+.flotar_d {float: right;}
+
 
 /*Destacados*/
 
@@ -94,12 +96,15 @@ article.contenedor div.cpanel:first-child {float: left; max-width: 540px;}
 article.contenedor div.cpanel:last-child {float: right; width: 720px; color: #afafaf;}
 article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
 article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
+article.contenedor div.cpanel:last-child p.infoelimincuen {text-align: right; clear: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
 article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
 article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
 article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
+article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
+article.contenedor div.cpanel:last-child ul li span a:hover {color: #fff; text-decoration: none;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
-article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 201px; border-right: 1px solid #39393a;}
+article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 204px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 
 article br.limpiar {clear: both;}
@@ -149,7 +154,6 @@ input[type="submit"], button[type="submit"] {
 	font-size: 14px;
 	max-width: auto;
 	padding: 6px 10px 8px 10px;
-	float: right;
 	}
 
 .bg_azul {
@@ -190,6 +194,30 @@ input[type="submit"], button[type="submit"] {
 	background-image: -webkit-linear-gradient(bottom, #708919 0%, #9bba2e 100%); /* Webkit (Chrome 11+) */
 	background-image: linear-gradient(to top, #708919 0%, #9bba2e 100%); /* W3C Markup, IE10 Release Preview */
 	color: #fff;
+	}
+
+.bg_rojo {
+	background-image: -ms-linear-gradient(bottom, #5b1212 0%, #871919 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #5b1212 0%, #871919 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #5b1212 0%, #871919 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5b1212), color-stop(1, #871919)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #5b1212 0%, #871919 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #5b1212 0%, #871919 100%); /* W3C Markup, IE10 Release Preview */
+	color: #edbdbd;
+	}
+
+.bg_rojo:hover {
+	background-image: -ms-linear-gradient(bottom, #871919 0%, #b72d2d 100%); /* IE10 Consumer Preview */
+	background-image: -moz-linear-gradient(bottom, #871919 0%, #b72d2d 100%); /* Mozilla Firefox */
+	background-image: -o-linear-gradient(bottom, #871919 0%, #b72d2d 100%); /* Opera */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #871919), color-stop(1, #b72d2d)); /* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-linear-gradient(bottom, #871919 0%, #b72d2d 100%); /* Webkit (Chrome 11+) */
+	background-image: linear-gradient(to top, #871919 0%, #b72d2d 100%); /* W3C Markup, IE10 Release Preview */
+	color: #fff;
+	}
+
+.borde_rojo {
+	border: 1px solid #871919;
 	}
 
 .borde_azul {
@@ -256,8 +284,8 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 /* Iconos */
 
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before,
-.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before,
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .altavoz:before,
+.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before, .x:before, .mundo:before,
 .bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
@@ -266,9 +294,9 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 	margin-right: 0.3rem;
 }
 
-.rdescargados:before, .estrella:before, .estrella-2:before, .mas:before,
+.rdescargados:before, .estrella:before, .estrella-2:before, .mas:before
 .tutos:before, .resena:before, .bandera:before, .comu:before, .jtotales:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before {cursor: pointer;}
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before, .x:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
@@ -291,6 +319,9 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 .cargavatar:before {content: "\f093";}
 .actualizar:before {content: "\f01e";}
 .estadisticas:before {content: "\f201";}
+.x:before {content: "\f00d";}
+.altavoz:before {content: "\f0a1";}
+.mundo:before {content: "\f0ac";}
 .copy-left {
 display: inline-block;
 margin-right: 5px;
