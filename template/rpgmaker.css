@@ -91,13 +91,12 @@ article.contenedor div.destacados figure:nth-child(14), article.contenedor div.d
 article.contenedor div.destacados figure figcaption {text-align: center;}
 
 article.contenedor div.cpanel:first-child {float: left; max-width: 540px;}
-article.contenedor div.cpanel:last-child {float: right; width: 640px; color: #afafaf;}
-article.contenedor div.cpanel:last-child ul {display: table; margin: 0; padding: 10px 5px; border-bottom: 1px solid #39393a;}
-article.contenedor div.cpanel:last-child h2 {font-size: 15px; text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
+article.contenedor div.cpanel:last-child {float: right; width: 720px; color: #afafaf;}
+article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
+article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
 article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
-article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 5px 5px 5px; margin: 0; text-align: center; font-size: 14px;}
-article.contenedor div.cpanel:last-child ul li:last-child {padding: 5px 0 5px 5px;}
-article.contenedor div.cpanel:last-child ul li span {color: #bdd091;}
+article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
+article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 201px; border-right: 1px solid #39393a;}
