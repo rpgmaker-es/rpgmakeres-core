@@ -9,9 +9,9 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 
 /*General*/
 
-@font-face {font-family: "FontAwesome"; src: url("fonts/fontawesome4.woff");}
-@font-face {font-family: "Ubuntu"; src: url("fonts/Ubuntu-Light.ttf");}
-* {font-family: "Ubuntu", sans-serif; font-style: normal; font-weight: normal;}
+@font-face {font-family: "FontAwesome"; src: url("fonts/fontawesome-webfont.woff2");}
+@font-face {font-family: "Maven Pro"; src: url("fonts/MavenPro-VF.woff2");}
+* {font-family: "Maven Pro", sans-serif; font-style: normal; font-weight: normal;}
 
 :root {--main-bg-color: #171522; --main-txt-color: #d8d7e0; }
 
@@ -46,7 +46,7 @@ nav h1 a {
 	color: var(--main-txt-color);
 	padding: 6px;
 	text-decoration: none;
-	background-image: url("pics/logo.png");
+	/*background-image: url("pics/logo.png");*/
 	background-repeat: no-repeat;
 	background-position: center;
 }
