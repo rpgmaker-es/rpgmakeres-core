@@ -90,7 +90,15 @@ article.contenedor div.destacados figure:nth-child(5), article.contenedor div.de
 article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
 article.contenedor div.destacados figure figcaption {text-align: center;}
 
-article.contenedor div.cpanel {max-width: 540px; border: 1px solid #39393a; margin: 20px 0;}
+article.contenedor div.cpanel:first-child {float: left; max-width: 540px;}
+article.contenedor div.cpanel:last-child {float: right; width: 640px; color: #afafaf;}
+article.contenedor div.cpanel:last-child ul {display: table; margin: 0; padding: 10px 5px; border-bottom: 1px solid #39393a;}
+article.contenedor div.cpanel:last-child h2 {font-size: 15px; text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
+article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
+article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 5px 5px 5px; margin: 0; text-align: center; font-size: 14px;}
+article.contenedor div.cpanel:last-child ul li:last-child {padding: 5px 0 5px 5px;}
+article.contenedor div.cpanel:last-child ul li span {color: #bdd091;}
+article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 201px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
@@ -251,7 +259,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 .acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before,
 .rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before,
-.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before {
+.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
 	font-style: normal;
@@ -260,14 +268,14 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 }
 
 .rdescargados:before, .estrella:before, .estrella-2:before, .mas:before,
-.tutos:before, .resena:before, .bandera:before, .comu:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
+.tutos:before, .resena:before, .bandera:before, .comu:before, .jtotales:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
 .acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
 .ajustes:before {content: "\f013";}
 .salir:before {content: "\f08b";}
-.juegos:before {content: "\f11b";}
+.juegos:before, .jtotales:before {content: "\f11b";}
 .recursos:before {content: "\f07c";}
 .burger:before {content: "\f0c9";}
 .rdescargados:before {content: "\f0ed";}
@@ -283,6 +291,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 .comu:before {content: "\f0c0";}
 .cargavatar:before {content: "\f093";}
 .actualizar:before {content: "\f01e";}
+.estadisticas:before {content: "\f201";}
 .copy-left {
 display: inline-block;
 margin-right: 5px;
