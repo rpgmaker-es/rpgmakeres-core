@@ -104,7 +104,7 @@ article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size
 article.contenedor div.cpanel:last-child ul li span a:hover {color: #fff; text-decoration: none;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
-article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 204px; border-right: 1px solid #39393a;}
+article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 
 article br.limpiar {clear: both;}
@@ -228,11 +228,12 @@ input[type="submit"], button[type="submit"] {
 	border: 1px solid #708919;
 	}
 
+
 input[type="text"], input[type="password"], input[type="email"] {
 	background-color: var(--main-bg-color);
 	width: 75%;
 	padding: 5px;
-	margin: 2px auto 10px auto;
+	margin: 11.5px auto;
 	color: var(--main-txt-color);
 	border: 1px solid #39393a;
 	border-radius: 3px;
