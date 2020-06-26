@@ -131,7 +131,7 @@ label {
 	white-space: pre;
 	}
 
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
 	border-radius: 2px;
 	-webkit-box-shadow: 2px 3px 2px 0px rgba(6, 17, 28, 0.9);
 	-moz-box-shadow:    2px 3px 2px 0px rgba(6, 17, 28, 0.9);
