@@ -46,7 +46,6 @@ nav h1 a {
 	color: var(--main-txt-color);
 	padding: 6px;
 	text-decoration: none;
-	/*background-image: url("pics/logo.png");*/
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -82,16 +81,20 @@ h2 {margin: 40px 0 5px 0;}
 
 .flotar_d {float: right;}
 
+figcaption, footer div ul li, .comunidad div ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+
 
 /*Destacados*/
 
 article.contenedor div.destacados {float: left; width: 925px;}
 article.contenedor div.destacados figure img {width: 205px;}
-article.contenedor div.destacados figure {display: inline-block; margin: 15px 35px 15px 0;}
+article.contenedor div.destacados figure {display: inline-block; margin: 15px 35px 15px 0; width: 205px;}
 article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
 article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
 article.contenedor div.destacados figure figcaption {text-align: center;}
 
+/* Contenido otras secciones */
+/* Ajustes */
 article.contenedor div.cpanel:first-child {float: left; max-width: 540px;}
 article.contenedor div.cpanel:last-child {float: right; width: 720px; color: #afafaf;}
 article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
@@ -103,7 +106,7 @@ article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 
 article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
 article.contenedor div.cpanel:last-child ul li span a:hover {color: #fff; text-decoration: none;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
-article.contenedor div.cpanel figure {margin: 0; padding: 15px; overflow: hidden;}
+article.contenedor div.cpanel figure {margin: 0; padding: 15px;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 
@@ -126,7 +129,7 @@ footer {color: var(--main-txt-color);}
 footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid #2A2833;}
 .contene-footer {display: table; width: 100%; margin: 40px auto;}
 footer div, .comunidad div {display: table-cell; width: 300px;}
-footer div ul, .comunidad div ul {list-style-type: none; padding: 0;}
+footer div ul, .comunidad div ul {list-style-type: none; padding: 0; width: 300px;}
 footer div ul li, .comunidad div ul li {list-style: none;}
 footer div a, .comunidad div a {color: var(--main-txt-color); text-decoration: none;}
 footer div a:hover, .comunidad div a:hover {color: #fff;}
@@ -286,7 +289,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 /* Iconos */
 
 .acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .altavoz:before,
-.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before, .x:before, .mundo:before,
+.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before, .anular:before, .mundo:before,
 .bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
@@ -297,7 +300,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 .rdescargados:before, .estrella:before, .estrella-2:before, .mas:before
 .tutos:before, .resena:before, .bandera:before, .comu:before, .jtotales:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before, .x:before {cursor: pointer;}
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before, .anular:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
@@ -320,7 +323,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 .cargavatar:before {content: "\f093";}
 .actualizar:before {content: "\f01e";}
 .estadisticas:before {content: "\f201";}
-.x:before {content: "\f00d";}
+.anular:before {content: "\f05e";}
 .altavoz:before {content: "\f0a1";}
 .mundo:before {content: "\f0ac";}
 .copy-left {
