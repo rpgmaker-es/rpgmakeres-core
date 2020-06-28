@@ -56,6 +56,6 @@ $_RPGMAKERES["config"] = array(
     /**
      * Core version
      */
-    "version" => "20200613"
+    "version" => "20200628"
 
 );

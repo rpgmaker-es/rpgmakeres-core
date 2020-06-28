@@ -32,7 +32,8 @@ class DynamicTestController
     {
         //returns an array of keyvalue-array-objects with 3 properties: URL-name, Method name and a parameter (optional, null if not)
         return [
-            ["database", "databaseTest", null]
+            ["database", "databaseTest", null],
+            ["ajustes", "ajustes", null]
         ];
     }
 
@@ -54,6 +55,11 @@ class DynamicTestController
             "title" => "Hello world!",
             "second_text" => "I'm rendering a dynamic view!"
         ]);
+    }
+
+    static function ajustes() {
+        ViewProcessor::sendHTMLHeaders();
+        return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php", "ajustes.php", []);
     }
 
     static function databaseTest()
