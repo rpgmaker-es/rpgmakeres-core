@@ -9,7 +9,7 @@ include_once "core/main.php";
 if (RPGMakerES::isBrowser()) exit();
 global $_RPGMAKERES;
 
-$options = getopt("hvufw:d:", ["help", "version", "update", "force", "write:", "delete:"]);
+$options = getopt("hvufw:d:m:", ["help", "version", "update", "force", "write:", "delete:", "mailtest:"]);
 
 echo "RPG Maker ES Core version " . $_RPGMAKERES["config"]["version"] . PHP_EOL;
 
@@ -26,7 +26,8 @@ if (array_key_exists("h", $options) || array_key_exists("help", $options)) {
         "-u     --update                        Update all pending sections of the page if needed" . PHP_EOL .
         "-f     --force                         If enabled, all sections will be updated, regardless if these are up-to-date" . PHP_EOL .
         "-w=CONTROLLER     --write=CONTROLLER   Writes a single section of the site, specified by a CONTROLLER name" . PHP_EOL .
-        "-d=CONTROLLER     --delete=CONTROLLER  Deletes pages from a controller, specified by a CONTROLLER name" . PHP_EOL . PHP_EOL .
+        "-d=CONTROLLER     --delete=CONTROLLER  Deletes pages from a controller, specified by a CONTROLLER name" . PHP_EOL .
+        "-m=EMAIL          --mailtest=EMAIL     Test email sending, by sending an email to EMAIL address" . PHP_EOL . PHP_EOL .
         "We still didn't know what the hell Entidad2 is.";
 
     exit(0);
@@ -74,6 +75,35 @@ if (array_key_exists("d", $options) || array_key_exists("delete", $options)) {
 
     if (WebGenerator::deleteControllerPages($value)) echo PHP_EOL . "Done!" . PHP_EOL;
     else echo PHP_EOL . "Controller not found" . PHP_EOL;
+    exit(0);
+}
+
+if (array_key_exists("m", $options) || array_key_exists("mailtest", $options)) {
+
+    RPGMakerES::loadService("mail");
+
+    $value = "";
+    if (array_key_exists("m", $options)) $value = $options["m"];
+    if (array_key_exists("mailtest", $options)) $value = $options["mailtest"];
+
+    echo "Sending test mail to ". $value . " ... " . PHP_EOL;
+
+    $out = MailService::sendByView(
+        "RPGMakerES Core mail sending",
+        "Destination user",
+        $value,
+        "testMail.php",
+        [
+            "mail" => $value,
+            "randomic" => rand(0,100)
+        ]
+    );
+
+    if ($out) {
+        echo "Done!" . PHP_EOL;
+    } else {
+        echo "Error while sending. Please see logs to find more information about." . PHP_EOL;
+    }
     exit(0);
 }
 

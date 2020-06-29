@@ -54,6 +54,31 @@ $_RPGMAKERES["config"] = array(
     "showTracesIn500Error" => false,
 
     /**
+     * Information to the SMTP server for mail sending
+     */
+    "smtpAddress" => "[::1]",
+    "smtpPort" => 25,
+    "smtpUseLoginInfo" => false,
+    "smtpUser" => "user",
+    "smtpPassword" => "password",
+
+    /**
+     * Default values for "From" in mails
+     */
+    "mailFromAddress" => "noresponder@rpgmaker.es",
+    "mailFromName" => "RPG Maker en español",
+
+    /**
+     * Mail treshold means that each X mails sent, it will dissconect and connect again.
+     */
+    "mailTreshold" => 80,
+
+    /**
+     * Wait interval means that each X mail sent defined in mailTreshold, it will sleep Y seconds before continuing.
+     */
+    "mailWaitInternal" => 2,
+
+    /**
      * Core version
      */
     "version" => "20200628"
