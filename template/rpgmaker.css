@@ -80,13 +80,14 @@ h2 {
 h2 {margin: 40px 0 5px 0;}
 
 .flotar_d {float: right;}
+.flotar_i {float: left;}
 
 figcaption, footer div ul li, .comunidad div ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 
 
 /*Destacados*/
 
-article.contenedor div.destacados {float: left; width: 925px;}
+article.contenedor div.destacados {width: 925px;}
 article.contenedor div.destacados figure img {width: 205px;}
 article.contenedor div.destacados figure {display: inline-block; margin: 15px 35px 15px 0; width: 205px;}
 article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
@@ -95,8 +96,8 @@ article.contenedor div.destacados figure figcaption {text-align: center;}
 
 /* Contenido otras secciones */
 /* Ajustes */
-article.contenedor div.cpanel:first-child {float: left; max-width: 540px;}
-article.contenedor div.cpanel:last-child {float: right; width: 720px; color: #afafaf;}
+article.contenedor div.cpanel:first-child, .form_acceso {max-width: 540px;}
+article.contenedor div.cpanel:last-child {width: 720px; color: #afafaf;}
 article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
 article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
 article.contenedor div.cpanel:last-child p.infoelimincuen {text-align: right; clear: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
@@ -104,11 +105,19 @@ article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
 article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
 article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
 article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
-article.contenedor div.cpanel:last-child ul li span a:hover {color: #fff; text-decoration: none;}
+article.contenedor div.cpanel:last-child ul li span a:hover, .form_acceso p a:hover {color: #fff; text-decoration: none;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
+
+/* Acceso */
+
+.minibloque {max-width: 240px;}
+.minibloque label {margin-top: 8px;}
+.form_acceso {margin: 0 auto;}
+.form_acceso p {font-size: 11px; margin: 10px 0 0 0; padding: 0;}
+
 
 article br.limpiar {clear: both;}
 
@@ -131,13 +140,15 @@ footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-
 footer div, .comunidad div {display: table-cell; width: 300px;}
 footer div ul, .comunidad div ul {list-style-type: none; padding: 0; width: 300px;}
 footer div ul li, .comunidad div ul li {list-style: none;}
-footer div a, .comunidad div a {color: var(--main-txt-color); text-decoration: none;}
+footer div a, .comunidad div a, .form_acceso p a {color: var(--main-txt-color); text-decoration: none;}
 footer div a:hover, .comunidad div a:hover {color: #fff;}
 
 
 /* Formularios */
 
 form {padding: 15px; overflow: hidden;}
+
+fieldset {border: 1px solid #39393a; padding: 20px;}
 
 label {
 	font-size: 13px;
@@ -270,11 +281,11 @@ input[type="checkbox"] + label span {
     height:19px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(pics/check_radio_sheet.png) left top no-repeat;
+    background:url("pics/check_radio_sheet.png") left top no-repeat;
     cursor:pointer;
 }
 input[type="checkbox"]:checked + label span {
-    background:url(pics/check_radio_sheet.png) -19px top no-repeat;
+    background:url("pics/check_radio_sheet.png") -19px top no-repeat;
 }
 
 input[type="text"]:disabled {
@@ -290,7 +301,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 .acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .altavoz:before,
 .rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before, .anular:before, .mundo:before,
-.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before {
+.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before, .nuser:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
 	font-style: normal;
@@ -300,7 +311,8 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 .rdescargados:before, .estrella:before, .estrella-2:before, .mas:before
 .tutos:before, .resena:before, .bandera:before, .comu:before, .jtotales:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before, .anular:before {cursor: pointer;}
+.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before,
+.anular:before, .nuser:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
@@ -326,6 +338,7 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 .anular:before {content: "\f05e";}
 .altavoz:before {content: "\f0a1";}
 .mundo:before {content: "\f0ac";}
+.nuser:before {content: "\f234";}
 .copy-left {
 display: inline-block;
 margin-right: 5px;
