@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="RPG Maker en español es una página dedicada a RPG Maker 2000, 2003, XP, VX, VX Ace, MV, MZ, EasyRPG y MKXP con ayuda, descargas de juegos y material para crear videojuegos.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/templae/rpgmaker.css">
+	<link rel="stylesheet" href="/template/rpgmaker.css">
 	<link rel="preload" href="/template/rpgmaker.css">
 	<link rel="preload" href="/template/fonts/fontawesome-webfont.woff2">
 	<link rel="preload" href="/template/fonts/MavenPro-VF.woff2">
@@ -27,46 +27,37 @@
 		</nav>
 		<section>
 			<article class="contenedor">
-				<div class="cpanel flotar_i">
-					<figure>
-						<img src="pics/av_base.jpg" alt="Avatar" />
-						<figcaption>Hasta13Caracteres</figcaption>
-					</figure>
-					<form>
-						<label>Nombre de usuario (dato inamovible)</label>
-						<input type="text" placeholder="Nickname" disabled />
-						<label>Contraseña (puedes modificarlo aquí)</label>
-						<input type="password" value="Tu contraseña" />
-						<input type="file" id="file" for="noav" />
-						<label for="file" class="btn-3 bg_verde borde_verde"><i class="cargavatar"></i>Cargar Avatar</label>
-						<input type="checkbox" id="c1" name="cc" />
-						<label for="c1"><span></span>Eliminar avatar</label>
-						<button type="submit" class="bg_azul borde_azul flotar_d">
-							<i class="actualizar"></i>Actualizar Perfil
+				<form class="form_acceso">
+					<fieldset>
+						<legend>Hey, ya soy usuario</legend>
+						<label>Nombre de usuario</label><br />
+						<input type="text" placeholder="Nickname" /><br />
+						<label>Contraseña</label><br />
+						<input type="password" value="Tu contraseña" /><br />
+						<div class="minibloque">
+							<input type="checkbox" id="c1" name="cc" />
+							<label class="flotar_d" for="c1"><span></span>Recuérdame</label>
+							<button type="submit" class="bg_azul borde_azul">
+								<i class="acceso"></i>Iniciar Sesión
+							</button>
+						</div>
+						<p><a href="">He olvidado mi contraseña, soy así de <del>PokaDPR</del> listo</a></p>
+					</fieldset>
+				</form>
+				<form class="form_acceso">
+					<fieldset>
+						<legend>Registre su cuenta</legend>
+						<label>Nombre de usuario</label><br />
+						<input type="text" placeholder="Nickname" /><br />
+						<label>Contraseña</label><br />
+						<input type="password" value="" /><br />
+						<label>E-mail</label><br />
+						<input type="email" placeholder="cuenta@cuenta.com" /><br />
+						<button type="submit" class="bg_verde borde_verde">
+							<i class="nuser"></i>Registrarse
 						</button>
-					</form>
-				</div>
-				<div class="cpanel flotar_d">
-					<h2><i class="estadisticas"></i>Información de NombreUsuario</h2>
-					<ul>
-						<li><i class="rdescargados"></i>Recursos cargados<br /><span>1 mil.</span></li>
-						<li><i class="jtotales"></i>Juegos aportados<br /><span>0</span></li>
-						<li><i class="resena"></i>Reseñas realizadas<br /><span>10M</span></li>
-						<li><i class="tutos"></i>Tutoriales aportados<br /><span>40</span></li>
-					</ul>
-					<ul>
-						<li><i class="altavoz"></i>Perfil en red social 1<br /><span><a href="">Visitar</a></span></li>
-						<li><i class="altavoz"></i>Perfil en red social 2<br /><span><a href="">Visitar</a></span></li>
-						<li><i class="altavoz"></i>Perfil en red social 3<br />--</li>
-						<li><i class="mundo"></i>Sitio web propio<br /><span><a href="">Visitar</a></span></li>
-					</ul>
-					<form>
-						<button type="submit" class="bg_rojo borde_rojo flotar_d">
-							<i class="anular"></i>Anular cuenta
-						</button>
-						<p class="infoelimincuen">Se reactiva al loguearse</p>
-					</form>
-				</div>
+					</fieldset>
+				</form>
 			</article>
 		</section>
 		<footer>
