@@ -21,4 +21,6 @@ if (!@include_once  RPGMakerES::GetRootFolder("vendor/autoload.php") ) die("Comp
 global $_RPGMAKERES;
 
 ini_set( 'session.cookie_httponly', 1 );
+ini_set('session.cookie_samesite', 'Strict');
+ini_set('session.cookie_secure', 1);
 ini_set('session.gc_maxlifetime', $_RPGMAKERES["config"]["sessionTimeout"]);

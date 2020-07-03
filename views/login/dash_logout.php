@@ -29,6 +29,8 @@
 <nav>
     <div class="contenedor">
         <ul class="menu">
+            <li><a target="_parent" href="/"><i class="ajustes"></i>Ajustes</a></li>
+            <li><a target="_parent" href="/login/logout"><i class="salir"></i>Salir</a></li>
             <li><a target="_parent" href="/login"><i class="acceso"></i>Acceso</a></li>
         </ul>
     </div>

@@ -26,10 +26,11 @@
         <ul class="menu-general menu">
             <li><a href=""><i class="recursos"></i>Recursos</a></li><li><a href=""><i class="juegos"></i>Juegos</a></li><li><a href="/login/debugsessioncheck"><i class="ayuda"></i>Ayuda</a></li>
         </ul>
-        <iframe src="/login/logindashboard" class="menu-usuario iframe-usuario" style="border:none; height:40px; display:inline-block"></iframe>
-        <!--<ul class="menu-usuario menu">
-            <li><a href=""><i class="ajustes"></i>Ajustes</a></li><li><a href=""><i class="salir"></i>Salir</a></li>
-        </ul>-->
+        <ul class="menu-usuario menu">
+            <li><a target="_parent" href="/"><i class="ajustes"></i>Ajustes</a></li>
+            <li><a target="_parent" href="/login/logout"><i class="salir"></i>Salir</a></li>
+            <li><a target="_parent" href="/login"><i class="acceso"></i>Acceso</a></li>
+        </ul>
     </div>
 </nav>
 <section>
