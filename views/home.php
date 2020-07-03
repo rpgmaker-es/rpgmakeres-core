@@ -9,7 +9,7 @@
  * Home de RPG Maker . es por CesarRP
  */
 ?>
-<div class="destacados">
+<div class="destacados flotar_i">
     <h2><i class="bandera"></i>Juegos Destacados</h2>
 
     <figure>

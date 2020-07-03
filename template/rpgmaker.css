@@ -354,6 +354,9 @@ filter: FlipH;
 
 nav input[type="checkbox"], nav label {display: none;}
 
+/*Honeypots */
+.cofreMisterioso {display: none;}
+
 /*Responsivos*/
 
 @media screen and (max-width: 800px) {

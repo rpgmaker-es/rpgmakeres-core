@@ -22,13 +22,14 @@
 <body>
 <nav>
     <div class="contenedor">
-        <h1><a href="">RPG Maker en español</a></h1><input type="checkbox" id="burger" /><label for="burger"><i class="burger"></i></label>
+        <h1><a href="/">RPG Maker en español</a></h1><input type="checkbox" id="burger" /><label for="burger"><i class="burger"></i></label>
         <ul class="menu-general menu">
-            <li><a href=""><i class="recursos"></i>Recursos</a></li><li><a href=""><i class="juegos"></i>Juegos</a></li><li><a href=""><i class="ayuda"></i>Ayuda</a></li>
+            <li><a href=""><i class="recursos"></i>Recursos</a></li><li><a href=""><i class="juegos"></i>Juegos</a></li><li><a href="/login/debugsessioncheck"><i class="ayuda"></i>Ayuda</a></li>
         </ul>
-        <ul class="menu-usuario menu">
+        <iframe src="/login/logindashboard" class="menu-usuario iframe-usuario" style="border:none; height:40px; display:inline-block"></iframe>
+        <!--<ul class="menu-usuario menu">
             <li><a href=""><i class="ajustes"></i>Ajustes</a></li><li><a href=""><i class="salir"></i>Salir</a></li>
-        </ul>
+        </ul>-->
     </div>
 </nav>
 <section>

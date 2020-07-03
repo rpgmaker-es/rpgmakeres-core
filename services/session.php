@@ -23,8 +23,6 @@ class SessionService
      */
     public static function useSession($userData = false)
     {
-
-        session_name('__Host-sesion');
         session_start();
         SessionService::$session_initalized = true;
 
@@ -58,6 +56,10 @@ class SessionService
             header('Location: ' . $_RPGMAKERES["config"]["loginUrl"]);
             die();
         }
+    }
+
+    public static function isSessionInitialized() {
+        return SessionService::$session_initalized;
     }
 
     /**

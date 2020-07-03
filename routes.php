@@ -14,6 +14,7 @@ global $_RPGMAKERES;
 $_RPGMAKERES["controllers"] = [
     "StaticTestController" => "StaticTestController.php",
     "DynamicTestController" => "DynamicTestController.php",
+    "LoginController" => "LoginController.php",
 ];
 
 /**
@@ -30,7 +31,8 @@ $_RPGMAKERES["staticPages"] = [
  * Used for sanity check on cron
  */
 $_RPGMAKERES["dynamicPages"] = [
-    "DynamicTestController"
+    "DynamicTestController",
+    "LoginController"
 ];
 
 /**

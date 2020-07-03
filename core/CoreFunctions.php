@@ -51,6 +51,22 @@ Class RPGMakerES
     }
 
     /**
+     * Load a model from the core
+     * @param String $modelName Name of the model
+     * @throws Exception
+     */
+    static function loadModel($modelName)
+    {
+        //Load db service
+        RPGMakerES::loadService("db_pdo");
+        if (!PDOService::connect()) throw new Exception("Unable to initialize database for model using.");
+
+        if (!@include_once(RPGMakerES::getRootFolder("/models/") . $modelName . ".php")) {
+            throw new Exception("The following model was not found: " . $modelName);
+        }
+    }
+
+    /**
      * Load a core from the core (well... the name sound stupid)
      * @param String $coreName Name of the service
      * @throws Exception
