@@ -17,6 +17,9 @@ include_once "CoreFunctions.php";
 if (!@include_once  RPGMakerES::GetRootFolder("config.php") ) die("Config.php not found");
 if (!@include_once  RPGMakerES::GetRootFolder("vendor/autoload.php") ) die("Composer autoload not found. Are you sure you ran composer update? :)");
 
+//optional separate additional config override
+@include_once  RPGMakerES::GetRootFolder("config-override.php");
+
 //setting PHP configurations
 global $_RPGMAKERES;
 
