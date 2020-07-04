@@ -81,6 +81,11 @@ $_RPGMAKERES["config"] = array(
     /**
      * Core version
      */
-    "version" => "20200628"
+    "version" => "20200628",
+
+    /**
+     * If true, it will use default PHP session name
+     */
+    "useDefaultSessionName" => false
 
 );

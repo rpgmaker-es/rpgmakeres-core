@@ -34,6 +34,8 @@ class StaticTestController
         return [
             ["1", "childrenTest", 1],
             ["2", "childrenTest", 2],
+            ["enableLoginFlag", "enableLoginFlag", null],
+            ["disableLoginFlag", "disableLoginFlag", null],
         ];
     }
 
@@ -56,6 +58,14 @@ class StaticTestController
                 "title" => "Children test",
                 "second_text" => "This is the children number " . $parameter
             ]);
+    }
+
+    static function enableLoginFlag() {
+        return ViewProcessor::renderHTML("login/dash_login.php", []);
+    }
+
+    static function disableLoginFlag() {
+        return ViewProcessor::renderHTML("login/dash_logout.php", []);
     }
 
 }

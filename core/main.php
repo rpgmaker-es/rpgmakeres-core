@@ -20,7 +20,8 @@ if (!@include_once  RPGMakerES::GetRootFolder("vendor/autoload.php") ) die("Comp
 //setting PHP configurations
 global $_RPGMAKERES;
 
+if (!$_RPGMAKERES["config"]["useDefaultSessionName"]) ini_set('session.name','__Host-sesion');
 ini_set( 'session.cookie_httponly', 1 );
 ini_set('session.cookie_samesite', 'Strict');
-ini_set('session.cookie_secure', 1);
+if (!$_RPGMAKERES["config"]["useDefaultSessionName"]) ini_set('session.cookie_secure', 1);
 ini_set('session.gc_maxlifetime', $_RPGMAKERES["config"]["sessionTimeout"]);

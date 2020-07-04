@@ -23,17 +23,14 @@
     <link rel="preload" href="/pics/rpgmaker.png">
     <link rel="preload" href="/favicon.ico">
     <title>RPG Maker en español</title>
+    <script>
+        sessionStorage.setItem("rpgmakeres_sesion","on");
+        window.location.replace("/");
+    </script>
 </head>
 <body>
-
-<nav>
-    <div class="contenedor">
-        <ul class="menu-usuario menu">
-            <li><a target="_parent" href="/login/logout"><i class="salir"></i>Salir</a></li><li><a target="_parent" href="/"><i class="ajustes"></i>Ajustes</a></li>
-        </ul>
-    </div>
-</nav>
+<footer>
+    <p><a href="/">Haz click aquí si la redirección no funciona</a></p>
+</footer>
 </body>
 </html>
-
-

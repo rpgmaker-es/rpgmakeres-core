@@ -80,8 +80,8 @@ class LoginController
                         $user["password"] = "";
                         SessionService::useSession($user);
 
-                        //redirect to home
-                        header('Location: /');
+                        //redirect to login session storage setter
+                        header('Location: /enableLoginFlag/');
                         die();
                     }
                 }
@@ -121,7 +121,7 @@ class LoginController
         RPGMakerES::loadService("session");
         SessionService::useSession();
         SessionService::destroySession();
-        header('Location: /');
+        header('Location: /disableLoginFlag/');
         die();
     }
 }
