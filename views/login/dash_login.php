@@ -23,10 +23,7 @@
     <link rel="preload" href="/pics/rpgmaker.png">
     <link rel="preload" href="/favicon.ico">
     <title>RPG Maker en español</title>
-    <script>
-        sessionStorage.setItem("rpgmakeres_sesion","on");
-        window.location.replace("/");
-    </script>
+    <script src="/script/dash_login.js"></script>
 </head>
 <body>
 <footer>

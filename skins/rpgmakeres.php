@@ -24,12 +24,12 @@
     <div class="contenedor">
         <h1><a href="/">RPG Maker en español</a></h1><input type="checkbox" id="burger" /><label for="burger"><i class="burger"></i></label>
         <ul class="menu-general menu">
-            <li><a href=""><i class="recursos"></i>Recursos</a></li><li><a href=""><i class="juegos"></i>Juegos</a></li><li><a href="/login/debugsessioncheck"><i class="ayuda"></i>Ayuda</a></li>
+            <li><a href=""><i class="recursos"></i>Recursos</a></li><li><a href=""><i class="juegos"></i>Juegos</a></li><li><a href="/login/debugsessioncheck/"><i class="ayuda"></i>Ayuda</a></li>
         </ul>
         <ul class="menu-usuario menu">
-            <li id="menu_user_ajustes"><a target="_parent" href="/login/debugsessioncheck"><i class="ajustes"></i>Ajustes</a></li>
-            <li id="menu_user_salir"><a target="_parent" href="/login/logout"><i class="salir"></i>Salir</a></li>
-            <li id="menu_user_acceso"><a target="_parent" href="/login"><i class="acceso"></i>Acceso</a></li>
+            <li id="menu_user_ajustes"><a target="_parent" href="/login/debugsessioncheck/"><i class="ajustes"></i>Ajustes</a></li>
+            <li id="menu_user_salir"><a target="_parent" href="/login/logout/"><i class="salir"></i>Salir</a></li>
+            <li id="menu_user_acceso"><a target="_parent" href="/login/"><i class="acceso"></i>Acceso</a></li>
         </ul>
     </div>
 </nav>
@@ -67,13 +67,6 @@
     </div>
     <p><span class="copy-left">©</span>RPGMaker.es</p>
 </footer>
-<script>
-    if (sessionStorage.getItem("rpgmakeres_sesion") !== null) {
-        document.getElementById("menu_user_acceso").style.display = "none";
-    } else {
-        document.getElementById("menu_user_ajustes").style.display = "none";
-        document.getElementById("menu_user_salir").style.display = "none";
-    }
-</script>
+<script src="/script/header_userbuttons.js"></script>
 </body>
 </html>
