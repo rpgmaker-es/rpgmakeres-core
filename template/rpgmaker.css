@@ -109,6 +109,8 @@ article.contenedor div.cpanel figure {margin: 0; padding: 15px;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 
+#menu_user_ajustes, #menu_user_salir {display: none;}
+
 /* Acceso */
 
 .minibloque {max-width: 240px;}
