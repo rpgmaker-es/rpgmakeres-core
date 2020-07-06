@@ -24,6 +24,7 @@
     <link rel="preload" href="/favicon.ico">
     <title>RPG Maker en español</title>
     <script src="/script/dash_logout.js"></script>
+    <noscript><meta http-equiv="refresh" content="0; url=/"></noscript>
 </head>
 <body>
 <footer>
