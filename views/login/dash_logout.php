@@ -22,6 +22,7 @@
     <link rel="preload" href="/fonts/MavenPro-VF.woff2">
     <link rel="preload" href="/pics/rpgmaker.png">
     <link rel="preload" href="/favicon.ico">
+    <link rel="preload" href="/script/dash_logout.js">
     <title>RPG Maker en español</title>
     <script src="/script/dash_logout.js"></script>
     <noscript><meta http-equiv="refresh" content="0; url=/"></noscript>

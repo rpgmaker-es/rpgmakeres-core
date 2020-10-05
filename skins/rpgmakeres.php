@@ -17,6 +17,7 @@
     <link rel="preload" href="/fonts/MavenPro-VF.woff2">
     <link rel="preload" href="/pics/rpgmaker.png">
     <link rel="preload" href="/favicon.ico">
+    <link rel="preload" href="/script/header_userbuttons.js">
     <title><?=$title!=""?$title . " - ":""?>RPG Maker en español</title>
 </head>
 <body>

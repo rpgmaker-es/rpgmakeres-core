@@ -1,20 +1,22 @@
 ## RPGMaker.es core
 
-###Setup
-You will need:
-- A web server
-- PHP 7.x connected to your webserver and in CLI
-- Composer (https://getcomposer.org)
+This is RPG Maker en español website. It features a custom PHP engine for fast and efficent (but a bit uncommon) page rendering.
 
-#####And eventually ... (optional)
-- A database, SQL compatible, capable of connecting with PHP via PDO interface.
+## Give it a try
 
-###Setup
-- Put all files in your PHP-enabled server, and point your web server to public folder.
-- Make a copy of config-example.php , rename it config.php and tweak it as you want.
-- Run composer install for the dependencies
-- Run php cron.php -u for generate all webpages. 
-- (Optional) Setup a cron that runs php cron.php -u in a certain amount of time to keep pages updated.
+https://build.rpgmaker.es (DEV demo version)
 
-###And... something more?
-Well.. there will be someday more time for fancy readme files. :D
+https://build.rpgmaker.es/template  (For template demo).
+
+## Where I can see more documentation?
+
+You can go to [docs](docs) folder for seeing more information about the engine, using it, how to install it and other sort of interesting stuff. 
+
+## Discussion
+
+Current discussion of the site is held in [Matrix.org](https://matrix.to/#/!AZmiWtGiXASwHapqpL:matrix.marbleen.cl) or [Discord](https://discord.gg/T4FWsnm) . It doesn't matter what you will choose, those channels are bridged :D 
+
+## License
+
+See [License](LICENSE) for details.
+
