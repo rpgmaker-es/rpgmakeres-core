@@ -94,7 +94,7 @@ article.contenedor div.destacados figure figcaption {text-align: center;}
 
 /* Contenido otras secciones */
 /* Ajustes */
-article.contenedor div.cpanel:first-child, .form_acceso {max-width: 540px;}
+article.contenedor div.cpanel:first-child, .form_acceso {display: inline-table; width: 600px;}
 article.contenedor div.cpanel:last-child {width: 720px; color: #afafaf;}
 article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
 article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
@@ -114,9 +114,9 @@ article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 /* Acceso */
 
 .minibloque {max-width: 240px;}
-.minibloque label {margin-top: 8px;}
+.minibloque label {margin-top: 8px; font-size: 15px;}
 .form_acceso {margin: 0 auto;}
-.form_acceso p {font-size: 11px; margin: 10px 0 0 0; padding: 0;}
+.form_acceso p {font-size: 13px; margin: 10px 0 0 0; padding: 0;}
 
 
 article br.limpiar {clear: both;}
@@ -149,9 +149,10 @@ footer div a:hover, .comunidad div a:hover {color: #fff;}
 form {padding: 15px; overflow: hidden;}
 
 fieldset {border: 1px solid #39393a; padding: 20px;}
+legend {font-size: 17px;}
 
 label {
-	font-size: 13px;
+	font-size: 15px;
 	color: #afafaf;
 	content: '\A';
 	white-space: pre;
@@ -161,7 +162,7 @@ input[type="submit"], button[type="submit"] {
 	border-radius: 2px;
 	box-shadow: 2px 3px 2px 0px rgba(6, 17, 28, 0.9);
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 6px 10px 8px 10px;
 }
 
