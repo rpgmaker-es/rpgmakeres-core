@@ -21,6 +21,12 @@ class WebGenerator
     static $STATIC = 1;
 
     /**
+     * An alias to refer that the user wants to update the default child on a controller
+     * @var string
+     */
+    static $DEFAULT_CHILD_ALIAS = "//__default__//";
+
+    /**
      * Generate and/or update all static and dynamic pages, depending of their status.
      * @param bool $force If true, all pages will be regenerated.
      * @throws Exception If there's issues with file permissions.
@@ -58,10 +64,11 @@ class WebGenerator
      * Search and generate a single controller, if exists.
      * @param String $controller The controller name, as defined in routes.php
      * @param bool $force If true, it will be generated regardless if it already exists or not
+     * @param string $child If defined, it will only update the specified child in controller.
      * @return bool True if the controller is updated. False if controller does not exist.
      * @throws Exception
      */
-    static function generateSingle($controller, $force = false)
+    static function generateSingle($controller, $force = false, $child = NULL)
     {
         global $_RPGMAKERES;
         include_once(RPGMakerES::getRootFolder("routes.php"));
@@ -69,13 +76,13 @@ class WebGenerator
         //seek if the desired controller is in one of the routes path. If so, then generate it.
         foreach ($_RPGMAKERES["dynamicPages"] as $page) {
             if ($page == $controller) {
-                WebGenerator::_processPages(WebGenerator::$DYNAMIC, $page, $force);
+                WebGenerator::_processPages(WebGenerator::$DYNAMIC, $page, $force, 0, $child);
                 return true;
             }
         }
         foreach ($_RPGMAKERES["staticPages"] as $page => $minutes) {
             if ($page == $controller) {
-                WebGenerator::_processPages(WebGenerator::$STATIC, $page, $force, $minutes);
+                WebGenerator::_processPages(WebGenerator::$STATIC, $page, $force, $minutes, $child);
                 return true;
             }
         }
@@ -121,10 +128,11 @@ class WebGenerator
      * @param int $mode WebGenerator::$DYNAMIC or WebGenerator::$STATIC.
      * @param String $page Controller name, as configured in routes.php
      * @param bool $force If true, all pages of the controller will be regenerated
-     * @param null $timeout Optional, Static only. If > 0, pages of the controller will be regenerated after x minutes.
+     * @param int $timeout Optional, Static only. If > 0, pages of the controller will be regenerated after x minutes.
+     * @param string $child If defined, it will only update the specified child in controller.
      * @throws Exception If there's issues with file permissions.
      */
-    static function _processPages($mode, $page, $force, $timeout = null)
+    static function _processPages($mode, $page, $force, $timeout = null, $childForcing = NULL)
     {
         global $_RPGMAKERES;
 
@@ -150,7 +158,7 @@ class WebGenerator
 
             //fine, folders are created. Now do the page procedure for default page
             $filePath = RPGMakerES::getRootfolder("public/" . $currentPath . "/index." . ($mode == WebGenerator::$DYNAMIC ? "php" : "html"));
-            if (!@file_exists($filePath) || $force) {
+            if ((!@file_exists($filePath) || $force ) && !$childForcing || $childForcing == WebGenerator::$DEFAULT_CHILD_ALIAS ) {
                 switch ($mode) {
                     case WebGenerator::$DYNAMIC:
                         WebGenerator::createDyn($filePath, $page, $default_method[0], $default_method[1]);
@@ -159,6 +167,8 @@ class WebGenerator
                         WebGenerator::createStatic($filePath, $page, $default_method[0], $default_method[1]);
                         break;
                 }
+                //if my intention is just generate the default child then I'm done.
+                if ($childForcing == WebGenerator::$DEFAULT_CHILD_ALIAS ) return;
 
             } else if ($mode == WebGenerator::$STATIC && !!$timeout ) {
                 //I can calculate timeout for this one
@@ -186,13 +196,18 @@ class WebGenerator
                 //create child
                 $filePath = RPGMakerES::getRootfolder("public/" . $currentPath . $child[0] . "/index." . ($mode == WebGenerator::$DYNAMIC ? "php" : "html"));
                 if (!@file_exists($filePath) || $force) {
-                    switch ($mode) {
-                        case WebGenerator::$DYNAMIC:
-                            WebGenerator::createDyn($filePath, $page, $child[1], $child[2]);
-                            break;
-                        case WebGenerator::$STATIC:
-                            WebGenerator::createStatic($filePath, $page, $child[1], $child[2]);
-                            break;
+                    //if there's no child forcing, continue. But if there's child forcing, just continue if it's the chosen one.
+                    if (!$childForcing || (!!$childForcing && $childForcing == $child[0])) {
+                        switch ($mode) {
+                            case WebGenerator::$DYNAMIC:
+                                WebGenerator::createDyn($filePath, $page, $child[1], $child[2]);
+                                break;
+                            case WebGenerator::$STATIC:
+                                WebGenerator::createStatic($filePath, $page, $child[1], $child[2]);
+                                break;
+                        }
+                        //if there's child forcing, then I'm done.
+                        if (!!$child) return;
                     }
                 } else if ($mode == WebGenerator::$STATIC && !!$timeout ) {
                     //I can calculate timeout for this one

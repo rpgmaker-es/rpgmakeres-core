@@ -82,8 +82,20 @@ Do you remember when I said in **routes.php** part that you can update static pa
 
 Where ``controllerName`` is the name of the controller as you defined it on **routes.php** file, and that ``true`` ... leave at it is (It means it will be be updated even if the page already exists on the public www folder).
 
+If you want to update **ONLY one child** of your page, it's not necessary that you need to rebuild the whole controller for this. Instead, use this:
+
+``WebGenerator::generateSingle(controllerName, true, route);``
+
+The same as above, but with an extra parameter: The child route name. 
+
+**NOTE:** If you want to update the default one, use ``//__default__// `` as route name. 
+
 Of course, you can update it too from CLI.
 
-``php cron.php --write controllerName --force``
+``php cron.php --write=controllerName --force`` 
+
+or
+
+``php cron.php --write=controllerName --force --child=childRoute`` 
 
 Same parameters as above. 
