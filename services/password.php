@@ -34,7 +34,7 @@ class PasswordService
      */
     public static function generateToken( $uniqueString = NULL ) {
         if (!$uniqueString) $uniqueString = rand(0,100);
-        return hash ( "sha2" , date("U") . $uniqueString);
+        return hash ( "sha512" , date("U") . $uniqueString);
     }
 
 }

@@ -88,4 +88,22 @@ class SessionService
         return true;
     }
 
+    public static function regenerateCSRF()
+    {
+        global $_RPGMAKERES;
+
+        RPGMakerES::loadService("password");
+        $_SESSION['csrf'] = PasswordService::generateToken(true);
+        return $_SESSION['csrf'];
+    }
+
+    public static function validateCRSF($csrf) {
+        $out = false;
+        if (array_key_exists("csrf", $_SESSION)) {
+            if ($csrf == $_SESSION['csrf']) $out = true;
+            SessionService::regenerateCSRF();
+        }
+        return $out;
+    }
+
 }

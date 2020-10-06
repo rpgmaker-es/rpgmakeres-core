@@ -17,8 +17,23 @@ class UsersModel
         return NULL;
     }
 
+    public static function getUserByUID($uid)
+    {
+        $out = PDOService::getSecureQuery(
+            "SELECT * FROM user WHERE uid = ? and deleted = 0",
+            [PDO::PARAM_INT], [$uid]);
+        if ($out && count($out) > 0) return $out[0];
+        return NULL;
+    }
+
     private static function generateActiveConditions()
     {
         return " AND suspended = 0 AND verified = 1 AND deleted = 0 ";
+    }
+
+    public static function deleteUser($uid) {
+        return PDOService::execSecureQuery(
+            "UPDATE user SET deleted = 1 WHERE uid = ?",
+            [PDO::PARAM_INT], [$uid]);
     }
 }
