@@ -87,7 +87,7 @@ figcaption, footer div ul li, .comunidad div ul li {text-overflow: ellipsis; ove
 
 article.contenedor div.destacados {width: 925px;}
 article.contenedor div.destacados figure img {width: 205px;}
-article.contenedor div.destacados figure {display: inline-block; margin: 15px 35px 15px 0; width: 205px;}
+article.contenedor div.destacados figure {display: inline-block; margin: 15px 30px 15px 0; width: 205px;}
 article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
 article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
 article.contenedor div.destacados figure figcaption {text-align: center;}
