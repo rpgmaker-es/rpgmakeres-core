@@ -7,6 +7,60 @@ Licencia: GPLv3
 URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
+#malla {
+	max-width: 1310px; /* 320+10+320+10+320+10+320 */
+	display: grid;
+	grid-template-columns: auto auto; /* define dos columnas */
+	grid-gap: 10px; /* margen entre columnas (sin margen externo) */
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#destacados, #nuevos, #recursos {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+}
+
+#populares, #reseñas, #tutoriales {
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+}
+
+.miniatura {
+	width: 320px;
+	height: 240px;
+	background: silver;
+}
+
+.enlace {
+	width: 320px;
+	height: 52.5px;
+	background: silver;
+}
+
+
+@media screen and (max-width: 1319px) {
+	#destacados, #nuevos, #recursos {
+		grid-template-columns: auto auto;
+	}
+}
+
+@media screen and (max-width: 979px) {
+	#destacados, #nuevos, #recursos {
+		grid-template-columns: auto;
+	}
+}
+
+@media screen and (max-width: 649px) {
+	#malla {
+		grid-template-columns: auto;
+	}
+}
+
+
 /*General*/
 
 @font-face {font-family: "FontAwesome"; src: url("fonts/fontawesome-webfont.woff2");}
