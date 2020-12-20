@@ -8,24 +8,25 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 #malla {
-	max-width: 1310px; /* 320+10+320+10+320+10+320 */
+	max-width: 1320px; /* 320+10+320+10+320+20+320 */
 	display: grid;
-	grid-template-columns: auto auto; /* define dos columnas */
-	grid-gap: 10px; /* margen entre columnas (sin margen externo) */
+	grid-template-columns: auto auto; /* dos columnas */
+	grid-gap: 20px; /* margen entre columnas (sin margen externo) */
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 10px;
 }
 
 #destacados, #nuevos, #recursos {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto auto auto; /* 3 columnas */
 	grid-gap: 10px;
 }
 
 #populares, #reseñas, #tutoriales {
 	display: grid;
-	grid-template-columns: auto;
+	grid-template-columns: auto; /* 1 columna */
 	grid-gap: 10px;
 }
 
@@ -48,13 +49,13 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	}
 }
 
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 989px) {
 	#destacados, #nuevos, #recursos {
 		grid-template-columns: auto;
 	}
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 659px) {
 	#malla {
 		grid-template-columns: auto;
 	}
@@ -125,7 +126,7 @@ p {padding: 0.3em 0; line-height: 1.5em;}
 h2 {
 	border-bottom: 1px solid #636170;
 	color: #d8d7e0;
-	margin: 40px 0 5px 0;
+	margin: 20px 0 5px 0;
 	padding: 0 0 5px 0;
 }
 
