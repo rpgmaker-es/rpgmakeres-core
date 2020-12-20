@@ -14,16 +14,16 @@
 
 <a href="">Crear usuario</a>
 <table>
-    <tr>
-        <th>UID</th>
-        <th>Usuario</th>
-        <th>Correo</th>
-        <th>Activo</th>
-        <th>Suspendido</th>
-        <th>Verificado</th>
-        <th>Privilegio</th>
-        <th>Acciones</th>
-    </tr>
+    <?=PaginationService::viewCreateTableHeaders($paginationParameters, [
+            "UID" => "uid",
+        "Usuario" => "username",
+        "Correo" => "email",
+        "Activo" => "active",
+        "Suspendido" => "suspended",
+        "Verificado" => "verified",
+        "Privilegio" => "permissions",
+        "Acciones" => true
+])?>
     <?php foreach($users as $user) {
         ?>
         <tr>
@@ -56,3 +56,5 @@
     }
     ?>
 </table>
+
+<?=PaginationService::viewCreatePageSeeker($paginationParameters)?>

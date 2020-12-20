@@ -65,9 +65,31 @@ class AdminController
         $csrf = SessionService::regenerateCSRF();
 
         RPGMakerES::loadService("db_pdo");
+        RPGMakerES::loadService("validation");
+        RPGMakerES::loadService("pagination");
 
-        $users = PDOService::getQuery("SELECT * FROM user WHERE deleted = 0");
-        $content = ViewProcessor::renderHTML("admin/userlist.php", ["users" => $users, "csrf" => $csrf]);
+        RPGMakerES::loadModel("UsersModel");
+
+        //Obtain pagination parameters
+        $paginationParameters = PaginationService::getPaginationGetParams();
+
+
+        $paginationParameters =PaginationService::mapSearchValues($paginationParameters, "active", ["Activo" => 1, "Inactivo" => 0]);
+        $paginationParameters =PaginationService::mapSearchValues($paginationParameters, "suspended", ["suspendido" => 1]);
+        $paginationParameters =PaginationService::mapSearchValues($paginationParameters, "verified", ["ok" => 1, "no" => 0]);
+        $paginationParameters =PaginationService::mapSearchValues($paginationParameters, "permissions", ["Usuario" => 0, "Administrador" => 4]);
+
+
+
+        $out = UsersModel::getUsers($paginationParameters["page"], $paginationParameters["search"], $paginationParameters["order"]);
+        $users = $out["result"];
+        $paginationParameters["count"] = $out["count"];
+
+        $content = ViewProcessor::renderHTML("admin/userlist.php", [
+            "users" => $users,
+            "paginationParameters"=> $paginationParameters,
+            "csrf" => $csrf
+        ]);
 
         return ViewProcessor::renderHTMLWithSkin("rpgmakeres.php",
             "admin/base.php", [

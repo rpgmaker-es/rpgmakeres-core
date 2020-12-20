@@ -86,6 +86,11 @@ $_RPGMAKERES["config"] = array(
     /**
      * If true, it will use default PHP session name
      */
-    "useDefaultSessionName" => false
+    "useDefaultSessionName" => false,
+
+    /**
+     * Number of items in a pagination
+     */
+    "paginationNumberOfItems" => 10
 
 );

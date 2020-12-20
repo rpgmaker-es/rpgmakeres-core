@@ -8,6 +8,25 @@
 
 class UsersModel
 {
+    public static function getUsers($page, $search, $orderby) {
+
+        global $_RPGMAKERES;
+        $validKeys = ["uid", "username", "email", "active", "suspended", "verified", "permissions"];
+
+        if (
+            ValidationService::areValidKeys($search, $validKeys) &&
+            ValidationService::areValidKeys($orderby, $validKeys, true)
+        ) {
+            //keys are validated
+            $out = PaginationService::buildPaginationSQL(
+                "SELECT * FROM user WHERE deleted = 0", NULL, NULL,
+                $_RPGMAKERES["config"]["paginationNumberOfItems"], $page, $search, $orderby);
+            if ($out && count($out) > 0) return $out;
+            return NULL;
+        }
+        return NULL;
+    }
+
     public static function getActiveUserByUsername($username)
     {
         $out = PDOService::getSecureQuery(
