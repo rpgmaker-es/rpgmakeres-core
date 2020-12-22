@@ -15,25 +15,40 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 10px;
+	padding-top: 80px;
 }
 
-#destacados, #nuevos, #recursos {
+#destacados,
+#nuevos,
+#recursos {
 	display: grid;
 	grid-template-columns: auto auto auto; /* 3 columnas */
 	grid-gap: 10px;
 }
 
-#populares, #reseñas, #tutoriales {
+#populares,
+#reseñas,
+#tutoriales {
 	display: grid;
 	grid-template-columns: auto; /* 1 columna */
 	grid-gap: 10px;
 }
 
-.miniatura {
+#malla figure {
+	margin: 0;
+}
+
+#malla figure img {
 	width: 320px;
 	height: 240px;
-	background: silver;
+}
+
+#malla figure figcaption {
+	text-align: center;
+	text-overflow: ellipsis; /* FIXME */
+	overflow: hidden; /* FIXME */
+	white-space: nowrap; /* FIXME */
+	color: var(--main-txt-color); /* FIXME */
 }
 
 .enlace {
@@ -76,7 +91,8 @@ section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-
 
 nav {
 	background-color: var(--main-bg-color);
-	position: relative;
+	position: absolute;
+	width: 100%;
 	z-index: 3;
 	text-align: right;
 	box-shadow: 0px 0px 15px -6px rgba(0,0,0,0.5);
@@ -119,7 +135,7 @@ nav ul li a:hover, article.contenedor aside p a:hover {color: #fff;}
 
 /*Wrappers, textos (encabezados, párrafos, listas...)*/
 
-.contenedor, footer {margin: 0 auto; max-width: 1280px; padding: 0; overflow: hidden;}
+.contenedor, footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
 
 p {padding: 0.3em 0; line-height: 1.5em;}
 
@@ -135,17 +151,9 @@ h1, h2, h3 {font-weight: normal;}
 .flotar_d {float: right;}
 .flotar_i {float: left;}
 
-figcaption, footer div ul li, .comunidad div ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
-
-
-/*Destacados*/
-
-article.contenedor div.destacados {width: 925px;}
-article.contenedor div.destacados figure img {width: 205px;}
-article.contenedor div.destacados figure {display: inline-block; margin: 15px 30px 15px 0; width: 205px;}
-article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
-article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 30px 0;}
-article.contenedor div.destacados figure figcaption {text-align: center;}
+figcaption,
+footer div ul li,
+.comunidad div ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 
 /* Contenido otras secciones */
 /* Ajustes */
@@ -181,8 +189,9 @@ article br.limpiar {clear: both;}
 /*Sidebar*/
 
 article.contenedor aside {float: right; width: 300px;}
-article.contenedor aside figure, article.contenedor aside figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
-article.contenedor aside figure figcaption {background-color: var(--main-bg-color); opacity: 0.7; padding: 8px;}
+article.contenedor aside figure,
+article.contenedor aside figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
+article.contenedor aside figure figcaption {background-color: var(--main-bg-color); opacity: 0.7;}
 article.contenedor aside figure figcaption span {font-weight: bold;}
 article.contenedor aside p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
 article.contenedor aside p a {color: var(--main-txt-color); text-decoration: none;}
@@ -390,50 +399,30 @@ nav input[type="checkbox"], nav label {display: none;}
 
 @media screen and (max-width: 1280px) {
 	article.contenedor div.destacados {max-width: 820px;}
-	article.contenedor div.destacados figure img {width: 170px;}
 }
 
 @media screen and (max-width: 1160px) {
 	article.contenedor div.destacados {max-width: 760px;}
-	article.contenedor div.destacados figure img {width: 150px;}
 }
 
 @media screen and (max-width: 1100px) {
 	article.contenedor div.destacados {max-width: 700px;}
-	article.contenedor div.destacados figure {margin: 15px 32px 15px 0;}
 }
 
 @media screen and (max-width: 1080px) {
 	article.contenedor div.destacados {max-width: 680px;}
-	article.contenedor div.destacados figure {margin: 15px 25px 15px 0;}
 }
 
 @media screen and (max-width: 1050px) {
 	article.contenedor div.destacados {max-width: 600px;}
-	article.contenedor div.destacados figure {margin: 15px 0;}
-}
-
-@media screen and (max-width: 1000px) {
-	article.contenedor div.destacados figure img {width: 300px;}
-	article.contenedor div.destacados figure, article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
-	article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
 }
 
 @media screen and (max-width: 940px) {
 	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
-	article.contenedor div.destacados figure img {max-width: 300px;}
-	article.contenedor div.destacados figure {margin: 15px 20px 15px 0;}
-	article.contenedor div.destacados figure:nth-child(5), article.contenedor div.destacados figure:nth-child(10),
-	article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
 }
 
 @media screen and (max-width: 640px) {
 	article.contenedor div.destacados {max-width: 480px;}
-	article.contenedor div.destacados figure {margin: 15px 8% 15px 0;}
-	article.contenedor div.destacados figure:nth-child(3), article.contenedor div.destacados figure:nth-child(8), article.contenedor div.destacados figure:nth-child(10),
-	article.contenedor div.destacados figure:nth-child(12), article.contenedor div.destacados figure:nth-child(14), article.contenedor div.destacados figure:nth-child(17),
-	article.contenedor div.destacados figure:nth-child(19), article.contenedor div.destacados figure:last-child {margin: 15px 0;}
-	article.contenedor div.destacados figure img {max-width: 150px; height: auto;}
 	footer div, .comunidad div {display: block; max-width: 100%; margin: 0 auto;}
 	div.comunidad div {border-bottom: 1px solid #4c4a56;}
 	div.comunidad div:last-child {border-bottom: none;}
