@@ -351,7 +351,13 @@ i:before {
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
+	cursor: text;
 }
+
+a i:before {
+	cursor: pointer;
+}
+
 
 .rdescargados:before,
 .estrella:before,
@@ -364,19 +370,6 @@ i:before {
 .jtotales:before,
 article.contenedor aside figure figcaption span,
 article.contenedor aside p a {color: #d4b300;}
-
-.acceso:before,
-.ayuda:before,
-.ajustes:before,
-.salir:before,
-.juegos:before,
-.recursos:before,
-.burger:before,
-.folio:before,
-.cargavatar:before,
-.actualizar:before,
-.anular:before,
-.nuser:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
