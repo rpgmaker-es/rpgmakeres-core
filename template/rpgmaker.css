@@ -58,7 +58,7 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 }
 
 
-@media screen and (max-width: 1319px) {
+@media (max-width: 1319px) {
 	#destacados,
 	#nuevos,
 	#recursos {
@@ -66,7 +66,7 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	}
 }
 
-@media screen and (max-width: 989px) {
+@media (max-width: 989px) {
 	#destacados,
 	#nuevos,
 	#recursos {
@@ -74,7 +74,7 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	}
 }
 
-@media screen and (max-width: 659px) {
+@media (max-width: 659px) {
 	#malla {
 		grid-template-columns: auto;
 	}
@@ -447,7 +447,7 @@ nav label {display: none;}
 
 /*Responsivos*/
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
 	section {padding-top: 45px;}
 	nav label {font-size: 25px;}
 	nav input[type="checkbox"],
@@ -469,32 +469,32 @@ nav label {display: none;}
 	nav ul li {line-height: normal; display: block; padding-left: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
-@media screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
 	article.contenedor div.destacados {max-width: 820px;}
 }
 
-@media screen and (max-width: 1160px) {
+@media (max-width: 1160px) {
 	article.contenedor div.destacados {max-width: 760px;}
 }
 
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
 	article.contenedor div.destacados {max-width: 700px;}
 }
 
-@media screen and (max-width: 1080px) {
+@media (max-width: 1080px) {
 	article.contenedor div.destacados {max-width: 680px;}
 }
 
-@media screen and (max-width: 1050px) {
+@media (max-width: 1050px) {
 	article.contenedor div.destacados {max-width: 600px;}
 }
 
-@media screen and (max-width: 940px) {
+@media (max-width: 940px) {
 	article.contenedor div.destacados,
 	article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
 	article.contenedor div.destacados {max-width: 480px;}
 	footer div,
 	.comunidad div {display: block; max-width: 100%; margin: 0 auto;}
