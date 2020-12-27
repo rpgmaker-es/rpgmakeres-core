@@ -83,7 +83,7 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 
 /*General*/
 
-@font-face {font-family: "FontAwesome"; src: url("fonts/fontawesome-webfont.woff2");}
+@font-face {font-family: FontAwesome; src: url("fonts/fontawesome-webfont.woff2");}
 @font-face {font-family: "Maven Pro"; src: url("fonts/MavenPro-VF.woff2");}
 
 :root {--main-bg-color: #171522; --main-txt-color: #d8d7e0; }
@@ -347,37 +347,10 @@ input[type="email"]:required:invalid {
 
 /* Iconos */
 
-.acceso:before,
-.ayuda:before,
-.ajustes:before,
-.salir:before,
-.juegos:before,
-.recursos:before,
-.burger:before,
-.altavoz:before,
-.rdescargados:before,
-.estrella:before,
-.mas:before,
-.mas-2:before,
-.tutos:before,
-.resena:before,
-.estrella-2:before,
-.anular:before,
-.mundo:before,
-.bandera:before,
-.folio:before,
-.tuto:before,
-.comu:before,
-.cargavatar:before,
-.actualizar:before,
-.jtotales:before,
-.estadisticas:before,
-.nuser:before {
-	cursor: context-menu;
-	font-family: "FontAwesome", sans-serif;
+i:before {
+	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
-	margin-right: 0.3rem;
 }
 
 .rdescargados:before,
