@@ -59,13 +59,17 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 @media screen and (max-width: 1319px) {
-	#destacados, #nuevos, #recursos {
+	#destacados,
+	#nuevos,
+	#recursos {
 		grid-template-columns: auto auto;
 	}
 }
 
 @media screen and (max-width: 989px) {
-	#destacados, #nuevos, #recursos {
+	#destacados,
+	#nuevos,
+	#recursos {
 		grid-template-columns: auto;
 	}
 }
@@ -119,7 +123,8 @@ nav h1 a {
 }
 
 nav ul.menu-general {float: left;}
-nav ul.menu-general li:first-child, nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
+nav ul.menu-general li:first-child,
+nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
 
 nav ul {display: inline-flex; margin: 0; padding: 0 0 0 10px;}
 nav ul li {display: inline; line-height: 50px; color: var(--main-txt-color);}
@@ -131,11 +136,13 @@ nav ul li a {
 	padding: 0.98em 0.49em;
 }
 
-nav ul li a:hover, article.contenedor aside p a:hover {color: #fff;}
+nav ul li a:hover,
+article.contenedor aside p a:hover {color: #fff;}
 
 /*Wrappers, textos (encabezados, párrafos, listas...)*/
 
-.contenedor, footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
+.contenedor,
+footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
 
 p {padding: 0.3em 0; line-height: 1.5em;}
 
@@ -146,7 +153,9 @@ h2 {
 	padding: 0 0 5px 0;
 }
 
-h1, h2, h3 {font-weight: normal;}
+h1,
+h2,
+h3 {font-weight: normal;}
 
 .flotar_d {float: right;}
 .flotar_i {float: left;}
@@ -157,7 +166,8 @@ footer div ul li,
 
 /* Contenido otras secciones */
 /* Ajustes */
-article.contenedor div.cpanel:first-child, .form_acceso {display: inline-table; width: 600px;}
+article.contenedor div.cpanel:first-child,
+.form_acceso {display: inline-table; width: 600px;}
 article.contenedor div.cpanel:last-child {width: 720px; color: #afafaf;}
 article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
 article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
@@ -166,13 +176,15 @@ article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
 article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
 article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
 article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
-article.contenedor div.cpanel:last-child ul li span a:hover, .form_acceso p a:hover {color: #fff; text-decoration: none;}
+article.contenedor div.cpanel:last-child ul li span a:hover,
+.form_acceso p a:hover {color: #fff; text-decoration: none;}
 article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article.contenedor div.cpanel figure {margin: 0; padding: 15px;}
 article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
 
-#menu_user_ajustes, #menu_user_salir {display: none;}
+#menu_user_ajustes,
+#menu_user_salir {display: none;}
 
 /* Acceso */
 
@@ -201,11 +213,17 @@ article.contenedor aside p a {color: var(--main-txt-color); text-decoration: non
 footer {color: var(--main-txt-color);}
 footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid #2A2833;}
 .contene-footer {display: table; width: 100%; margin: 40px auto;}
-footer div, .comunidad div {display: table-cell; width: 300px;}
-footer div ul, .comunidad div ul {list-style-type: none; padding: 0; width: 300px;}
-footer div ul li, .comunidad div ul li {list-style: none;}
-footer div a, .comunidad div a, .form_acceso p a {color: var(--main-txt-color); text-decoration: none;}
-footer div a:hover, .comunidad div a:hover {color: #fff;}
+footer div,
+.comunidad div {display: table-cell; width: 300px;}
+footer div ul,
+.comunidad div ul {list-style-type: none; padding: 0; width: 300px;}
+footer div ul li,
+.comunidad div ul li {list-style: none;}
+footer div a,
+.comunidad div a,
+.form_acceso p a {color: var(--main-txt-color); text-decoration: none;}
+footer div a:hover,
+.comunidad div a:hover {color: #fff;}
 
 
 /* Formularios */
@@ -222,7 +240,8 @@ label {
 	white-space: pre;
 }
 
-input[type="submit"], button[type="submit"] {
+input[type="submit"],
+button[type="submit"] {
 	border-radius: 2px;
 	box-shadow: 2px 3px 2px 0px rgba(6, 17, 28, 0.9);
 	cursor: pointer;
@@ -273,7 +292,9 @@ input[type="submit"], button[type="submit"] {
 }
 
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
 	background-color: var(--main-bg-color);
 	width: 75%;
 	padding: 5px;
@@ -318,15 +339,40 @@ input[type="text"]:disabled {
 	background-color: #39393a;
 }
 
-input[type="text"]:required:invalid, input[type="password"]:required:invalid, input[type="email"]:required:invalid {
+input[type="text"]:required:invalid,
+input[type="password"]:required:invalid,
+input[type="email"]:required:invalid {
 	box-shadow: none;
 }
 
 /* Iconos */
 
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .altavoz:before,
-.rdescargados:before, .estrella:before, .mas:before, .mas-2:before, .tutos:before, .resena:before, .estrella-2:before, .anular:before, .mundo:before,
-.bandera:before, .folio:before, .tuto:before, .comu:before, .cargavatar:before, .actualizar:before, .jtotales:before, .estadisticas:before, .nuser:before {
+.acceso:before,
+.ayuda:before,
+.ajustes:before,
+.salir:before,
+.juegos:before,
+.recursos:before,
+.burger:before,
+.altavoz:before,
+.rdescargados:before,
+.estrella:before,
+.mas:before,
+.mas-2:before,
+.tutos:before,
+.resena:before,
+.estrella-2:before,
+.anular:before,
+.mundo:before,
+.bandera:before,
+.folio:before,
+.tuto:before,
+.comu:before,
+.cargavatar:before,
+.actualizar:before,
+.jtotales:before,
+.estadisticas:before,
+.nuser:before {
 	cursor: context-menu;
 	font-family: "FontAwesome", sans-serif;
 	font-style: normal;
@@ -334,16 +380,37 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 	margin-right: 0.3rem;
 }
 
-.rdescargados:before, .estrella:before, .estrella-2:before, .mas:before,
-.tutos:before, .resena:before, .bandera:before, .comu:before, .jtotales:before, article.contenedor aside figure figcaption span, article.contenedor aside p a {color: #d4b300;}
-.acceso:before, .ayuda:before, .ajustes:before, .salir:before, .juegos:before, .recursos:before, .burger:before, .folio:before, .cargavatar:before, .actualizar:before,
-.anular:before, .nuser:before {cursor: pointer;}
+.rdescargados:before,
+.estrella:before,
+.estrella-2:before,
+.mas:before,
+.tutos:before,
+.resena:before,
+.bandera:before,
+.comu:before,
+.jtotales:before,
+article.contenedor aside figure figcaption span,
+article.contenedor aside p a {color: #d4b300;}
+
+.acceso:before,
+.ayuda:before,
+.ajustes:before,
+.salir:before,
+.juegos:before,
+.recursos:before,
+.burger:before,
+.folio:before,
+.cargavatar:before,
+.actualizar:before,
+.anular:before,
+.nuser:before {cursor: pointer;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
 .ajustes:before {content: "\f013";}
 .salir:before {content: "\f08b";}
-.juegos:before, .jtotales:before {content: "\f11b";}
+.juegos:before,
+.jtotales:before {content: "\f11b";}
 .recursos:before {content: "\f07c";}
 .burger:before {content: "\f0c9";}
 .rdescargados:before {content: "\f0ed";}
@@ -372,7 +439,8 @@ input[type="text"]:required:invalid, input[type="password"]:required:invalid, in
 
 /*Ocultos > 800px*/
 
-nav input[type="checkbox"], nav label {display: none;}
+nav input[type="checkbox"],
+nav label {display: none;}
 
 /*Honeypots */
 .cofreMisterioso {display: none;}
@@ -382,7 +450,8 @@ nav input[type="checkbox"], nav label {display: none;}
 @media screen and (max-width: 800px) {
 	section {padding-top: 45px;}
 	nav label {font-size: 25px;}
-	nav input[type="checkbox"], nav label {display: inline-block; color: var(--main-txt-color);}
+	nav input[type="checkbox"],
+	nav label {display: inline-block; color: var(--main-txt-color);}
 	nav input[type="checkbox"] ~ .menu {max-height: 0;}
 	nav input[type="checkbox"] {visibility: hidden;}
 	nav input[type="checkbox"]:checked ~ .menu {max-height: 100%;}
@@ -390,10 +459,13 @@ nav input[type="checkbox"], nav label {display: none;}
 
 	nav {text-align: center; position: fixed; width: 100%;}
 	nav h1 {max-width: 100%; display: inline-block; text-align: center;}
-	nav ul.menu-general, nav h1 {float: none;}
-	nav ul.menu-general li:first-child, nav ul.menu-usuario li:first-child {border-left: none;}
+	nav ul.menu-general,
+	nav h1 {float: none;}
+	nav ul.menu-general li:first-child,
+	nav ul.menu-usuario li:first-child {border-left: none;}
 	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
-	nav ul, nav ul li a {margin: 0 auto; padding: 0; display: block; overflow: hidden;}
+	nav ul,
+	nav ul li a {margin: 0 auto; padding: 0; display: block; overflow: hidden;}
 	nav ul li {line-height: normal; display: block; padding-left: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
@@ -418,12 +490,14 @@ nav input[type="checkbox"], nav label {display: none;}
 }
 
 @media screen and (max-width: 940px) {
-	article.contenedor div.destacados, article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
+	article.contenedor div.destacados,
+	article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
 }
 
 @media screen and (max-width: 640px) {
 	article.contenedor div.destacados {max-width: 480px;}
-	footer div, .comunidad div {display: block; max-width: 100%; margin: 0 auto;}
+	footer div,
+	.comunidad div {display: block; max-width: 100%; margin: 0 auto;}
 	div.comunidad div {border-bottom: 1px solid #4c4a56;}
 	div.comunidad div:last-child {border-bottom: none;}
 	.contene-footer {display: block; text-align: center;}
