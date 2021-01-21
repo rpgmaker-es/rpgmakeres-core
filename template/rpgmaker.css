@@ -163,9 +163,9 @@ h3 {font-weight: normal;}
 .flotar_d {float: right;}
 .flotar_i {float: left;}
 
-figcaption,
+.comunidad ul {padding-left: 0;}
 footer div ul li,
-.comunidad div ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.comunidad div ul li {text-overflow: ellipsis; overflow: hidden; max-width: 280px; white-space: nowrap;}
 
 /* Contenido otras secciones */
 /* Ajustes */
@@ -199,7 +199,7 @@ article div.cpanel figure img {width: 100px; height: 100px;}
 
 article br.limpiar {clear: both;}
 
-.comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; width: 98%; padding: 0 10px;}
+.comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; padding: 0 10px;}
 
 /*Sidebar*/
 
@@ -215,11 +215,6 @@ article p a {color: var(--main-txt-color); text-decoration: none;}
 
 footer {color: var(--main-txt-color);}
 footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid #2A2833;}
-.contene-footer {display: table; width: 100%; margin: 40px auto;}
-footer div,
-.comunidad div {display: table-cell; width: 300px;}
-footer div ul,
-.comunidad div ul {list-style-type: none; padding: 0; width: 300px;}
 footer div ul li,
 .comunidad div ul li {list-style: none;}
 footer div a,
@@ -421,10 +416,8 @@ nav label {display: none;}
 @media (max-width: 800px) {
 	section {padding-top: 45px;}
 	nav label {font-size: 25px;}
-	nav input[type="checkbox"],
 	nav label {display: inline-block; color: var(--main-txt-color);}
 	nav input[type="checkbox"] ~ .menu {max-height: 0;}
-	nav input[type="checkbox"] {position: absolute; visibility: hidden;}
 	nav input[type="checkbox"]:checked ~ .menu {max-height: 100%;}
 	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
 	nav i:before {text-indent: 0;}
