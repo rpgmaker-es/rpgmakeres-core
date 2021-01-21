@@ -94,8 +94,12 @@ section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-
 /*Menu principal*/
 
 nav {
+	max-width: 1320px;
 	background-color: var(--main-bg-color);
 	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
 	width: 100%;
 	z-index: 3;
 	text-align: right;
@@ -116,7 +120,7 @@ nav h1 {
 nav h1 a {
 	display: block;
 	color: var(--main-txt-color);
-	padding: 6px;
+	padding: 6px 5px;
 	text-decoration: none;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -137,11 +141,10 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-article.contenedor aside p a:hover {color: #fff;}
+article p a:hover {color: #fff;}
 
 /*Wrappers, textos (encabezados, párrafos, listas...)*/
 
-.contenedor,
 footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
 
 p {padding: 0.3em 0; line-height: 1.5em;}
@@ -166,22 +169,22 @@ footer div ul li,
 
 /* Contenido otras secciones */
 /* Ajustes */
-article.contenedor div.cpanel:first-child,
+article div.cpanel:first-child,
 .form_acceso {display: inline-table; width: 600px;}
-article.contenedor div.cpanel:last-child {width: 720px; color: #afafaf;}
-article.contenedor div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
-article.contenedor div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
-article.contenedor div.cpanel:last-child p.infoelimincuen {text-align: right; clear: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
-article.contenedor div.cpanel:last-child ul:last-child {border-bottom: none;}
-article.contenedor div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
-article.contenedor div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
-article.contenedor div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
-article.contenedor div.cpanel:last-child ul li span a:hover,
+article div.cpanel:last-child {width: 720px; color: #afafaf;}
+article div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
+article div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
+article div.cpanel:last-child p.infoelimincuen {text-align: right; clear: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
+article div.cpanel:last-child ul:last-child {border-bottom: none;}
+article div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
+article div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
+article div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
+article div.cpanel:last-child ul li span a:hover,
 .form_acceso p a:hover {color: #fff; text-decoration: none;}
-article.contenedor div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
-article.contenedor div.cpanel figure {margin: 0; padding: 15px;}
-article.contenedor div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
-article.contenedor div.cpanel figure img {width: 100px; height: 100px;}
+article div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
+article div.cpanel figure {margin: 0; padding: 15px;}
+article div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
+article div.cpanel figure img {width: 100px; height: 100px;}
 
 #menu_user_ajustes,
 #menu_user_salir {display: none;}
@@ -200,13 +203,13 @@ article br.limpiar {clear: both;}
 
 /*Sidebar*/
 
-article.contenedor aside {float: right; width: 300px;}
-article.contenedor aside figure,
-article.contenedor aside figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
-article.contenedor aside figure figcaption {background-color: var(--main-bg-color); opacity: 0.7;}
-article.contenedor aside figure figcaption span {font-weight: bold;}
-article.contenedor aside p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
-article.contenedor aside p a {color: var(--main-txt-color); text-decoration: none;}
+article {float: right; width: 300px;}
+article figure,
+article figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
+article figure figcaption {background-color: var(--main-bg-color); opacity: 0.7;}
+article figure figcaption span {font-weight: bold;}
+article p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
+article p a {color: var(--main-txt-color); text-decoration: none;}
 
 /*Pie*/
 
@@ -352,12 +355,14 @@ i:before {
 	font-style: normal;
 	font-weight: normal;
 	cursor: text;
+	display: inline-block;
+	width: 1em;
 }
 
-a i:before {
+a i:before,
+i.burger:before {
 	cursor: pointer;
 }
-
 
 .rdescargados:before,
 .estrella:before,
@@ -368,8 +373,8 @@ a i:before {
 .bandera:before,
 .comu:before,
 .jtotales:before,
-article.contenedor aside figure figcaption span,
-article.contenedor aside p a {color: #d4b300;}
+article figcaption span,
+article a {color: #d4b300;}
 
 .acceso:before {content: "\f090";}
 .ayuda:before {content: "\f059";}
@@ -419,49 +424,51 @@ nav label {display: none;}
 	nav input[type="checkbox"],
 	nav label {display: inline-block; color: var(--main-txt-color);}
 	nav input[type="checkbox"] ~ .menu {max-height: 0;}
-	nav input[type="checkbox"] {visibility: hidden;}
+	nav input[type="checkbox"] {position: absolute; visibility: hidden;}
 	nav input[type="checkbox"]:checked ~ .menu {max-height: 100%;}
 	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
+	nav i:before {text-indent: 0;}
 
 	nav {text-align: center; position: fixed; width: 100%;}
-	nav h1 {max-width: 100%; display: inline-block; text-align: center;}
+	nav h1 {display: inline-block; text-align: center;}
 	nav ul.menu-general,
 	nav h1 {float: none;}
 	nav ul.menu-general li:first-child,
 	nav ul.menu-usuario li:first-child {border-left: none;}
 	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
 	nav ul,
-	nav ul li a {margin: 0 auto; padding: 0; display: block; overflow: hidden;}
-	nav ul li {line-height: normal; display: block; padding-left: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
+	nav ul li a {margin: 0 auto; padding: 0; line-height: 2.4; display: block; overflow: hidden;}
+	nav ul li {line-height: normal; display: block; text-indent: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
+
 @media (max-width: 1280px) {
-	article.contenedor div.destacados {max-width: 820px;}
+	article div.destacados {max-width: 820px;}
 }
 
 @media (max-width: 1160px) {
-	article.contenedor div.destacados {max-width: 760px;}
+	article div.destacados {max-width: 760px;}
 }
 
 @media (max-width: 1100px) {
-	article.contenedor div.destacados {max-width: 700px;}
+	article div.destacados {max-width: 700px;}
 }
 
 @media (max-width: 1080px) {
-	article.contenedor div.destacados {max-width: 680px;}
+	article div.destacados {max-width: 680px;}
 }
 
 @media (max-width: 1050px) {
-	article.contenedor div.destacados {max-width: 600px;}
+	article div.destacados {max-width: 600px;}
 }
 
 @media (max-width: 940px) {
-	article.contenedor div.destacados,
-	article.contenedor aside {float: none; margin: 0 auto; max-width: 640px;}
+	article div.destacados,
+	article {float: none; margin: 0 auto; max-width: 640px;}
 }
 
 @media (max-width: 640px) {
-	article.contenedor div.destacados {max-width: 480px;}
+	article div.destacados {max-width: 480px;}
 	footer div,
 	.comunidad div {display: block; max-width: 100%; margin: 0 auto;}
 	div.comunidad div {border-bottom: 1px solid #4c4a56;}
