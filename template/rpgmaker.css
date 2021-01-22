@@ -93,17 +93,18 @@ section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-
 
 /*Menu principal*/
 
-nav {
-	max-width: 1320px;
-	background-color: var(--main-bg-color);
+header {
 	position: absolute;
-	left: 0;
-	right: 0;
-	margin: auto;
 	width: 100%;
-	z-index: 3;
+}
+
+nav {
+	background-color: var(--main-bg-color);
+	z-index: 2;
+	box-shadow: 0 0 3px 0 black;
+	margin: auto;
+	max-width: 1320px;
 	text-align: right;
-	box-shadow: 0px 0px 15px -6px rgba(0,0,0,0.5);
 }
 
 nav h1 {
@@ -403,7 +404,7 @@ article a {color: #d4b300;}
 	transform: scaleX(-1);
 }
 
-/*Ocultos > 800px*/
+/*Ocultos > 768px*/
 
 nav input[type="checkbox"],
 nav label {display: none;}
@@ -413,7 +414,7 @@ nav label {display: none;}
 
 /*Responsivos*/
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
 	section {padding-top: 45px;}
 	nav label {font-size: 25px;}
 	nav label {display: inline-block; color: var(--main-txt-color);}
