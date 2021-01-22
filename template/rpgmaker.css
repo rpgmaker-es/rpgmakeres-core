@@ -94,7 +94,7 @@ section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-
 /*Menu principal*/
 
 header {
-			position: absolute;
+	position: absolute;
 	width: 100%;
 	z-index: 2;
 	box-shadow: 0 0 3px 0 black;
@@ -423,7 +423,8 @@ nav label {display: none;}
 	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
 	nav i:before {text-indent: 0;}
 
-	nav {text-align: center; position: fixed; width: 100%;}
+	header {position: fixed;}
+	nav {text-align: center;}
 	nav h1 {display: inline-block; text-align: center;}
 	nav ul.menu-general,
 	nav h1 {float: none;}
