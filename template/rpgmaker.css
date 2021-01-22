@@ -96,12 +96,13 @@ section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-
 header {
 	position: absolute;
 	width: 100%;
+	z-index: 2;
+	box-shadow: 0 0 3px 0 black;
 }
 
 nav {
+	position: relative;
 	background-color: var(--main-bg-color);
-	z-index: 2;
-	box-shadow: 0 0 3px 0 black;
 	margin: auto;
 	max-width: 1320px;
 	text-align: right;
