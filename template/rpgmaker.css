@@ -86,10 +86,16 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 @font-face {font-family: FontAwesome; src: url("fonts/fontawesome-webfont.woff2");}
 @font-face {font-family: "Maven Pro"; src: url("fonts/MavenPro-VF.woff2");}
 
-:root {--main-bg-color: #171522; --main-txt-color: #d8d7e0; }
+:root {
+	--main-bg-color: #171522;
+	--main-fg-color: #2A2833;
+	--main-txt-color: #d8d7e0;
+	--main-txt-h-color: #ffffff;
+	--main-sh-color: #000000;
+}
 
 body {margin: 0; font-family: "Maven Pro", sans-serif; background-color: var(--main-bg-color);}
-section {background-color: #2A2833; margin: 0; padding: 10px; color: var(--main-txt-color);}
+section {background-color: var(--main-fg-color); margin: 0; padding: 10px; color: var(--main-txt-color);}
 
 /*Menu principal*/
 
@@ -97,37 +103,34 @@ header {
 	position: absolute;
 	width: 100%;
 	z-index: 2;
-	box-shadow: 0 0 3px 0 black;
+	box-shadow: 0 0 3px 0 var(--main-sh-color);
 }
 
 nav {
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: 40px 1fr auto auto;
+	align-content: center;
+	grid-auto-rows: 50px;
 	background-color: var(--main-bg-color);
 	margin: auto;
 	max-width: 1320px;
-	text-align: right;
 }
 
 nav h1 {
-	float: left;
-	margin: 0 auto;
-	max-width: 960px;
-	text-indent: 36px;
-	line-height: 1.6em;
-	background-image: url("pics/rpgmaker.png");
-	background-repeat: no-repeat;
-	background-position: left;
+	line-height: 2em;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 nav h1 a {
 	display: block;
 	color: var(--main-txt-color);
-	padding: 6px 5px;
 	text-decoration: none;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-nav ul.menu-general {float: left;}
 nav ul.menu-general li:first-child,
 nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
 
@@ -142,7 +145,7 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-article p a:hover {color: #fff;}
+article p a:hover {color: var(--main-txt-h-color);}
 
 /*Wrappers, textos (encabezados, párrafos, listas...)*/
 
@@ -161,9 +164,6 @@ h1,
 h2,
 h3 {font-weight: normal;}
 
-.flotar_d {float: right;}
-.flotar_i {float: left;}
-
 .comunidad ul {padding-left: 0;}
 footer div ul li,
 .comunidad div ul li {text-overflow: ellipsis; overflow: hidden; max-width: 280px; white-space: nowrap;}
@@ -175,16 +175,16 @@ article div.cpanel:first-child,
 article div.cpanel:last-child {width: 720px; color: #afafaf;}
 article div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
 article div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
-article div.cpanel:last-child p.infoelimincuen {text-align: right; clear: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
+article div.cpanel:last-child p.infoelimincuen {text-align: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
 article div.cpanel:last-child ul:last-child {border-bottom: none;}
 article div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
 article div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
 article div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
 article div.cpanel:last-child ul li span a:hover,
-.form_acceso p a:hover {color: #fff; text-decoration: none;}
+.form_acceso p a:hover {color: var(--main-txt-h-color); text-decoration: none;}
 article div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
 article div.cpanel figure {margin: 0; padding: 15px;}
-article div.cpanel figure:first-child {float: left; width: 100px; height: 226px; border-right: 1px solid #39393a;}
+article div.cpanel figure:first-child {width: 100px; height: 226px; border-right: 1px solid #39393a;}
 article div.cpanel figure img {width: 100px; height: 100px;}
 
 #menu_user_ajustes,
@@ -198,13 +198,10 @@ article div.cpanel figure img {width: 100px; height: 100px;}
 .form_acceso p {font-size: 13px; margin: 10px 0 0 0; padding: 0;}
 
 
-article br.limpiar {clear: both;}
-
 .comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; padding: 0 10px;}
 
 /*Sidebar*/
 
-article {float: right; width: 300px;}
 article figure,
 article figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
 article figure figcaption {background-color: var(--main-bg-color); opacity: 0.7;}
@@ -215,14 +212,14 @@ article p a {color: var(--main-txt-color); text-decoration: none;}
 /*Pie*/
 
 footer {color: var(--main-txt-color);}
-footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid #2A2833;}
+footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid var(--main-fg-color);}
 footer div ul li,
 .comunidad div ul li {list-style: none;}
 footer div a,
 .comunidad div a,
 .form_acceso p a {color: var(--main-txt-color); text-decoration: none;}
 footer div a:hover,
-.comunidad div a:hover {color: #fff;}
+.comunidad div a:hover {color: var(--main-txt-h-color);}
 
 
 /* Formularios */
@@ -418,8 +415,8 @@ nav label {display: none;}
 	section {padding-top: 45px;}
 	nav label {font-size: 25px;}
 	nav label {display: inline-block; color: var(--main-txt-color);}
-	nav input[type="checkbox"] ~ .menu {max-height: 0;}
-	nav input[type="checkbox"]:checked ~ .menu {max-height: 100%;}
+	nav input[type="checkbox"] ~ ul {max-height: 0;}
+	nav input[type="checkbox"]:checked ~ ul {max-height: 100%;}
 	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
 	nav i:before {text-indent: 0;}
 
@@ -427,7 +424,6 @@ nav label {display: none;}
 	nav {text-align: center;}
 	nav h1 {display: inline-block; text-align: center;}
 	nav ul.menu-general,
-	nav h1 {float: none;}
 	nav ul.menu-general li:first-child,
 	nav ul.menu-usuario li:first-child {border-left: none;}
 	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
@@ -459,7 +455,7 @@ nav label {display: none;}
 
 @media (max-width: 940px) {
 	article div.destacados,
-	article {float: none; margin: 0 auto; max-width: 640px;}
+	article {margin: 0 auto; max-width: 640px;}
 }
 
 @media (max-width: 640px) {
@@ -469,5 +465,5 @@ nav label {display: none;}
 	div.comunidad div {border-bottom: 1px solid #4c4a56;}
 	div.comunidad div:last-child {border-bottom: none;}
 	.contene-footer {display: block; text-align: center;}
-	div.contene-footer div {border-bottom: 1px solid #2A2833;}
+	div.contene-footer div {border-bottom: 1px solid var(--main-fg-color);}
 }
