@@ -1,13 +1,13 @@
 /*
 Tema: RPGMaker-ES
-Autores: CésarRP, Orochii, Fdelapena, EN.i, [...]
+Autores: CésarRP, Orochii, fdelapena, EN.i, [...]
 Descripción: Plantilla para la web hispana central de RPG Maker.
 Versión: 1.0
 Licencia: GPLv3
 URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-#malla {
+main {
 	max-width: 1320px; /* 320+10+320+10+320+20+320 */
 	display: grid;
 	grid-template-columns: auto auto; /* dos columnas */
@@ -16,6 +16,8 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 80px;
+	background-color: var(--main-bg-color);
+	color: var(--body-txt-color);
 }
 
 #destacados,
@@ -24,6 +26,12 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	display: grid;
 	grid-template-columns: auto auto auto; /* 3 columnas */
 	grid-gap: 10px;
+}
+
+#destacados h2,
+#nuevos h2,
+#recursos h2 {
+	grid-column-start: span 3;
 }
 
 #populares,
@@ -43,15 +51,20 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 	height: 240px;
 }
 
+img.charset {
+	width: 288px;
+	height: 256px;
+}
+
 #malla figure figcaption {
 	text-align: center;
 	text-overflow: ellipsis; /* FIXME */
 	overflow: hidden; /* FIXME */
 	white-space: nowrap; /* FIXME */
-	color: var(--main-txt-color); /* FIXME */
+	color: var(--body-txt-color); /* FIXME */
 }
 
-.enlace {
+.enlace { /* FIXME provisional, eliminar. */
 	width: 320px;
 	height: 52.5px;
 	background: silver;
@@ -81,23 +94,27 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 }
 
 
-/*General*/
+/* General */
 
 @font-face {font-family: FontAwesome; src: url("fonts/fontawesome-webfont.woff2");}
 @font-face {font-family: "Maven Pro"; src: url("fonts/MavenPro-VF.woff2");}
 
 :root {
-	--main-bg-color: #171522;
-	--main-fg-color: #2A2833;
-	--main-txt-color: #d8d7e0;
-	--main-txt-h-color: #ffffff;
+	--body-bg-color: #171522;
+	--body-txt-color: #d8d7e0;
+	--main-bg-color: #2A2833;
+	--body-txt-h-color: #ffffff;
 	--main-sh-color: #000000;
+	--bg-azul: #12415c;
+	--bg-azul-h: #196189;
+	--borde-rojo: #871919;
+	--borde-azul: #196189;
+	--borde-verde: #708919;
 }
 
-body {margin: 0; font-family: "Maven Pro", sans-serif; background-color: var(--main-bg-color);}
-section {background-color: var(--main-fg-color); margin: 0; padding: 10px; color: var(--main-txt-color);}
+body {margin: 0; font-family: "Maven Pro", sans-serif; background-color: var(--body-bg-color);}
 
-/*Menu principal*/
+/* Menú principal */
 
 header {
 	position: absolute;
@@ -112,7 +129,7 @@ nav {
 	grid-template-columns: 40px 1fr auto auto;
 	align-content: center;
 	grid-auto-rows: 50px;
-	background-color: var(--main-bg-color);
+	background-color: var(--body-bg-color);
 	margin: auto;
 	max-width: 1320px;
 }
@@ -125,7 +142,7 @@ nav h1 {
 
 nav h1 a {
 	display: block;
-	color: var(--main-txt-color);
+	color: var(--body-txt-color);
 	text-decoration: none;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -135,19 +152,19 @@ nav ul.menu-general li:first-child,
 nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
 
 nav ul {display: inline-flex; margin: 0; padding: 0 0 0 10px;}
-nav ul li {display: inline; line-height: 50px; color: var(--main-txt-color);}
+nav ul li {display: inline; line-height: 50px; color: var(--body-txt-color);}
 
 nav ul li a {
-	color: var(--main-txt-color);
+	color: var(--body-txt-color);
 	text-decoration: none;
 	font-size: 1.1429em;
 	padding: 0.98em 0.49em;
 }
 
 nav ul li a:hover,
-article p a:hover {color: var(--main-txt-h-color);}
+main p a:hover {color: var(--body-txt-h-color);}
 
-/*Wrappers, textos (encabezados, párrafos, listas...)*/
+/* Wrappers, textos (encabezados, párrafos, listas...) */
 
 footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
 
@@ -165,27 +182,29 @@ h2,
 h3 {font-weight: normal;}
 
 .comunidad ul {padding-left: 0;}
-footer div ul li,
-.comunidad div ul li {text-overflow: ellipsis; overflow: hidden; max-width: 280px; white-space: nowrap;}
+footer ul li,
+.comunidad ul li {text-overflow: ellipsis; overflow: hidden; max-width: 280px; white-space: nowrap;}
 
 /* Contenido otras secciones */
+
 /* Ajustes */
-article div.cpanel:first-child,
+
+.cpanel:first-child,
 .form_acceso {display: inline-table; width: 600px;}
-article div.cpanel:last-child {width: 720px; color: #afafaf;}
-article div.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
-article div.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
-article div.cpanel:last-child p.infoelimincuen {text-align: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
-article div.cpanel:last-child ul:last-child {border-bottom: none;}
-article div.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
-article div.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
-article div.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
-article div.cpanel:last-child ul li span a:hover,
-.form_acceso p a:hover {color: var(--main-txt-h-color); text-decoration: none;}
-article div.cpanel {border: 1px solid #39393a; margin: 20px 0;}
-article div.cpanel figure {margin: 0; padding: 15px;}
-article div.cpanel figure:first-child {width: 100px; height: 226px; border-right: 1px solid #39393a;}
-article div.cpanel figure img {width: 100px; height: 100px;}
+.cpanel:last-child {width: 720px; color: #afafaf;}
+.cpanel:last-child ul {display: table; margin: 0 auto; padding: 10px 5px; text-align: center; border-bottom: 1px solid #39393a;}
+.cpanel:last-child h2 {font-size: 15px;text-align: center; border-bottom: 1px solid #39393a; margin: 0; padding: 10px 0;}
+.cpanel:last-child p.infoelimincuen {text-align: right; font-size: 13px; color: #afafaf; margin: 0; padding: 0;}
+.cpanel:last-child ul:last-child {border-bottom: none;}
+.cpanel:last-child ul li {display: table-cell; padding: 5px 6px; margin: 0; text-align: center; font-size: 14px;}
+.cpanel:last-child ul li span {color: #bdd091; font-size: 16px;}
+.cpanel:last-child ul li span a {color: #bdd091; font-size: 14px;}
+.cpanel:last-child ul li span a:hover,
+.form_acceso p a:hover {color: var(--body-txt-h-color); text-decoration: none;}
+.cpanel {border: 1px solid #39393a; margin: 20px 0;}
+.cpanel figure {margin: 0; padding: 15px;}
+.cpanel figure:first-child {width: 100px; height: 226px; border-right: 1px solid #39393a;}
+.cpanel figure img {width: 100px; height: 100px;}
 
 #menu_user_ajustes,
 #menu_user_salir {display: none;}
@@ -200,26 +219,26 @@ article div.cpanel figure img {width: 100px; height: 100px;}
 
 .comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; padding: 0 10px;}
 
-/*Sidebar*/
+/* Sidebar */
 
 article figure,
 article figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
-article figure figcaption {background-color: var(--main-bg-color); opacity: 0.7;}
+article figure figcaption {background-color: var(--body-bg-color); opacity: 0.7;}
 article figure figcaption span {font-weight: bold;}
 article p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
-article p a {color: var(--main-txt-color); text-decoration: none;}
+article p a {color: var(--body-txt-color); text-decoration: none;}
 
-/*Pie*/
+/* Pie */
 
-footer {color: var(--main-txt-color);}
-footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid var(--main-fg-color);}
-footer div ul li,
-.comunidad div ul li {list-style: none;}
-footer div a,
-.comunidad div a,
-.form_acceso p a {color: var(--main-txt-color); text-decoration: none;}
-footer div a:hover,
-.comunidad div a:hover {color: var(--main-txt-h-color);}
+footer {color: var(--body-txt-color);}
+footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid var(--main-bg-color);}
+footer ul li,
+.comunidad ul li {list-style: none;}
+footer a,
+.comunidad a,
+.form_acceso p a {color: var(--body-txt-color); text-decoration: none;}
+footer a:hover,
+.comunidad a:hover {color: var(--body-txt-h-color);}
 
 
 /* Formularios */
@@ -239,30 +258,30 @@ label {
 input[type="submit"],
 button[type="submit"] {
 	border-radius: 2px;
-	box-shadow: 2px 3px 2px 0px rgba(6, 17, 28, 0.9);
+	box-shadow: 2px 3px 2px 0 rgba(6, 17, 28, 0.9);
 	cursor: pointer;
 	font-size: 15px;
 	padding: 6px 10px 8px 10px;
 }
 
 .bg_azul {
-	background: #12415c linear-gradient(to top, #12415c 0%, #196189 100%);
+	background: var(--bg-azul) linear-gradient(to top, var(--bg-borde-azul) 0%, #196189 100%);
 	color: #91b9d0;
 }
 
 .bg_azul:hover {
-	background: #196189 linear-gradient(to top, #196189 0%, #3b91c1 100%);
-	color: #fff;
+	background: var(--bg-azul-h) linear-gradient(to top, #196189 0%, #3b91c1 100%);
+	color: var(--body-txt-h-color);
 }
 
 .bg_verde {
-	background: #375c12 linear-gradient(to top, #375c12 0%, #708919 100%);
+	background: #375c12 linear-gradient(to top, #375c12 0%, var(--bg-borde-verde) 100%);
 	color: #bdd091;
 }
 
 .bg_verde:hover {
-	background: #708919 linear-gradient(to top, #708919 0%, #9bba2e 100%);
-	color: #fff;
+	background: var(--bg-borde-verde) linear-gradient(to top, var(--bg-borde-verde) 0%, #9bba2e 100%);
+	color: var(--body-txt-h-color);
 }
 
 .bg_rojo {
@@ -272,30 +291,30 @@ button[type="submit"] {
 
 .bg_rojo:hover {
 	background: #871919 linear-gradient(to top, #871919 0%, #b72d2d 100%);
-	color: #fff;
+	color: var(--body-txt-h-color);
 }
 
 .borde_rojo {
-	border: 1px solid #871919;
+	border: 1px solid var(--borde-rojo);
 }
 
 .borde_azul {
-	border: 1px solid #196189;
+	border: 1px solid var(--borde-azul);
 }
 
 .borde_verde {
-	border: 1px solid #708919;
+	border: 1px solid var(--borde-verde);
 }
 
 
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-	background-color: var(--main-bg-color);
+	background-color: var(--body-bg-color);
 	width: 75%;
 	padding: 5px;
 	margin: 11.5px auto;
-	color: var(--main-txt-color);
+	color: var(--body-txt-color);
 	border: 1px solid #39393a;
 	border-radius: 3px;
 	box-sizing: border-box;
@@ -401,23 +420,23 @@ article a {color: #d4b300;}
 	transform: scaleX(-1);
 }
 
-/*Ocultos > 768px*/
+/* Ocultos > 768px */
 
 nav input[type="checkbox"],
 nav label {display: none;}
 
-/*Honeypots */
+/* Honeypots */
 .cofreMisterioso {display: none;}
 
-/*Responsivos*/
+/* Responsivos */
 
 @media (max-width: 768px) {
-	section {padding-top: 45px;}
+	main {padding-top: 45px;}
 	nav label {font-size: 25px;}
-	nav label {display: inline-block; color: var(--main-txt-color);}
+	nav label {display: inline-block; color: var(--body-txt-color);}
 	nav input[type="checkbox"] ~ ul {max-height: 0;}
 	nav input[type="checkbox"]:checked ~ ul {max-height: 100%;}
-	nav input[type="checkbox"]:checked ~ label .burger:before {content: "\f00d";}
+	nav input[type="checkbox"]:checked ~ .burger:before {content: "\f00d";}
 	nav i:before {text-indent: 0;}
 
 	header {position: fixed;}
@@ -425,45 +444,18 @@ nav label {display: none;}
 	nav h1 {display: inline-block; text-align: center;}
 	nav ul.menu-general,
 	nav ul.menu-general li:first-child,
-	nav ul.menu-usuario li:first-child {border-left: none;}
 	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
+	nav ul.menu-usuario li:first-child {border-left: none;}
 	nav ul,
 	nav ul li a {margin: 0 auto; padding: 0; line-height: 2.4; display: block; overflow: hidden;}
 	nav ul li {line-height: normal; display: block; text-indent: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
-
-@media (max-width: 1280px) {
-	article div.destacados {max-width: 820px;}
-}
-
-@media (max-width: 1160px) {
-	article div.destacados {max-width: 760px;}
-}
-
-@media (max-width: 1100px) {
-	article div.destacados {max-width: 700px;}
-}
-
-@media (max-width: 1080px) {
-	article div.destacados {max-width: 680px;}
-}
-
-@media (max-width: 1050px) {
-	article div.destacados {max-width: 600px;}
-}
-
-@media (max-width: 940px) {
-	article div.destacados,
-	article {margin: 0 auto; max-width: 640px;}
-}
-
 @media (max-width: 640px) {
-	article div.destacados {max-width: 480px;}
-	footer div,
-	.comunidad div {display: block; max-width: 100%; margin: 0 auto;}
-	div.comunidad div {border-bottom: 1px solid #4c4a56;}
-	div.comunidad div:last-child {border-bottom: none;}
-	.contene-footer {display: block; text-align: center;}
-	div.contene-footer div {border-bottom: 1px solid var(--main-fg-color);}
+	.destacados {max-width: 480px;}
+	footer,
+	.comunidad {display: block; max-width: 100%; margin: 0 auto;}
+	.comunidad ul {border-bottom: 1px solid #4c4a56;}
+	.comunidad ul:last-child {border-bottom: none;}
+	footer ul {border-bottom: 1px solid var(--main-bg-color);}
 }
