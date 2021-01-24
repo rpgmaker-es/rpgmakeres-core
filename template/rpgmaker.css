@@ -8,21 +8,27 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 main {
-	max-width: 1320px; /* 320+10+320+10+320+20+320 */
 	display: grid;
 	grid-template-columns: auto auto; /* dos columnas */
-	grid-gap: 20px; /* margen entre columnas (sin margen externo) */
+	grid-gap: 20px;
 	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 80px;
+	padding-top: 50px;
 	background-color: var(--main-bg-color);
 	color: var(--body-txt-color);
+}
+
+main article h2 {
+	margin-top: 50px;
+}
+
+article figure {
+	margin-top: 10px;
 }
 
 #destacados,
 #nuevos,
 #recursos {
+	grid-column-start: 1;
 	display: grid;
 	grid-template-columns: auto auto auto; /* 3 columnas */
 	grid-gap: 10px;
@@ -34,19 +40,42 @@ main {
 	grid-column-start: span 3;
 }
 
+#comunidad h2 {
+	grid-column-start: span 3;
+}
+
 #populares,
 #reseñas,
 #tutoriales {
+	grid-column-start: 2;
 	display: grid;
 	grid-template-columns: auto; /* 1 columna */
 	grid-gap: 10px;
 }
 
-#malla figure {
-	margin: 0;
+#comunidad {
+	grid-column-start: span 2;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+	background-color: #3c3a47;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-#malla figure img {
+#comunidad ul {padding-left: 0; max-width: 360px;}
+#comunidad ul li,
+footer ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+
+
+
+main figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+main figure img {
 	width: 320px;
 	height: 240px;
 }
@@ -56,7 +85,7 @@ img.charset {
 	height: 256px;
 }
 
-#malla figure figcaption {
+main figure figcaption {
 	text-align: center;
 	text-overflow: ellipsis; /* FIXME */
 	overflow: hidden; /* FIXME */
@@ -67,7 +96,7 @@ img.charset {
 .enlace { /* FIXME provisional, eliminar. */
 	width: 320px;
 	height: 52.5px;
-	background: silver;
+	background-color: #cccccc;
 }
 
 
@@ -88,7 +117,7 @@ img.charset {
 }
 
 @media (max-width: 659px) {
-	#malla {
+	main {
 		grid-template-columns: auto;
 	}
 }
@@ -100,11 +129,12 @@ img.charset {
 @font-face {font-family: "Maven Pro"; src: url("fonts/MavenPro-VF.woff2");}
 
 :root {
+	--screen-max-width: 1320px;
 	--body-bg-color: #171522;
 	--body-txt-color: #d8d7e0;
-	--main-bg-color: #2A2833;
 	--body-txt-h-color: #ffffff;
-	--main-sh-color: #000000;
+	--main-bg-color: #2A2833;
+	--main-sh-color: #1f1e26;
 	--bg-azul: #12415c;
 	--bg-azul-h: #196189;
 	--borde-rojo: #871919;
@@ -114,59 +144,61 @@ img.charset {
 
 body {margin: 0; font-family: "Maven Pro", sans-serif; background-color: var(--body-bg-color);}
 
+
 /* Menú principal */
 
 header {
 	position: absolute;
 	width: 100%;
 	z-index: 2;
-	box-shadow: 0 0 3px 0 var(--main-sh-color);
-}
-
-nav {
-	display: grid;
-	justify-content: space-between;
-	grid-template-columns: 40px 1fr auto auto;
-	align-content: center;
-	grid-auto-rows: 50px;
 	background-color: var(--body-bg-color);
-	margin: auto;
-	max-width: 1320px;
+	box-shadow: 0 0 16px 0 var(--main-sh-color);
 }
 
-nav h1 {
-	line-height: 2em;
+header nav {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	grid-auto-rows: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--screen-max-width);
+}
+
+header nav h1 {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-nav h1 a {
-	display: block;
-	color: var(--body-txt-color);
-	text-decoration: none;
-	background-repeat: no-repeat;
-	background-position: center;
+header nav h1 img {
+	vertical-align: middle;
 }
 
-nav ul.menu-general li:first-child,
-nav ul.menu-usuario li:first-child {border-left: 1px solid #3c3b47;}
+header nav h1 a {
+	display: block;
+	color: var(--body-txt-color);
+	padding-right: 16px;
+	border-right: 1px solid #3c3b47;
+	text-decoration: none;
+}
 
-nav ul {display: inline-flex; margin: 0; padding: 0 0 0 10px;}
-nav ul li {display: inline; line-height: 50px; color: var(--body-txt-color);}
+header nav ul {margin: 0; padding: 0 0 0 10px;}
+header nav ul li {display: inline; line-height: 50px; color: var(--body-txt-color);}
 
-nav ul li a {
+header nav ul li a {
 	color: var(--body-txt-color);
 	text-decoration: none;
 	font-size: 1.1429em;
 	padding: 0.98em 0.49em;
 }
 
-nav ul li a:hover,
+header nav ul li a:hover,
 main p a:hover {color: var(--body-txt-h-color);}
+
 
 /* Wrappers, textos (encabezados, párrafos, listas...) */
 
-footer {margin: 0 auto; max-width: 1320px; padding: 0; overflow: hidden;}
+footer {margin: 0 auto; max-width: var(--screen-max-width); padding: 0; overflow: hidden;}
 
 p {padding: 0.3em 0; line-height: 1.5em;}
 
@@ -181,9 +213,6 @@ h1,
 h2,
 h3 {font-weight: normal;}
 
-.comunidad ul {padding-left: 0;}
-footer ul li,
-.comunidad ul li {text-overflow: ellipsis; overflow: hidden; max-width: 280px; white-space: nowrap;}
 
 /* Contenido otras secciones */
 
@@ -217,28 +246,35 @@ footer ul li,
 .form_acceso p {font-size: 13px; margin: 10px 0 0 0; padding: 0;}
 
 
-.comunidad {background-color: #3c3a47; display: table; margin: 20px auto; border-radius: 10px; padding: 0 10px;}
-
 /* Sidebar */
 
-article figure,
-article figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background: gray;}
-article figure figcaption {background-color: var(--body-bg-color); opacity: 0.7;}
-article figure figcaption span {font-weight: bold;}
-article p {border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
-article p a {color: var(--body-txt-color); text-decoration: none;}
+#populares figure,
+#populares figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background-color: #808080;}
+#populares figure figcaption {background-color: #3c3a47;}
+#populares figure figcaption span {font-weight: bold;}
+#reseñas ul,
+#tutoriales ul {padding-left: 0; margin-top: 0;}
+#reseñas li,
+#tutoriales li {list-style: none;border-bottom: 1px dotted #4c4a56; padding: 0 0 5px 0; margin: 8px 0;}
+#reseñas li:first-child,
+#turoriales li:first-child {margin-top: 0;}
+#reseñas a,
+#tutoriales a {text-decoration: none;}
+#reseñas :hover,
+#tutoriales :hover {color: var(--body-txt-color);}
+
 
 /* Pie */
 
 footer {color: var(--body-txt-color);}
 footer p {text-align: center; font-size: 14px; padding: 10px; margin: 0; border-top: 1px solid var(--main-bg-color);}
 footer ul li,
-.comunidad ul li {list-style: none;}
+#comunidad ul li {list-style: none;}
 footer a,
-.comunidad a,
+#comunidad a,
 .form_acceso p a {color: var(--body-txt-color); text-decoration: none;}
 footer a:hover,
-.comunidad a:hover {color: var(--body-txt-h-color);}
+#comunidad a:hover {color: var(--body-txt-h-color);}
 
 
 /* Formularios */
@@ -258,7 +294,7 @@ label {
 input[type="submit"],
 button[type="submit"] {
 	border-radius: 2px;
-	box-shadow: 2px 3px 2px 0 rgba(6, 17, 28, 0.9);
+	box-shadow: 2px 3px 2px 0 #06111C;
 	cursor: pointer;
 	font-size: 15px;
 	padding: 6px 10px 8px 10px;
@@ -416,14 +452,13 @@ article a {color: #d4b300;}
 .nuser:before {content: "\f234";}
 .copy-left {
 	display: inline-block;
-	margin-right: 5px;
 	transform: scaleX(-1);
 }
 
 /* Ocultos > 768px */
 
-nav input[type="checkbox"],
-nav label {display: none;}
+header nav input[type="checkbox"],
+header nav label {display: none;}
 
 /* Honeypots */
 .cofreMisterioso {display: none;}
@@ -432,30 +467,28 @@ nav label {display: none;}
 
 @media (max-width: 768px) {
 	main {padding-top: 45px;}
-	nav label {font-size: 25px;}
-	nav label {display: inline-block; color: var(--body-txt-color);}
-	nav input[type="checkbox"] ~ ul {max-height: 0;}
-	nav input[type="checkbox"]:checked ~ ul {max-height: 100%;}
-	nav input[type="checkbox"]:checked ~ .burger:before {content: "\f00d";}
-	nav i:before {text-indent: 0;}
+	header nav label {font-size: 25px;}
+	header nav label {display: inline-block; color: var(--body-txt-color);}
+	header nav input[type="checkbox"] ~ ul {max-height: 0;}
+	header nav input[type="checkbox"]:checked ~ ul {max-height: 100%;}
+	header nav input[type="checkbox"]:checked ~ .burger:before {content: "\f00d";}
+	header nav i:before {text-indent: 0;}
 
 	header {position: fixed;}
-	nav {text-align: center;}
-	nav h1 {display: inline-block; text-align: center;}
-	nav ul.menu-general,
-	nav ul.menu-general li:first-child,
-	nav ul.menu-general li:first-child {border-top: 1px solid #3c3b47;}
-	nav ul.menu-usuario li:first-child {border-left: none;}
-	nav ul,
-	nav ul li a {margin: 0 auto; padding: 0; line-height: 2.4; display: block; overflow: hidden;}
-	nav ul li {line-height: normal; display: block; text-indent: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
+	header nav {text-align: center;}
+	header nav h1 {display: inline-block; text-align: center;}
+	header nav h1 a {border-right: none;}
+	header nav ul li:first-child {border-top: 1px solid #3c3b47;}
+	header nav ul,
+	header nav ul li a {margin: 0 auto; padding: 0; line-height: 2.4; display: block; overflow: hidden;}
+	header nav ul li {line-height: normal; display: block; text-indent: 10px; text-align: left; border-bottom: 1px solid #3c3b47;}
 }
 
 @media (max-width: 640px) {
 	.destacados {max-width: 480px;}
 	footer,
-	.comunidad {display: block; max-width: 100%; margin: 0 auto;}
-	.comunidad ul {border-bottom: 1px solid #4c4a56;}
-	.comunidad ul:last-child {border-bottom: none;}
+	#comunidad {display: block; max-width: 100%; margin: 0 auto;}
+	#comunidad ul {border-bottom: 1px solid #4c4a56;}
+	#comunidad ul:last-child {border-bottom: none;}
 	footer ul {border-bottom: 1px solid var(--main-bg-color);}
 }
