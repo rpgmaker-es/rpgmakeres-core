@@ -13,8 +13,8 @@
 class MailService {
 
     /**
-     * Instance of Swift_Mailer, for multiple using.
-     * @var Swift_Mailer
+     * Instance of MailerInterface, for multiple using.
+     * @var \Symfony\Component\Mailer\Mailer
      */
     private static $mailer = NULL;
 
@@ -26,13 +26,13 @@ class MailService {
         global $_RPGMAKERES;
 
         if (!MailService::$mailer) {
-            $transport = (new Swift_SmtpTransport($_RPGMAKERES["config"]["smtpAddress"], $_RPGMAKERES["config"]["smtpPort"]));
             if ($_RPGMAKERES["config"]["smtpUseLoginInfo"]) {
-                $transport->setUsername($_RPGMAKERES["config"]["smtpUser"])->setPassword($_RPGMAKERES["config"]["smtpPassword"]);
+                $transport = \Symfony\Component\Mailer\Transport::fromDsn('smtp://' . $_RPGMAKERES["config"]["smtpUser"] . ':' . $_RPGMAKERES["config"]["smtpPassword"] . '@' . $_RPGMAKERES["config"]["smtpAddress"] . ':' . $_RPGMAKERES["config"]["smtpPort"]);
+            } else {
+                $transport = \Symfony\Component\Mailer\Transport::fromDsn('native://default');
             }
 
-            MailService::$mailer = new Swift_Mailer($transport);
-            MailService::$mailer->registerPlugin(new Swift_Plugins_AntiFloodPlugin($_RPGMAKERES["config"]["mailTreshold"], $_RPGMAKERES["config"]["mailWaitInternal"]));
+            MailService::$mailer = new \Symfony\Component\Mailer\Mailer($transport);
         }
     }
 
@@ -72,12 +72,12 @@ class MailService {
 
         //preparing mail
         try {
-            $message = new Swift_Message($subject);
-            $message->setFrom([$_RPGMAKERES["config"]["mailFromAddress"] => $_RPGMAKERES["config"]["mailFromName"]])
-                ->setReturnPath($_RPGMAKERES["config"]["mailFromAddress"])
-                ->setTo([strtolower(trim($toMail)) => trim($toName)])
-                ->setBody($bodyHTML, 'text/html')
-                ->addPart($bodyText, 'text/plain');
+             $message = (new \Symfony\Component\Mime\Email())
+                 ->subject($subject)
+                 ->from(new \Symfony\Component\Mime\Address($_RPGMAKERES["config"]["mailFromAddress"], $_RPGMAKERES["config"]["mailFromName"]))
+                 ->to(new \Symfony\Component\Mime\Address(strtolower(trim($toMail)), trim($toName)))
+                 ->html($bodyHTML)
+                 ->text($bodyText);
         } catch(Exception $e) {
             RPGMakerES::log("Error while building mail to " . $toMail . ": " . $e->getMessage());
             return false;

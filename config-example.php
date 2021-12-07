@@ -69,16 +69,6 @@ $_RPGMAKERES["config"] = array(
     "mailFromName" => "RPG Maker en español",
 
     /**
-     * Mail treshold means that each X mails sent, it will dissconect and connect again.
-     */
-    "mailTreshold" => 80,
-
-    /**
-     * Wait interval means that each X mail sent defined in mailTreshold, it will sleep Y seconds before continuing.
-     */
-    "mailWaitInternal" => 2,
-
-    /**
      * Core version
      */
     "version" => "20200628",

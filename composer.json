@@ -6,7 +6,7 @@
   "require": {
     "ext-mysqli": "*",
     "ext-pdo": "*",
-    "swiftmailer/swiftmailer": "^6.0",
-    "soundasleep/html2text": "~1.1"
+    "soundasleep/html2text": "~1.1",
+    "symfony/mailer": "^6.0"
   }
 }
