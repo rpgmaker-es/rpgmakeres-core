@@ -13,7 +13,7 @@
 class MailService {
 
     /**
-     * Instance of MailerInterface, for multiple using.
+     * Instance of Mailer, for multiple using.
      * @var \Symfony\Component\Mailer\Mailer
      */
     private static $mailer = NULL;
@@ -72,22 +72,21 @@ class MailService {
 
         //preparing mail
         try {
-             $message = (new \Symfony\Component\Mime\Email())
-                 ->subject($subject)
-                 ->from(new \Symfony\Component\Mime\Address($_RPGMAKERES["config"]["mailFromAddress"], $_RPGMAKERES["config"]["mailFromName"]))
-                 ->to(new \Symfony\Component\Mime\Address(strtolower(trim($toMail)), trim($toName)))
-                 ->html($bodyHTML)
-                 ->text($bodyText);
-        } catch(Exception $e) {
+            $message = (new \Symfony\Component\Mime\Email())
+                ->subject($subject)
+                ->from(new \Symfony\Component\Mime\Address($_RPGMAKERES["config"]["mailFromAddress"], $_RPGMAKERES["config"]["mailFromName"]))
+                ->to(new \Symfony\Component\Mime\Address(strtolower(trim($toMail)), trim($toName)))
+                ->html($bodyHTML)
+                ->text($bodyText);
+        } catch (Exception $e) {
             RPGMakerES::log("Error while building mail to " . $toMail . ": " . $e->getMessage());
             return false;
         }
 
         //sending mail
-        $failedRecipients = []; //this is just a reference array for writing failed recipients
         try {
             MailService::$mailer->send($message);
-        } catch (Exception $e) {
+        } catch (\Symfony\Component\Mailer\Exception\TransportExceptionInterface $e) {
             RPGMakerES::log("Error while sending mail to " . $toMail . ": " . $e->getMessage());
             return false;
         }
