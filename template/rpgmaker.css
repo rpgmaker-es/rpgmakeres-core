@@ -78,6 +78,7 @@ main figure {
 
 main figure img {
 	max-width: 320px;
+	line-height: 0;
 }
 
 img.charset {
@@ -250,7 +251,7 @@ h3 {font-weight: normal;}
 
 #populares figure,
 #populares figure img {min-height: 100px; background-color: #808080;}
-#populares figure figcaption {background-color: #3c3a47;}
+#populares figure figcaption {background-color: #3c3a47; line-height: initial;}
 #populares figure figcaption span {font-weight: bold;}
 #reseñas ul,
 #tutoriales ul {padding-left: 0; margin-top: 0;}
