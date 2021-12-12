@@ -33,9 +33,10 @@ nav h1 {
 	max-width: 960px;
 	text-indent: 36px;
 	line-height: 1.6em;
-	background-image: url("pics/rpgmaker.png");
+	background-image: url("/pics/icon.svg");
 	background-repeat: no-repeat;
 	background-position: left;
+	background-size: 32px;
 }
 
 nav h1 a {

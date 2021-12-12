@@ -41,6 +41,7 @@ article figure {
 }
 
 #comunidad h2 {
+	margin-top: 10px;
 	grid-column-start: span 3;
 }
 
@@ -71,18 +72,17 @@ footer ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 
 
 main figure {
-	margin-left: 0;
-	margin-right: 0;
+	margin: auto;
+	text-align: center;
 }
 
 main figure img {
-	width: 320px;
-	height: 240px;
+	max-width: 320px;
 }
 
 img.charset {
-	width: 288px;
-	height: 256px;
+	max-width: 288px;
+	max-height: 256px;
 }
 
 main figure figcaption {
@@ -249,7 +249,7 @@ h3 {font-weight: normal;}
 /* Sidebar */
 
 #populares figure,
-#populares figure img {height: 100px; margin: 11.6px 0 0 0; padding: 0; background-color: #808080;}
+#populares figure img {min-height: 100px; background-color: #808080;}
 #populares figure figcaption {background-color: #3c3a47;}
 #populares figure figcaption span {font-weight: bold;}
 #reseñas ul,

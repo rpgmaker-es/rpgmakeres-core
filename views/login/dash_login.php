@@ -20,8 +20,7 @@
     <link rel="preload" href="/rpgmaker.css">
     <link rel="preload" href="/fonts/fontawesome-webfont.woff2">
     <link rel="preload" href="/fonts/MavenPro-VF.woff2">
-    <link rel="preload" href="/pics/rpgmaker.png">
-    <link rel="preload" href="/favicon.ico">
+    <link rel="preload" href="/pics/icon.svg">
     <link rel="preload" href="/script/dash_login.js">
     <title>RPG Maker en español</title>
     <script src="/script/dash_login.js"></script>

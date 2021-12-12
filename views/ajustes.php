@@ -11,7 +11,7 @@
 ?>
 <div class="cpanel">
     <figure>
-        <img src="/pics/av_base.jpg" alt="Avatar" />
+        <img src="/pics/av_base.png" alt="Avatar" />
         <figcaption>Hasta13Caracteres</figcaption>
     </figure>
     <form>

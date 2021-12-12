@@ -13,60 +13,60 @@
     <h2><i class="bandera"></i>Juegos Destacados</h2>
 
     <figure>
-        <img src="pics/ej2.jpg">
+        <img src="/pics/ej2.png">
         <figcaption>Super Crystal Hunter</figcaption>
     </figure><figure>
-        <img src="pics/ej4.png">
+        <img src="/pics/ej4.png">
         <figcaption>The Battle Mage</figcaption>
     </figure><figure>
-        <img src="pics/ej.jpg">
+        <img src="/pics/ej1.png">
         <figcaption>Desolate City: The Bloody Dawn</figcaption>
     </figure><figure>
-        <img src="pics/ej3.jpg">
+        <img src="/pics/ej3.png">
         <figcaption>Ian, El Benjamín Arrugado</figcaption>
     </figure>
 
     <h2><i class="mas"></i>Nuevos Juegos</h2>
 
     <figure>
-        <img src="pics/ej.jpg">
+        <img src="/pics/ej1.png">
         <figcaption>Desolate City: The Bloody Dawn</figcaption>
     </figure><figure>
-        <img src="pics/ej2.jpg">
+        <img src="/pics/ej2.png">
         <figcaption>Super Crystal Hunter</figcaption>
     </figure><figure>
-        <img src="pics/ej3.jpg">
+        <img src="/pics/ej3.png">
         <figcaption>Ian, El Benjamín Arrugado</figcaption>
     </figure><figure>
-        <img src="pics/ej4.png">
+        <img src="/pics/ej4.png">
         <figcaption>The Battle Mage</figcaption>
     </figure><figure>
-        <img src="pics/ej4.png">
+        <img src="/pics/ej4.png">
         <figcaption>The Battle Mage</figcaption>
     </figure><figure>
-        <img src="pics/ej3.jpg">
+        <img src="/pics/ej3.png">
         <figcaption>Ian, El Benjamín Arrugado</figcaption>
     </figure><figure>
-        <img src="pics/ej2.jpg">
+        <img src="/pics/ej2.png">
         <figcaption>Super Crystal Hunter</figcaption>
     </figure><figure>
-        <img src="pics/ej.jpg">
+        <img src="/pics/ej1.png">
         <figcaption>Desolate City: The Bloody Dawn</figcaption>
     </figure>
 
     <h2><i class="rdescargados"></i>Top Recursos Descargados</h2>
 
     <figure>
-        <img src="pics/Plantilla.png">
+        <img src="/pics/Plantilla.png">
         <figcaption>Nombre gráfico</figcaption>
     </figure><figure>
-        <img src="pics/Plantilla.png">
+        <img src="/pics/Plantilla.png">
         <figcaption>Nombre audio</figcaption>
     </figure><figure>
-        <img src="pics/Plantilla.png">
+        <img src="/pics/Plantilla.png">
         <figcaption>Nombre Pack</figcaption>
     </figure><figure>
-        <img src="pics/Plantilla.png">
+        <img src="/pics/Plantilla.png">
         <figcaption>Nombre Tool</figcaption>
     </figure>
 </div>
