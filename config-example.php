@@ -54,15 +54,6 @@ $_RPGMAKERES["config"] = array(
     "showTracesIn500Error" => false,
 
     /**
-     * Information to the SMTP server for mail sending
-     */
-    "smtpAddress" => "[::1]",
-    "smtpPort" => 25,
-    "smtpUseLoginInfo" => false,
-    "smtpUser" => "user",
-    "smtpPassword" => "password",
-
-    /**
      * Default values for "From" in mails
      */
     "mailFromAddress" => "noresponder@rpgmaker.es",
