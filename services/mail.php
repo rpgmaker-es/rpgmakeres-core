@@ -43,7 +43,7 @@ class MailService {
 
         //sending mail
         mb_language("en");
-        $to = mb_encode_mimeheader(trim($toName) . '" <' . strtolower(trim($toMail)) . '>');
+        $to = mb_encode_mimeheader('"' . trim($toName) . '" <' . strtolower(trim($toMail)) . '>');
         $subject = mb_encode_mimeheader($subject);
         $headers = mb_encode_mimeheader("From: \"{$_RPGMAKERES["config"]["mailFromName"]}\" <{$_RPGMAKERES["config"]["mailFromAddress"]}>");
         if (!mb_send_mail($to, $subject, $body, $headers)) {
