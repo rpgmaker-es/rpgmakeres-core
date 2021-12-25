@@ -42,7 +42,10 @@ class MailService {
         global $_RPGMAKERES;
 
         //sending mail
-        if (!mb_send_mail('"' . trim($toName) . '" <' . strtolower(trim($toMail)) . '>', $subject, $body, "From: \"{$_RPGMAKERES["config"]["mailFromName"]}\" <{$_RPGMAKERES["config"]["mailFromAddress"]}>")) {
+        $to = mb_encode_mimeheader(trim($toName) . '" <' . strtolower(trim($toMail)) . '>');
+        $subject = mb_encode_mimeheader($subject);
+        $headers = mb_encode_mimeheader("From: \"{$_RPGMAKERES["config"]["mailFromName"]}\" <{$_RPGMAKERES["config"]["mailFromAddress"]}>");
+        if (!mb_send_mail($to, $subject, $body, $headers)) {
             RPGMakerES::log("Error while sending mail to $toMail: " . print_r(error_get_last(), true));
             return false;
         }
