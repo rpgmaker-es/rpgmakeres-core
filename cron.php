@@ -98,13 +98,13 @@ if (array_key_exists("m", $options) || array_key_exists("mailtest", $options)) {
     echo "Sending test mail to ". $value . " ... " . PHP_EOL;
 
     $out = MailService::sendByView(
-        "RPGMakerES Core mail sending",
-        'Destination user',
+        "Prueba de envío de RPG Maker en Español",
+        'Usuario de RPG Maker en Español',
         $value,
         "testMail.php",
         [
             "mail" => $value,
-            "randomic" => rand(0,100)
+            "randomic" => rand(0, 100)
         ]
     );
 
