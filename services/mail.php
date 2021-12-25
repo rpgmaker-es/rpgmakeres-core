@@ -42,6 +42,7 @@ class MailService {
         global $_RPGMAKERES;
 
         //sending mail
+        mb_language("en");
         $to = mb_encode_mimeheader(trim($toName) . '" <' . strtolower(trim($toMail)) . '>');
         $subject = mb_encode_mimeheader($subject);
         $headers = mb_encode_mimeheader("From: \"{$_RPGMAKERES["config"]["mailFromName"]}\" <{$_RPGMAKERES["config"]["mailFromAddress"]}>");
