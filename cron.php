@@ -99,7 +99,7 @@ if (array_key_exists("m", $options) || array_key_exists("mailtest", $options)) {
 
     $out = MailService::sendByView(
         "RPGMakerES Core mail sending",
-        '"Destination user"',
+        'Destination user',
         $value,
         "testMail.php",
         [
