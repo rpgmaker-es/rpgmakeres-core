@@ -7,6 +7,9 @@ Licencia: GPLv3
 URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
+@font-face {font-family: "Maven Pro"; src: url("/fonts/MavenPro-VF.woff2");}
+@font-face {font-family: FontAwesome; src: url("/fonts/fontawesome-webfont.woff2");}
+
 main {
 	display: grid;
 	grid-template-columns: auto auto; /* dos columnas */
@@ -65,9 +68,17 @@ article figure {
 	padding-right: 10px;
 }
 
-#comunidad ul {padding-left: 0; max-width: 360px;}
+#comunidad ul {
+	padding-left: 0;
+	max-width: 360px;
+}
+
 #comunidad ul li,
-footer ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+footer ul li {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
 
 
@@ -78,7 +89,6 @@ main figure {
 
 main figure img {
 	max-width: 320px;
-	line-height: 0;
 }
 
 img.charset {
@@ -93,13 +103,6 @@ main figure figcaption {
 	white-space: nowrap; /* FIXME */
 	color: var(--body-txt-color); /* FIXME */
 }
-
-.enlace { /* FIXME provisional, eliminar. */
-	width: 320px;
-	height: 52.5px;
-	background-color: #cccccc;
-}
-
 
 @media (max-width: 1319px) {
 	#destacados,
@@ -125,9 +128,6 @@ main figure figcaption {
 
 
 /* General */
-
-@font-face {font-family: FontAwesome; src: url("/fonts/fontawesome-webfont.woff2");}
-@font-face {font-family: "Maven Pro"; src: url("/fonts/MavenPro-VF.woff2");}
 
 :root {
 	--screen-max-width: 1320px;
@@ -249,9 +249,10 @@ h3 {font-weight: normal;}
 
 /* Sidebar */
 
-#populares figure,
-#populares figure img {min-height: 100px; background-color: #808080;}
-#populares figure figcaption {background-color: #3c3a47; line-height: initial;}
+article#populares a { text-decoration: none; }
+#populares figure {background-color: #808080; line-height: 0;}
+#populares figure img {height: 100px; object-fit: cover; object-position: center;}
+#populares figure figcaption {padding: 8px; text-align: left; background-color: #3c3a47; line-height: initial;}
 #populares figure figcaption span {font-weight: bold;}
 #reseñas ul,
 #tutoriales ul {padding-left: 0; margin-top: 0;}
@@ -284,13 +285,6 @@ form {padding: 15px; overflow: hidden;}
 
 fieldset {border: 1px solid #39393a; padding: 20px;}
 legend {font-size: 17px;}
-
-label {
-	font-size: 15px;
-	color: #afafaf;
-	content: '\A';
-	white-space: pre;
-}
 
 input[type="submit"],
 button[type="submit"] {
