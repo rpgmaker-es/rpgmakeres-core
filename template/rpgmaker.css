@@ -8,12 +8,6 @@ URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 @font-face {
-	font-family: "Maven Pro";
-	src: url("/fonts/MavenPro-VF.woff2");
-	font-display: optional;
-}
-
-@font-face {
 	font-family: FontAwesome;
 	src: url("/fonts/fontawesome-webfont.woff2");
 	font-display: optional;
@@ -124,43 +118,51 @@ main figure figcaption {
 body {
 	background-color: var(--body-bg-color);
 	display: grid;
-	font-family: "Maven Pro", sans-serif;
+	font-family: "Open Sans", Verdana, sans-serif;
+	grid-template-columns: auto 1fr;
 	margin: 0;
 }
 
 /* Menú principal */
 
-header {
+body > h1 {
 	order: 1;
 }
 
-main {
+header {
 	order: 2;
 }
 
-footer {
+main {
+	grid-column-start: span 2;
 	order: 3;
+}
+
+footer {
+	grid-column-start: span 2;
+	order: 4;
 }
 
 header nav {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: 1fr auto;
 }
 
-header nav h1 {
+body > h1 {
+	border-right: 1px solid var(--seccion-bg);
+	font-size: 24px;
 	margin-top: 0;
 	margin-bottom: 0;
+	padding-right: 16px;
 }
 
-header nav h1 img {
+body > h1 img {
 	vertical-align: text-top;
 }
 
-header nav h1 a {
+body > h1 a {
 	color: var(--body-txt-color);
 	display: inline-block;
-	padding-right: 16px;
-	border-right: 1px solid var(--seccion-bg);
 	line-height: 50px;
 	text-decoration: none;
 }
@@ -196,11 +198,6 @@ header nav .separado {
 
 /* Wrappers, textos (encabezados, párrafos, listas...) */
 
-footer {
-	max-width: var(--screen-max-width);
-	overflow: hidden;
-}
-
 p {
 	line-height: 1.5em;
 	padding: 0.3em 0;
@@ -208,7 +205,7 @@ p {
 
 h2 {
 	border-bottom: 1px solid #636170;
-	color: #d8d7e0;
+	color: var(--body-txt-color);
 	margin: 20px 0 5px 0;
 	padding: 0 0 5px 0;
 }
@@ -236,7 +233,7 @@ h3 {
 }
 
 .cpanel:last-child ul {
-	border-bottom: 1px solid #39393a;
+	border-bottom: 1px solid var(--seccion-bg);
 	display: table;
 	margin: 0 auto;
 	padding: 10px 5px;
@@ -244,7 +241,7 @@ h3 {
 }
 
 .cpanel:last-child h2 {
-	border-bottom: 1px solid #39393a;
+	border-bottom: 1px solid var(--seccion-bg);
 	font-size: 15px;
 	margin: 0;
 	padding: 10px 0;
@@ -288,7 +285,7 @@ h3 {
 }
 
 .cpanel {
-	border: 1px solid #39393a;
+	border: 1px solid var(--seccion-bg);
 	margin: 20px 0;
 }
 
@@ -298,7 +295,7 @@ h3 {
 }
 
 .cpanel figure:first-child {
-	border-right: 1px solid #39393a;
+	border-right: 1px solid var(--seccion-bg);
 	height: 226px;
 	width: 100px;
 }
@@ -396,7 +393,12 @@ article#populares a {
 
 footer {
 	color: var(--body-txt-color);
+	margin: 0 auto;
+	max-width: var(--screen-max-width);
+	overflow: hidden;
+	width: 100%;
 }
+
 
 footer nav {
 	display: grid;
@@ -426,6 +428,7 @@ footer a,
 .form_acceso p a {
 	color: var(--body-txt-color);
 	text-decoration: none;
+	line-height: 2;
 }
 
 footer a:hover,
@@ -442,7 +445,7 @@ form {
 }
 
 fieldset {
-	border: 1px solid #39393a;
+	border: 1px solid var(--seccion-bg);
 	padding: 20px;
 }
 
@@ -505,7 +508,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"] {
 	background-color: var(--body-bg-color);
-	border: 1px solid #39393a;
+	border: 1px solid var(--seccion-bg);
 	box-sizing: border-box;
 	border-radius: 3px;
 	color: var(--body-txt-color);
@@ -551,7 +554,7 @@ input[type="checkbox"]:checked + label span {
 }
 
 input[type="text"]:disabled {
-	background-color: #39393a;
+	background-color: var(--seccion-bg);
 }
 
 input[type="text"]:required:invalid,
@@ -579,18 +582,6 @@ article a {
 	text-decoration: none;
 }
 
-.acceso:before {
-	content: "\f090";
-}
-
-.ayuda:before {
-	content: "\f059";
-}
-
-.ajustes:before {
-	content: "\f013";
-}
-
 .salir:before {
 	content: "\f08b";
 }
@@ -602,10 +593,6 @@ article a {
 
 .recursos:before {
 	content: "\f07c";
-}
-
-.mas:before {
-	content: "\f0fe";
 }
 
 .cargavatar:before {
@@ -660,8 +647,12 @@ a[href="#menu"] {
 
 /* Responsivos */
 
-
 @media (max-width: 1319px) {
+
+	:root {
+		--screen-max-width: 989px;
+	}
+
 	#destacados,
 	#nuevos,
 	#recursos,
@@ -679,6 +670,11 @@ a[href="#menu"] {
 }
 
 @media (max-width: 989px) {
+
+	:root {
+		--screen-max-width: 690px;
+	}
+
 	#destacados,
 	#nuevos,
 	#recursos,
@@ -695,26 +691,34 @@ a[href="#menu"] {
 	}
 }
 
-@media (max-width: 659px) {
+
+@media (max-width: 679px) {
+
+	:root {
+		--screen-max-width: 320px;
+	}
+
+	body > h1 {
+		border-right: medium none currentcolor;
+		font-size: 22px;
+		padding-right: 0;
+	}
+
 	main {
 		grid-template-columns: auto;
+		padding-top: 45px;
 	}
 }
 
-
-@media (max-width: 767px) {
-
-	main {
-		padding-top: 45px;
-	}
-
+@media (max-width: 740px) { /* ancho de la barra del menú */
 	a[href="#menu"] {
 		color: var(--body-txt-color);
 		display: inline;
+		font-size: 32px;
 		line-height: 50px;
 		text-align: right;
 		text-decoration: none;
-		padding-right: 1ex;
+		padding-right: 10px;
 	}
 
 	#menu {
@@ -731,7 +735,6 @@ a[href="#menu"] {
 	#menu a[href="#menu-cerrado"] {
 		background-color: var(--body-bg-color);
 		color: var(--body-txt-color);
-		display: none;
 		font-size: 24px;
 		line-height: 50px;
 		padding-right: 1ex;
@@ -739,7 +742,6 @@ a[href="#menu"] {
 		right: 0;
 		text-align: right;
 		text-decoration: none;
-		width: 55px;
 	}
 
 	#menu:target a[href="#menu-cerrado"]:before {
@@ -747,7 +749,7 @@ a[href="#menu"] {
 	}
 
 	#menu:target a[href="#menu-cerrado"] {
-		display: block;
+		display: inline;
 	}
 
 	#menu li {
@@ -766,27 +768,13 @@ a[href="#menu"] {
 
 }
 
-@media (max-width: 640px) {
-	.destacados {
-		max-width: 480px;
+@media (max-width: 319px) { /* para pantallas de 240px de ancho */
+	body > h1 {
+		font-size: 15px;
 	}
-
-	footer,
-	#comunidad {
-		display: block;
-		margin: 0 auto;
+	img,
+	img.charset {
 		max-width: 100%;
-	}
-
-	#comunidad ul {
-		border-bottom: 1px solid #4c4a56;
-	}
-
-	#comunidad ul:last-child {
-		border-bottom: none;
-	}
-
-	footer ul {
-		border-bottom: 1px solid var(--main-bg-color);
+		height: auto;
 	}
 }
