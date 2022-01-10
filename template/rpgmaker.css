@@ -125,7 +125,7 @@ main figure figcaption {
 body {
 	background-color: var(--body-bg-color);
 	display: grid;
-	font-family: "Open Sans", Verdana, sans-serif;
+	font-family: "Segoe UI", "Open Sans", Verdana, sans-serif;
 	grid-template-columns: auto 1fr;
 	margin: 0;
 }
