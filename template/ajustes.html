@@ -1,106 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 	<head>
 		<link rel="preload" href="/template/rpgmaker.css" as="style">
-		<link rel="preload" href="/fonts/fontawesome-webfont.woff2" as="font" crossorigin="anonymous">
-		<link rel="preload" href="/fonts/MavenPro-VF.woff2" as="font" crossorigin="anonymous">
 		<link rel="preload" href="/pics/icon.svg" as="image">
 		<link rel="stylesheet" href="/template/rpgmaker.css">
 		<link rel="icon" type="image/svg+xml" href="/pics/icon.svg" sizes="any">
 		<link rel="mask-icon" href="/pics/mask-icon.svg" color="#d4b300">
 		<meta charset="utf-8">
-		<meta name="description" content="Página dedicada a RPG Maker, EasyRPG y MKXP con descargas de juegos y material para crear videojuegos.">
+		<meta name="description" content="Formulario para realizar ajustes en el perfil de usuario de rpgmaker.es.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#171522">
-		<title>RPG Maker en español</title>
+		<title>Ajustes del usuario en rpgmaker.es</title>
 	</head>
 	<body>
-		<nav>
-			<div class="contenedor">
-				<h1><a href=""><img src="/pics/icon.svg" alt="" width="32" height="32"> RPG Maker en español</a></h1>
-				<input type="checkbox" id="burger" /><label for="burger"><i class="burger"></i></label>
-				<ul>
-					<li><a href=""><i class="recursos"></i> Recursos</a></li>
-					<li><a href=""><i class="juegos"></i> Juegos</a></li>
-					<li><a href=""><i class="ayuda"></i> Ayuda</a></li>
-				</ul>
-				<ul>
-					<li><a href=""><i class="acceso"></i> Acceso</a></li>
-				</ul>
-			</div>
-		</nav>
-		<section>
-			<article class="contenedor">
-				<div class="cpanel flotar_i">
-					<figure>
-						<img src="pics/av_base.png" width="100" height="100" alt="Avatar" />
-						<figcaption>Hasta13Caracteres</figcaption>
-					</figure>
-					<form>
+		<h1>
+			<a href=".">
+				<img src="/pics/icon.svg" alt="" width="32" height="32">
+				RPG Maker en español
+			</a>
+		</h1>
+		<main>
+			<div class="cpanel">
+				<figure>
+					<img src="pics/av_base.png" width="100" height="100" alt="Avatar">
+					<figcaption>Hasta13Caracteres</figcaption>
+				</figure>
+				<form>
+					<p>
 						<label>Nombre de usuario (dato inamovible)</label>
-						<input type="text" placeholder="Nickname" disabled />
-						<label>Contraseña (puedes modificarlo aquí)</label>
-						<input type="password" value="Tu contraseña" />
-						<input type="file" id="file" for="noav" />
-						<label for="file" class="btn-3 bg_verde borde_verde"><i class="cargavatar"></i> Cargar Avatar</label>
-						<input type="checkbox" id="c1" name="cc" />
-						<label for="c1"><span></span>Eliminar avatar</label>
-						<button type="submit" class="bg_azul borde_azul flotar_d">
-							<i class="actualizar"></i> Actualizar Perfil
-						</button>
-					</form>
-				</div>
-				<div class="cpanel flotar_d">
-					<h2><i class="estadisticas"></i> Información de NombreUsuario</h2>
-					<ul>
-						<li><i class="rdescargados"></i> Recursos cargados<br /><span>1 mil.</span></li>
-						<li><i class="jtotales"></i> Juegos aportados<br /><span>0</span></li>
-						<li><i class="resena"></i> Reseñas realizadas<br /><span>10M</span></li>
-						<li><i class="tutos"></i> Tutoriales aportados<br /><span>40</span></li>
-					</ul>
-					<ul>
-						<li><i class="altavoz"></i> Perfil en red social 1<br /><span><a href="">Visitar</a></span></li>
-						<li><i class="altavoz"></i> Perfil en red social 2<br /><span><a href="">Visitar</a></span></li>
-						<li><i class="altavoz"></i> Perfil en red social 3<br />--</li>
-						<li><i class="mundo"></i> Sitio web propio<br /><span><a href="">Visitar</a></span></li>
-					</ul>
-					<form>
-						<button type="submit" class="bg_rojo borde_rojo flotar_d">
-							<i class="anular"></i> Anular cuenta
-						</button>
-						<p class="infoelimincuen">Se reactiva al loguearse</p>
-					</form>
-				</div>
-			</article>
-		</section>
-		<footer>
-			<div class="contene-footer">
-				<div>
-					<h3>Enlaces de ayuda</h3>
-					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
-					</ul>
-				</div>
-				<div>
-					<h3>Enlaces de ayuda</h3>
-					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
-					</ul>
-				</div>
-				<div>
-					<h3>Enlaces de ayuda</h3>
-					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
-					</ul>
-				</div>
+						<input type="text" placeholder="Alias" disabled>
+					</p>
+					<p>
+						<label for="clave">Contraseña (puedes modificarlo aquí)</label>
+						<input id="clave" type="password" value="Tu contraseña">
+					</p>
+					<p>
+						<input type="file" id="avatar">
+						<label for="avatar" class="btn-3 bg_verde borde_verde">📤 Cargar Avatar</label>
+					</p>
+					<p>
+						<input type="checkbox" id="eliminar-avatar" name="cc">
+						<label for="eliminar-avatar"><span></span>Eliminar avatar</label>
+					</p>
+					<p>
+						<button type="submit" class="bg_azul borde_azul">↻ Actualizar Perfil</button>
+					</p>
+				</form>
 			</div>
-			<p><span class="copy-left">©</span>RPGMaker.es</p>
+			<div class="cpanel informacion">
+				<h2>📈 Información de NombreUsuario</h2>
+				<ul>
+					<li>📂 Recursos cargados<br><span>1 mil.</span></li>
+					<li>🎲 Juegos aportados<br><span>0</span></li>
+					<li>✅ Reseñas realizadas<br><span>10M</span></li>
+					<li>📚 Tutoriales aportados<br><span>40</span></li>
+				</ul>
+				<ul>
+					<li>📢 Perfil en red social 1<br><span><a href="">Visitar</a></span></li>
+					<li>📢 Perfil en red social 2<br><span><a href="">Visitar</a></span></li>
+					<li>📢 Perfil en red social 3<br>--</li>
+					<li>🔗 Sitio web propio<br><span><a href="">Visitar</a></span></li>
+				</ul>
+				<form>
+					<button type="submit" class="bg_rojo borde_rojo">🗑️ Anular cuenta</button>
+					<p class="infoelimincuen">Se reactiva al loguearse</p>
+				</form>
+			</div>
+		</main>
+		<header>
+			<nav id="menu">
+				<a href="#menu">☰</a>
+				<a href="#menu-cerrado"></a>
+				<ul>
+					<li>
+						<a href="/recursos/">📂 Recursos</a>
+					</li>
+					<li>
+						<a href="/juegos/">🎲 Juegos</a>
+					</li>
+					<li>
+						<a href="/ayuda/">❔ Ayuda</a>
+					</li>
+					<li class="separado">
+						<a href="acceso.html">🔑 Acceso</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<footer>
+			<nav>
+				<section>
+					<h3>Enlaces de ayuda</h3>
+					<ul>
+						<li><a href="//wiki.rpgaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Enlaces de ayuda</h3>
+					<ul>
+						<li><a href="//wiki.rpgmaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Enlaces de ayuda</h3>
+					<ul>
+						<li><a href="//wiki.rpgmaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
+					</ul>
+				</section>
+			</nav>
+			<p><span class="copy-left">©</span> RPGMaker.es</p>
 		</footer>
 	</body>
 </html>

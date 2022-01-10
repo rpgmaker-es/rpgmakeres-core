@@ -1,76 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 	<head>
 		<link rel="preload" href="/template/rpgmaker.css" as="style">
-		<link rel="preload" href="/fonts/fontawesome-webfont.woff2" as="font" crossorigin="anonymous">
-		<link rel="preload" href="/fonts/MavenPro-VF.woff2" as="font" crossorigin="anonymous">
 		<link rel="preload" href="/pics/icon.svg" as="image">
 		<link rel="stylesheet" href="/template/rpgmaker.css">
 		<link rel="icon" type="image/svg+xml" href="/pics/icon.svg" sizes="any">
 		<link rel="mask-icon" href="/pics/mask-icon.svg" color="#d4b300">
 		<meta charset="utf-8">
-		<meta name="description" content="Página dedicada a RPG Maker, EasyRPG y MKXP con descargas de juegos y material para crear videojuegos.">
+		<meta name="description" content="Formulario de recuperación de contraseña para acceder al portal rpgmaker.es.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#171522">
-		<title>RPG Maker en español</title>
+		<title>Recuperación de contraseña en rpgmaker.es</title>
 	</head>
 	<body>
-		<nav>
-			<div class="contenedor">
-				<h1><a href=""><img src="/pics/icon.svg" alt="" width="32" height="32"> RPG Maker en español</a></h1>
-				<input type="checkbox" id="burger" /><label for="burger"><i class="burger"></i></label>
+		<h1>
+			<a href="/">
+				<img src="/pics/icon.svg" alt="" width="32" height="32">
+				RPG Maker en español
+			</a>
+		</h1>
+		<main>
+			<form class="form_acceso">
+				<fieldset>
+					<legend>Ehm...</legend>
+					<p>
+						<label for="correo">Dirección de correo electrónico</label><br>
+						<input id="correo" type="email" placeholder="cuenta@cuenta.com">
+					</p>
+					<p>
+						<button type="submit" class="bg_verde borde_verde">↻ Regenerar Clave</button>
+					</p>
+				</fieldset>
+			</form>
+		</main>
+		<header>
+			<nav id="menu">
+				<a href="#menu">☰</a>
+				<a href="#menu-cerrado"></a>
 				<ul>
-					<li><a href=""><i class="recursos"></i> Recursos</a></li>
-					<li><a href=""><i class="juegos"></i> Juegos</a></li>
-					<li><a href=""><i class="ayuda"></i> Ayuda</a></li>
+					<li>
+						<a href="/recursos/">📂 Recursos</a>
+					</li>
+					<li>
+						<a href="/juegos/">🎲 Juegos</a>
+					</li>
+					<li>
+						<a href="/ayuda/">❔ Ayuda</a>
+					</li>
+					<li class="separado">
+						<a href="acceso.html">🔑 Acceso</a>
+					</li>
 				</ul>
-				<ul>
-					<li><a href=""><i class="acceso"></i> Acceso</a></li>
-				</ul>
-			</div>
-		</nav>
-		<section>
-			<article class="contenedor">
-				<form class="form_acceso">
-					<fieldset>
-						<legend>Ehm...</legend>
-						<label>Si existe, recibirá un correo con instrucciones</label><br />
-						<input type="email" placeholder="cuenta@cuenta.com" /><br />
-						<button type="submit" class="bg_verde borde_verde">
-							<i class="actualizar"></i> Regenerar Clave
-						</button>
-					</fieldset>
-				</form>
-			</article>
-		</section>
+			</nav>
+		</header>
 		<footer>
-			<div class="contene-footer">
-				<div>
+			<nav>
+				<section>
 					<h3>Enlaces de ayuda</h3>
 					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
+						<li><a href="//wiki.rpgaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
 					</ul>
-				</div>
-				<div>
+				</section>
+				<section>
 					<h3>Enlaces de ayuda</h3>
 					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
+						<li><a href="//wiki.rpgmaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
 					</ul>
-				</div>
-				<div>
+				</section>
+				<section>
 					<h3>Enlaces de ayuda</h3>
 					<ul>
-						<li><a href="">Wiki RPG Maker (ES)</a></li>
-						<li><a href="">Comunidad RPG Maker</a></li>
-						<li><a href="">Soporte On-line</a></li>
+						<li><a href="//wiki.rpgmaker.es/">Wiki RPG Maker (ES)</a></li>
+						<li><a href="//comunidad.rpgmaker.es/">Comunidad RPG Maker</a></li>
+						<li><a href="/consultas/">Soporte On-line</a></li>
 					</ul>
-				</div>
-			</div>
-			<p><span class="copy-left">©</span>RPGMaker.es</p>
+				</section>
+			</nav>
+			<p><span class="copy-left">©</span> RPGMaker.es</p>
 		</footer>
 	</body>
 </html>
