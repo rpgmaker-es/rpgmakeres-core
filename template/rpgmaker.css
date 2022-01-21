@@ -7,12 +7,6 @@ Licencia: GPLv3
 URL Licencia: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-@font-face {
-	font-family: FontAwesome;
-	src: url("/fonts/fontawesome-webfont.woff2");
-	font-display: optional;
-}
-
 main {
 	background-color: var(--main-bg-color);
 	color: var(--body-txt-color);
@@ -125,7 +119,7 @@ main figure figcaption {
 body {
 	background-color: var(--body-bg-color);
 	display: grid;
-	font-family: "Segoe UI", "Open Sans", Verdana, sans-serif;
+	font-family: "Segoe UI", "Open Sans", "PT Sans Caption", sans-serif;
 	grid-template-columns: auto 1fr;
 	margin: 0;
 }
@@ -541,7 +535,7 @@ a[href="#menu"] {
 
 /* Responsivos */
 
-@media (max-width: 1319px) {
+@media (max-width: 1331px) { /* 320 * 4 columnas = 1280 + 10 + 10 + 20 de paddings = 1320 + 12 (scrollbar) - 1 */
 
 	:root {
 		--screen-max-width: 989px;
@@ -563,10 +557,10 @@ a[href="#menu"] {
 	}
 }
 
-@media (max-width: 989px) {
+@media (max-width: 1001px) { /* 320 * 3 columnas = 960 + 10 + 20 de paddings = 990 + 12 (scrollbar) - 1 */
 
 	:root {
-		--screen-max-width: 690px;
+		--screen-max-width: 659px;
 	}
 
 	#destacados,
@@ -586,7 +580,7 @@ a[href="#menu"] {
 }
 
 
-@media (max-width: 679px) {
+@media (max-width: 671px) { /* 320 * 2 columnas = 640 + 20 de padding = 660 + 12 (scrollbar) - 1 */
 
 	:root {
 		--screen-max-width: 320px;
@@ -597,7 +591,7 @@ a[href="#menu"] {
 	}
 }
 
-@media (max-width: 742px) { /* ancho de la barra del menú */
+@media (max-width: 767px) { /* ancho de la barra del menú, con línea de texto aparece mínimo con 768px */
 	body > h1 {
 		border-right: medium none currentcolor;
 		font-size: 22px;
