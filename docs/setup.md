@@ -3,7 +3,7 @@
 You will need:
 
 - A web server
-- PHP 7.x connected to your webserver and in CLI
+- PHP 8.x connected to your webserver and in CLI
 - Composer (https://getcomposer.org)
 
 ##### And eventually ... (optional)
