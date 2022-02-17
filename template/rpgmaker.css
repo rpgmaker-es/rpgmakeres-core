@@ -119,7 +119,7 @@ main figure figcaption {
 body {
 	background-color: var(--body-bg-color);
 	display: grid;
-	font-family: "Segoe UI", "Open Sans", "PT Sans Caption", sans-serif;
+	font-family: "Segoe UI", "Open Sans", "PT Sans Caption", "Avenir Next", sans-serif;
 	grid-template-columns: auto 1fr;
 	margin: 0;
 }
