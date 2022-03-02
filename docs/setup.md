@@ -4,11 +4,12 @@ You will need:
 
 - A web server
 - PHP 8.x connected to your webserver and in CLI
+- The following extensions: zip, mbstring, apcu.
 - Composer (https://getcomposer.org)
 
 ##### And eventually ... (optional)
 
-- A database, SQL compatible, capable of connecting with PHP via PDO interface.
+- A database, SQL compatible, capable of connecting with PHP via PDO interface (do not forget php-mysql extension).
 
 ### Setup
 

@@ -129,7 +129,7 @@ class WebGenerator
      * @param String $page Controller name, as configured in routes.php
      * @param bool $force If true, all pages of the controller will be regenerated
      * @param int $timeout Optional, Static only. If > 0, pages of the controller will be regenerated after x minutes.
-     * @param string $child If defined, it will only update the specified child in controller.
+     * @param string $childForcing If defined, it will only update the specified child in controller.
      * @throws Exception If there's issues with file permissions.
      */
     static function _processPages($mode, $page, $force, $timeout = null, $childForcing = NULL)
@@ -207,7 +207,7 @@ class WebGenerator
                                 break;
                         }
                         //if there's child forcing, then I'm done.
-                        if (!!$child) return;
+                        if (!!$childForcing) return;
                     }
                 } else if ($mode == WebGenerator::$STATIC && !!$timeout ) {
                     //I can calculate timeout for this one

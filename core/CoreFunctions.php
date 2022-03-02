@@ -140,9 +140,14 @@ Class RPGMakerES
                 $out .= $stacktrace[$i]['class'] . $stacktrace[$i]['type'];
             }
             $out.= $stacktrace[$i]["function"] . "(";
-            for ($j=0;$j<count($stacktrace[$i]["args"]); $j++) {
-                $out.="_";
-                if ($j != count($stacktrace[$i]["args"]) - 1) $out.=",";
+            //Asks if the the trace have parameters enabled, see https://www.php.net/manual/es/exception.gettrace.php#125278
+            if (array_key_exists("args", $stacktrace[$i])) {
+                for ($j=0;$j<count($stacktrace[$i]["args"]); $j++) {
+                    $out.="_";
+                    if ($j != count($stacktrace[$i]["args"]) - 1) $out.=",";
+                }
+            } else {
+                $out.="...";
             }
             $out .=")" . PHP_EOL;
         }

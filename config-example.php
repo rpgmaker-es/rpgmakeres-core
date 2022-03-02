@@ -66,6 +66,8 @@ $_RPGMAKERES["config"] = array(
 
     /**
      * If true, it will use default PHP session name
+     * Must be activated in developing environment (or others where HTTPS is not available),
+     * otherwise all sessions will expire instantly.
      */
     "useDefaultSessionName" => false,
 
