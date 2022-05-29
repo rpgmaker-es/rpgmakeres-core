@@ -60,7 +60,7 @@ class UsersModel
 
         //generate password first
         RPGMakerES::loadService("password");
-        $passwd = PasswordService::generatePassword($_POST["password"]);
+        $passwd = PasswordService::generatePassword($data["password"]);
 
         return PDOService::execSecureQuery(
             "INSERT INTO user (
