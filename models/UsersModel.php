@@ -55,4 +55,25 @@ class UsersModel
             "UPDATE user SET deleted = 1 WHERE uid = ?",
             [PDO::PARAM_INT], [$uid]);
     }
+
+    public static function addUser($data) {
+
+        //generate password first
+        RPGMakerES::loadService("password");
+        $passwd = PasswordService::generatePassword($_POST["password"]);
+
+        return PDOService::execSecureQuery(
+            "INSERT INTO user (
+                  username,email,password,created_at,active,suspended,
+                  verified,permissions,deleted,
+                  avatar,url1,url2,url3,url4
+                  ) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            [PDO::PARAM_STR, PDO::PARAM_STR,PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR],
+            [$data["username"], $data["email"], $passwd, date('Y-m-d H:i:s'), $data["active"], $data["suspended"], $data["verified"], $data["permissions"], 0,  "", $data["url1"], $data["url2"], $data["url3"], $data["url4"]]);
+
+    }
+
+    public static function editUser($data) {
+        //TODO
+    }
 }

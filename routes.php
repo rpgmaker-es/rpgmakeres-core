@@ -16,6 +16,7 @@ $_RPGMAKERES["controllers"] = [
     "DynamicTestController" => "DynamicTestController.php",
     "LoginController" => "LoginController.php",
     "AdminController" => "AdminController.php",
+    "AdminUserController" => "AdminUserController.php",
 ];
 
 /**
@@ -34,7 +35,8 @@ $_RPGMAKERES["staticPages"] = [
 $_RPGMAKERES["dynamicPages"] = [
     "DynamicTestController",
     "LoginController",
-    "AdminController"
+    "AdminController",
+    "AdminUserController",
 ];
 
 /**

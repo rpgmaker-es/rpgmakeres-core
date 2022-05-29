@@ -12,7 +12,7 @@
 
 <h2> Lista de usuarios</h2>
 
-<a href="">Crear usuario</a>
+<a href="/admin/user/create">Crear usuario</a>
 <table>
     <?=PaginationService::viewCreateTableHeaders($paginationParameters, [
             "UID" => "uid",
@@ -46,10 +46,10 @@
                 }
                 ?></td>
             <td>
-                <a href="">Editar</a>
+                <a href="/admin/user/edit?uid=<?=$user["uid"]?>">Editar</a>
                 <a href="">Suspender</a>
-                <a href="">Reiniciar clave</a>
-                <a href="/admin/userdelete?uid=<?=$user["uid"]?>&csrf=<?=$csrf?>">Eliminar</a>
+                <a href="">Enviar mail recuperacion</a>
+                <a href="/admin/user/delete?uid=<?=$user["uid"]?>&csrf=<?=$csrf?>">Eliminar</a>
             </td>
         </tr>
     <?php

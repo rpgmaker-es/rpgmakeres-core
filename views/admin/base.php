@@ -16,7 +16,7 @@
     <section>
         <article>
             <a href="">Resumen</a><br/>
-            <a href="user">Usuarios</a><br/>
+            <a href="/admin/user">Usuarios</a><br/>
             <a href="">Noticias</a><br/>
             <a href="">Comentarios</a><br/>
             <a href="">Juegos</a><br/>

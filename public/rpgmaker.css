@@ -221,7 +221,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 	box-sizing: border-box;
 }
 
-[type="file"] {height: 0; overflow: hidden; width: 0;}
+/*[type="file"] {height: 0; overflow: hidden; width: 0;}*/
 
 [type="file"] + label {
 	border-radius: 3px;
@@ -235,9 +235,9 @@ input[type="text"], input[type="password"], input[type="email"] {
 	margin: auto 30% 20px auto;
 }
 
-input[type="checkbox"] {
+/*input[type="checkbox"] {
 	display:none;
-}
+}*/
 input[type="checkbox"] + label span {
 	display:inline-block;
 	width:19px;

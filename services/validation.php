@@ -53,12 +53,50 @@ class ValidationService
     /**
      * Checks if provided number-like data it's a valid number or not.
      * @param mixed $i Input number-like data
+     * @param mixed $rangeStart Optional, the number will be valid if its equal or major than this number
+     * @param mixed $rangeEnd Optional, the number will be valid if its equal or minor than this number
      * @return bool True or false if number-like data is valid.
      */
-    public static function isValidNumber($i)
+    public static function isValidNumber($i, $rangeStart = NULL, $rangeEnd = NULL)
     {
-        if (is_numeric(ValidationService::cleanNumber($i))) return true;
+        $valid = false;
+        if (is_numeric(ValidationService::cleanNumber($i))) {
+            $valid = true;
+        }
+
+        if ($rangeStart) {
+            if ($i < $rangeStart) {
+                $valid = false;
+            }
+        }
+
+        if ($rangeEnd) {
+            if ($i > $rangeEnd) {
+                $valid = false;
+            }
+        }
+
+        return $valid;
+    }
+
+    public static function isValidEmail($data, $length) {
+        if (filter_var($data, FILTER_VALIDATE_EMAIL) !== false ) return true;
         return false;
+    }
+
+    public static function isValidPassword($data, $length) {
+        //TODO validate password settings to strong one
+        if (self::isValidString($data, $length) && strlen($data) >=6) return true;
+        return false;
+    }
+
+    /**
+     * Returns if the data is not an empty string and/or NULL
+     * @param $data
+     * @return bool
+     */
+    public static function isFilled($data) {
+        return $data!=NULL && (strlen($data) >0 );
     }
 
     /**
@@ -105,4 +143,40 @@ class ValidationService
         //Alright!
         return true;
     }
+
+    public static $error_list = [];
+
+    public static function addError($item, $description) {
+        array_push(ValidationService::$error_list, [$item, $description]);
+    }
+
+    public static function hasErrors() {
+        return count(ValidationService::$error_list) > 0;
+    }
+
+    public static function printErrors() {
+
+        $out = "<ul class='validation_error'>\n";
+
+        foreach(ValidationService::$error_list as $error) {
+            $out .="<li>" . $error[1] . "</li>\n";
+        }
+
+        return $out . "\n";
+    }
+
+    public static function addClassIfError($property) {
+        foreach(ValidationService::$error_list as $error) {
+            if ($error[0] == $property) {
+                return "error-class";
+            }
+        }
+        return "";
+    }
+
+    public static function cleanError() {
+        ValidationService::$error_list = [];
+    }
+
+
 }

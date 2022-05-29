@@ -106,4 +106,14 @@ class SessionService
         return $out;
     }
 
+    public static function checkAdmin() {
+        SessionService::useSession();
+        SessionService::mustLogin();
+        if (!array_key_exists("permissions", $_SESSION['user']) || $_SESSION['user']['permissions'] != 4 ) {
+            global $_RPGMAKERES;
+            header('Location: ' . $_RPGMAKERES["config"]["loginUrl"]);
+            die();
+        }
+    }
+
 }
