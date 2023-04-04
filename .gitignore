@@ -17,6 +17,3 @@ config-override.php
 #Exclusion for composer files
 /vendor/
 /composer.lock
-
-#Exclusion for server files
-/.well-known/
